@@ -33,6 +33,14 @@ group :test do
   gem 'rspec'
 end
 
+group :development do
+  gem 'annotate'
+end
+
+group :test do
+  gem 'rspec'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
