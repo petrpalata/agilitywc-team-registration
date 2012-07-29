@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nickname: MyString
+  registered_name: MyString
+  breed_id: 1
+  date_of_birth: 2012-07-29
+  studbook: MyString
+  studbook_number: 1
+  record_book: MyString
+  license: MyString
+  tatoo: 1
+  microchip: 1
+  microchip_position: MyString
+  user_id: 1
+  owner_first_name: MyString
+  owner_last_name: MyString
+  owner_address: MyText
+  owner_phone_number: MyString
+
+two:
+  nickname: MyString
+  registered_name: MyString
+  breed_id: 1
+  date_of_birth: 2012-07-29
+  studbook: MyString
+  studbook_number: 1
+  record_book: MyString
+  license: MyString
+  tatoo: 1
+  microchip: 1
+  microchip_position: MyString
+  user_id: 1
+  owner_first_name: MyString
+  owner_last_name: MyString
+  owner_address: MyText
+  owner_phone_number: MyString
