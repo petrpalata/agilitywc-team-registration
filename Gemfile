@@ -13,6 +13,7 @@ gem 'nested_form'
 gem 'countries'
 gem 'simple_enum'
 gem 'paperclip', '~> 2.7'
+gem 'rails-i18n'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -48,7 +49,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'
