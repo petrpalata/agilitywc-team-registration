@@ -16,37 +16,47 @@
                     <% else %>
                         <%= link_to t('links.application.login'), new_user_session_path,  :class => "btn" %>
                     <% end %>
-                    <%= link_to "cs", root_url(:locale => 'cs') %> | <%= link_to "en", root_url(:locale => 'en') %> |  <%= link_to "es", root_url(:locale => 'es') %> | <%= link_to "fr", root_url(:locale => 'fr') %> | <%= link_to "de", root_url(:locale => 'de') %>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="span2">
-                    <ul class="nav nav-tabs nav-stacked">
-                        <% if signed_in? %>
-                            <% if current_user.superadmin? %>
-                                <li><%= link_to t('links.application.new_admin'), new_user_registration_path %></li>
-                            <% end %>
-                            <% if current_user.admin? %>
-                                <li><%= link_to t('links.application.new_user'), new_user_registration_path %></li>
-                            <% end %>
-                            <% if current_user.user? %>
-                                <li><%= link_to t('links.application.teams'), handlers_path %></li>
-                            <% end %>
-                            <% if current_user.confirm_all and current_user.user? %>
-                                <li><%= link_to t('links.application.payment_information'), confirmation_payment_information_path %></li>
-                            <% elsif current_user.user? %>
-                                <li><%= link_to t('links.application.confirmation'), confirmation_index_path %></li>
-                            <% end %>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span2">
+                <div class="button-bar">
+                    <div class="btn-group">
+                        <%= link_to "cs", root_url(:locale => 'cs'), :class => "btn btn-small" %> 
+                        <%= link_to "en", root_url(:locale => 'en'), :class => "btn btn-small" %> 
+                        <%= link_to "es", root_url(:locale => 'es'), :class => "btn btn-small" %> 
+                        <%= link_to "fr", root_url(:locale => 'fr'), :class => "btn btn-small" %> 
+                        <%= link_to "de", root_url(:locale => 'de'), :class => "btn btn-small" %>
+                    </div>
+                </div>
+                <br />
+                <ul class="nav nav-tabs nav-stacked">
+                    <% if signed_in? %>
+                        <% if current_user.superadmin? %>
+                            <li><%= link_to t('links.application.new_admin'), new_user_registration_path %></li>
                         <% end %>
-                    </ul>
-                </div>
-                <div class="span9">
-                    <%= render 'layouts/notices' %>
-                    <%= yield %>
-                </div>
+                        <% if current_user.admin? %>
+                            <li><%= link_to t('links.application.new_user'), new_user_registration_path %></li>
+                        <% end %>
+                        <% if current_user.user? %>
+                            <li><%= link_to t('links.application.teams'), handlers_path %></li>
+                        <% end %>
+                        <% if current_user.confirm_all and current_user.user? %>
+                            <li><%= link_to t('links.application.payment_information'), confirmation_payment_information_path %></li>
+                        <% elsif current_user.user? %>
+                            <li><%= link_to t('links.application.confirmation'), confirmation_index_path %></li>
+                        <% end %>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="span9">
+                <%= render 'layouts/notices' %>
+                <%= yield %>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
