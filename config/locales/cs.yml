@@ -1,0 +1,93 @@
+cs:
+  application:
+     title: "Registrace týmů"
+  teams:
+     form:
+        actions: "Akce"
+        correct_errors: "Opravte následující chyby."
+        email: "E-mail"
+        password: "Heslo"
+        remember_me: "Zapamatovat"
+        sign_in: "Přihlásit"
+        add_dog: "Přidat psa"
+        first_name: "Jméno"
+        last_name: "Příjmení"
+        insurance_company: "Pojišťovna"
+        insurance_contract_number: "Číslo pojišťovací smlouvy"
+        picture: "Obrázek"
+        nickname: "Přezdívka"
+        registered_name: "Jméno"
+        category: "Kategorie"
+        small: "Small"
+        medium: "Medium"
+        large: "Large"
+        breed: "Plemeno"
+        date_of_birth: "Datum narození"
+        license: "Licence"
+        microchip: "Mikročip"
+        microchip_position: "Pozice mikročipu"
+        recordbook: "Recordbook"
+        studbook: "Studbook"
+        studbook_number: "Studbook number"
+        tatoo: "Tetování"
+        owner_first_name: "Jméno majitele"
+        owner_last_name: "Příjmení majitele"
+        owner_phone_number: "Telefon majitele"
+        owner_address: "Adresa majitele"
+        remove_this_dog: "Odebrat tohoto psa"
+        submit: "Odeslat"
+     controller:
+        successfully_created: "Tým byl úspěšně přidán."
+        successfully_updated: "Tým byl úspěšně upraven."
+        successfully_deleted: "Tým byl úspěšně smazán."
+        dont_have_permission: "Pro zobrazení nemáte dostatečná oprávnění."
+        no_changed_allowed: "Již jste potvdili přihlášky, další změny nejsou možné."
+     new:
+        title: "Nový tým"
+     edit:
+        title: "Upravit tým"
+     index:
+        title: "Týmy"
+  confirmation:
+     mailer:
+        send_confirmation:
+          subject: "Informace o platbě"
+     payment_information:
+        title: "Informace o platbě"
+        account_number: "Číslo účtu"
+        held_by_raiffeisen_bank: "Vedeno u Raiffeisen bank"
+        payment_id: "Variabilní symbol"
+        total_teams: "Celkově týmů"
+        total_amount_euro: "Celková cena (v eurech)"
+     title:
+     controller:
+        successfully_confirmed_all_entries: "Všechny přihlášky byly úspěšně potvrzeny."
+        already_confirmed_all_entries: "Již jste potvdili všechny přihlášky."
+     views:
+        index:
+          link_to_confirmation: "Potvrdit všechny přihlášky a vygenerovat údaje k platbě (nelze vrátit)"
+  user:
+     mailer:
+       admin_welcome_message: 
+          subject: "Aktivate administrátorského účtu" 
+       welcome_message:
+          message: "Váš účet pro registraci týmů na mistrovství světa v agility byl aktivován"
+          subject: "Aktivace účtu"
+  registration:
+     controller:
+       successfully_created_new_user: "Nový uživatel byl úspěšně vytvořen."
+  links:
+     teams:
+       edit: "Editovat"
+       back: "Zpět"
+       show: "Zobrazit"
+       destroy: "Smazat"
+       new: "Nový tým"
+     application:
+       login: "Přihlášení"
+       logout: "Odhlášení"
+       new_admin: "Nový administrátor"
+       new_user: "Nový uživatel"
+       teams: "Týmy"
+       confirmation: "Potvrzení"
+       payment_information: "Informace o platbě"

@@ -16,6 +16,7 @@
                     <% else %>
                         <%= link_to t('links.application.login'), new_user_session_path,  :class => "btn" %>
                     <% end %>
+                    <%= link_to "cs", root_url(:locale => 'cs') %> | <%= link_to "en", root_url(:locale => 'en') %> |  <%= link_to "es", root_url(:locale => 'es') %> | <%= link_to "fr", root_url(:locale => 'fr') %> | <%= link_to "de", root_url(:locale => 'de') %>
                 </div>
             </div>
         </div>
@@ -34,14 +35,14 @@
                                 <li><%= link_to t('links.application.teams'), handlers_path %></li>
                             <% end %>
                             <% if current_user.confirm_all and current_user.user? %>
-                                <li><%= link_to t('links.application.payment_information'), '/confirmation/payment_information' %></li>
+                                <li><%= link_to t('links.application.payment_information'), confirmation_payment_information_path %></li>
                             <% elsif current_user.user? %>
-                                <li><%= link_to t('links.application.confirmation'), '/confirmation/' %></li>
+                                <li><%= link_to t('links.application.confirmation'), confirmation_index_path %></li>
                             <% end %>
                         <% end %>
                     </ul>
                 </div>
-                <div class="span10">
+                <div class="span9">
                     <%= render 'layouts/notices' %>
                     <%= yield %>
                 </div>
