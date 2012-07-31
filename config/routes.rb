@@ -14,9 +14,9 @@ TeamRegistration::Application.routes.draw do
 
     resources :teams, :as => :handlers
 
-    match "/confirmation" => "confirmation#index"
-    match "/confirmation/confirm_all" => "confirmation#confirm_all"
-    match "/confirmation/payment_information" => "confirmation#payment_information"
+    match "/confirmation" => "confirmation#index", :as => 'confirmation_index'
+    match "/confirmation/confirm_all" => "confirmation#confirm_all", :as => 'confirmation_confirm_all'
+    match "/confirmation/payment_information" => "confirmation#payment_information", :as => 'confirmation_payment_information'
     # The priority is based upon order of creation:
     # first created -> highest priority.
 
