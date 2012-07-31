@@ -1,5 +1,93 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  application:
+     title: "Teams registration"
+  teams:
+     form:
+        actions: "Actions"
+        correct_errors: "Correct the following errors."
+        email: "E-mail"
+        password: "Password"
+        remember_me: "Remember me"
+        sign_in: "Sign in"
+        add_dog: "Add dog"
+        first_name: "First name"
+        last_name: "Last name"
+        insurance_company: "Insurance company"
+        insurance_contract_number: "Insurance contract number"
+        picture: "Picture"
+        nickname: "Nickname"
+        registered_name: "Registered name"
+        category: "Category"
+        small: "Small"
+        medium: "Medium"
+        large: "Large"
+        breed: "Breed"
+        date_of_birth: "Date of birth"
+        license: "License"
+        microchip: "Microchip"
+        microchip_position: "Microchip position"
+        recordbook: "Recordbook"
+        studbook: "Studbook"
+        studbook_number: "Studbook number"
+        tatoo: "Tatoo"
+        owner_first_name: "Owner's first name"
+        owner_last_name: "Owner's last name"
+        owner_phone_number: "Owner's phone number"
+        owner_address: "Owner's address"
+        remove_this_dog: "Remove this dog"
+        submit: "Submit"
+     controller:
+        successfully_created: "Team successfully created."
+        successfully_updated: "Team successfully updated."
+        successfully_deleted: "Team successfully deleted."
+        dont_have_permission: "You don't have permission to view this."
+        no_changed_allowed: "You have confirmed your entries, subsequent changes are not possible."
+     new:
+        title: "New team"
+     edit:
+        title: "Edit team"
+     index:
+        title: "Listing teams"
+  confirmation:
+     mailer:
+        send_confirmation:
+          subject: "Payment information"
+     payment_information:
+        title: "Payment information"
+        account_number: "Account no.:"
+        held_by_raiffeisen_bank: "Held by Raiffeisen bank"
+        payment_id: "Payment ID (variable symbol)"
+        total_teams: "Total teams"
+        total_amount_euro: "Total amount (euro)"
+     title:
+     controller:
+        successfully_confirmed_all_entries: "You have successfully confirmed all your entries."
+        already_confirmed_all_entries: "You have already confirmed your entries."
+     views:
+        index:
+          link_to_confirmation: "Confirm all entries and generate payment (cannot undo)"
+  user:
+     mailer:
+       admin_welcome_message: 
+          subject: "Admin account activation" 
+       welcome_message:
+          message: "Your account for World Agility Championship registration has been activated"
+          subject: "Account activation"
+  registration:
+     controller:
+       successfully_created_new_user: "Successfully created new user."
+  links:
+     teams:
+       edit: "Edit"
+       back: "Back"
+       show: "Show"
+       destroy: "Destroy"
+       new: "New team"
+     application:
+       login: "Login"
+       logout: "Logout"
+       new_admin: "New admin"
+       new_user: "New user"
+       teams: "Teams"
+       confirmation: "Confirmation"
+       payment_information: "Payment information"

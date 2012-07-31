@@ -34,4 +34,19 @@ TeamRegistration::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {  
+      :address              => "smtp.gmail.com",  
+      :port                 => 587,  
+      :domain               => "agility2012.cz",  
+      :user_name            => "orders@agility2012.cz",  
+      :password             => "obon5uso",  
+      :authentication       => "plain",  
+      :enable_starttls_auto => true  
+  } 
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

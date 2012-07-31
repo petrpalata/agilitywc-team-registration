@@ -10,64 +10,39 @@
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="/">Team registration</a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li><%= link_to "Handlers" %></li>
-                            <li><%= link_to "Dogs" %></li>
-                            <li><%= link_to "Teams" %></li>
-                        </ul>
-                    </div>
-                    <div class="btn-group">
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            User
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <% if user_signed_in? %>
-                                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-                            <% else %>
-                                <li><%= link_to "Login", new_user_session_path %></li>
-                                <li><%= link_to "Sign up", new_user_registration_path %></li>
-                            <% end %>
-                        </ul>
-                    </div>
+                    <a class="brand" href="/"><%= t 'application.title' %></a>
+                    <% if user_signed_in? %>
+                        <%= link_to t('links.application.logout'), destroy_user_session_path, :method => :delete, :class => "btn" %>
+                    <% else %>
+                        <%= link_to t('links.application.login'), new_user_session_path,  :class => "btn" %>
+                    <% end %>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="span3">
+                <div class="span2">
                     <ul class="nav nav-tabs nav-stacked">
-                        <li><%= link_to "Handlers" %></li>
-                        <li><%= link_to "Dogs" %></li>
-                        <li><%= link_to "Teams" %></li>
+                        <% if signed_in? %>
+                            <% if current_user.superadmin? %>
+                                <li><%= link_to t('links.application.new_admin'), new_user_registration_path %></li>
+                            <% end %>
+                            <% if current_user.admin? %>
+                                <li><%= link_to t('links.application.new_user'), new_user_registration_path %></li>
+                            <% end %>
+                            <% if current_user.user? %>
+                                <li><%= link_to t('links.application.teams'), handlers_path %></li>
+                            <% end %>
+                            <% if current_user.confirm_all and current_user.user? %>
+                                <li><%= link_to t('links.application.payment_information'), '/confirmation/payment_information' %></li>
+                            <% elsif current_user.user? %>
+                                <li><%= link_to t('links.application.confirmation'), '/confirmation/' %></li>
+                            <% end %>
+                        <% end %>
                     </ul>
                 </div>
-                <div class="span9">
-                     <% if flash[:alert] %>
-                         <p class="alert">
-                             <button class="close" data-dismiss="alert">×</button>
-                             <%= flash[:alert] %></p>
-                         </p>
-                     <% end %>
-                     <% if flash[:notice] %>
-                         <p class="alert alert-info">
-                             <button class="close" data-dismiss="alert">×</button>
-                             <%= flash[:notice] %></p>
-                         </p>
-                     <% end %>
-                     <% if flash[:success] %>
-                         <p class="alert alert-success">
-                             <button class="close" data-dismiss="alert">×</button>
-                             <%= flash[:success] %></p>
-                         </p>
-                     <% end %>
+                <div class="span10">
+                    <%= render 'layouts/notices' %>
                     <%= yield %>
                 </div>
             </div>

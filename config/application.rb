@@ -58,5 +58,15 @@ module TeamRegistration
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+        msg = instance.error_message 
+
+        if html_tag =~ /<(input|textarea|select)/
+            "<p class=\"control-group error\">#{html_tag}</p>".html_safe
+        else 
+            html_tag
+        end 
+    }
   end
 end

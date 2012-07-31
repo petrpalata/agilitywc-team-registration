@@ -1,0 +1,12 @@
+<h1><%= t 'confirmation.payment_information.title' %></h1>
+<br />
+<p>
+<%= t 'confirmation.payment_information.account_number' %> 6875362001/5500<br />
+<%= t 'confirmation.payment_information.held_by_raiffeisen_bank' %><br />
+IBAN CZ3055000000006875362001<br />
+SWIFT RZBCCZPP<br />
+<%= t 'confirmation.payment_information.payment_id' %>: <%= @payment.id + 22220000 %><br />
+
+<%= t 'confirmation.payment_information.total_teams' %>: <%= @payment.total_teams %><br />
+<%= t 'confirmation.payment_information.total_amount_euro' %>: <%= @payment.price_in_euros %>.00
+</p>
