@@ -1,24 +1,22 @@
 TeamRegistration::Application.routes.draw do
-    scope '/team_registration' do
-        root :to => "index#index"
+    root :to => "index#index"
 
-        devise_for :users, :skip => ['sessions', 'registrations']
+    devise_for :users, :skip => ['sessions', 'registrations']
 
-        devise_scope :user do 
-            get "/new_user" => "registration#new", :as => 'new_user_registration'
-            post "/new_user" => "registration#create", :as => 'create_user_registration'
+    devise_scope :user do 
+        get "/new_user" => "registration#new", :as => 'new_user_registration'
+        post "/new_user" => "registration#create", :as => 'create_user_registration'
 
-            get "/login" => "devise/sessions#new", :as => 'new_user_session'
-            post "/login" => "devise/sessions#create", :as => 'user_session'
-            delete "/logout" => "devise/sessions#destroy", :as => 'destroy_user_session'
-        end
-
-        resources :teams, :as => :handlers
-
-        match "/confirmation" => "confirmation#index"
-        match "/confirmation/confirm_all" => "confirmation#confirm_all"
-        match "/confirmation/payment_information" => "confirmation#payment_information"
+        get "/login" => "devise/sessions#new", :as => 'new_user_session'
+        post "/login" => "devise/sessions#create", :as => 'user_session'
+        delete "/logout" => "devise/sessions#destroy", :as => 'destroy_user_session'
     end
+
+    resources :teams, :as => :handlers
+
+    match "/confirmation" => "confirmation#index"
+    match "/confirmation/confirm_all" => "confirmation#confirm_all"
+    match "/confirmation/payment_information" => "confirmation#payment_information"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 
