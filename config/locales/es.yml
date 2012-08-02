@@ -1,93 +1,93 @@
 es:
-    application: 
-        title: "Los equipos de registro"
+  application: 
+    title: "Los equipos de registro"
+  teams: 
+    form: 
+      actions: "Acción"
+      correct_errors: "Corregir los errores "
+      email: "Correo electrónico"
+      password: "Contraseňa de acceso"
+      remember_me: "Guardar en la memoria"
+      sign_in: "Acceder"
+      add_dog: "Aňadir un perro"
+      first_name: "Nombre"
+      last_name:  "Apellido"
+      insurance_company: "Compaňía de seguros"
+      insurance_contract_number: "Número de contratos de seguros"
+      picture: "Cuadro"
+      nickname: "Apodo"
+      registered_name: "Nombre registrado"
+      category: "Categoría"
+      small: "Pequeño"
+      medium: "Mediano"
+      large: "Alto"
+      breed: "Raza"
+      date_of_birth: "Fecha de nacimiento"
+      license: "Licencia"
+      microchip: "Microchip"
+      microchip_position: "Posición del microchip"
+      recordbook: "Recordbook"
+      studbook: "Studbook"
+      studbook_number: "Studbook número"
+      tatoo: "Tatuaje"
+      owner_first_name: "Nombre del propietario"
+      owner_last_name: "Apellido del propietario"
+      owner_phone_number: "Número de teléfono propietario"
+      owner_address: "Dirección del propietario"
+      remove_this_dog: "Quitar este perro"
+      submit: "Enviar"
+    controller:
+      successfully_created: "El equipo ha sido agregado con éxito."
+      successfully_updated: "El equipo se adaptó con éxito. "
+      successfully_deleted: "El equipo fue eliminado con éxito. "
+      dont_have_permission: "No tiene permisos."
+      no_changed_allowed: "Ustedes ya han presentado solicitudes, los cambios no son posibles. "
+    new: 
+      title: "Nuevo equipo"
+    edit:
+      title: "Modificar el equipo"
+    index:
+      title: "Equipos"
+  confirmation: 
+    mailer: 
+     send_confirmation: 
+       subject: "Información de pago"
+     payment_information:
+       title: "Información de pago"
+       account_number: "Número de cuenta"
+       held_by_raiffeisen_bank: "Liderados por los bancos Raiffeisen. "
+       payment_id: "Símbolo de la variable"
+       total_teams: "En conjunto equipos"
+       total_amount_euro: "El precio total (en euros)"
+    title:
+    controller: 
+      successfully_confirmed_all_entries: "Todas la solicitudes se han validado con éxito. "
+      already_confirmed_all_entries: "Usted ya ha presentado todas las inscripciones ."
+    views: 
+      index:
+        link_to_confirmation: "Enviar todas las inscripción y generar datos para el pago (no la espalda)"
+  user:
+    mailer:
+      admin_welcome_message:        
+        subject: "Activación de cuenta de administrador."
+      welcome_message: 
+        message: "Sus equipos de registro de la cuenta a los campeonatos del mundo de la agility se ha activado."
+        subject: "Activación de la cuenta."
+  registration: 
+    controller:
+      successfully_created_new_user: "Un nuevo usuario se ha creado correctamente."
+  links: 
     teams: 
-        form: 
-            actions: "Acción"
-            correct_errors: "Corregir los errores "
-                email: "Correo electrónico"
-                password: "Contraseňa de acceso"
-                remember_me: "Guardar en la memoria"
-                sign_in: "Acceder"
-                add_dog: "Aňadir un perro"
-                first_name: "Nombre"
-                last_name:  "Apellido"
-                insurance_company: "Compaňía de seguros"
-                insurance_contract_number: "Número de contratos de seguros"
-                picture: "Cuadro"
-                nickname: "Apodo"
-                registered_name: "Nombre registrado"
-                category: "Categoría"
-                small: "Pequeño"
-                medium: "Mediano"
-                large: "Alto"
-                breed: "Raza"
-                date_of_birth: "Fecha de nacimiento"
-                license: "Licencia"
-                microchip: "Microchip"
-                microchip_position: "Posición del microchip"
-                recordbook: "Recordbook"
-                studbook: "Studbook"
-                studbook_number: "Studbook número"
-                tatoo: "Tatuaje"
-                owner_first_name: "Nombre del propietario"
-                owner_last_name: "Apellido del propietario"
-                owner_phone_number: "Número de teléfono propietario"
-                owner_address: "Dirección del propietario"
-                remove_this_dog: "Quitar este perro"
-                submit: "Enviar"
-        controller: "Controlador"
-            successfully_created: "El equipo ha sido agregado con éxito."
-            successfully_updated: "El equipo se adaptó con éxito. "
-            successfully_deleted: "El equipo fue eliminado con éxito. "
-            dont_have_permission: "No tiene permisos."
-            no_changed_allowed: "Ustedes ya han presentado solicitudes, los cambios no son posibles. "
-        new: 
-            title: "Nuevo equipo"
-        edit:
-            title: "Modificar el equipo"
-        index:
-            title: "Equipos"
-    confirmation: 
-        mailer: 
-            send_confirmation: 
-                subject: "Información de pago"
-            payment_information: "Información de pago"
-                title: "Información de pago"
-                account_number: "Número de cuenta"
-                held_by_raiffeisen_bank: "Liderados por los bancos Raiffeisen. "
-                payment_id: "Símbolo de la variable"
-                total_teams: "En conjunto equipos"
-                total_amount_euro: "El precio total (en euros)"
-        title:
-        controller: 
-successfully_confirmed_all_entries: "Todas la solicitudes se han validado con éxito. "
-already_confirmed_all_entries: "Usted ya ha presentado todas las inscripciones ."
-views: 
-index:
-link_to_confirmation: "Enviar todas las inscripción y generar datos para el pago (no la espalda)"
-user: "Usuario"
-mailer:
-admin_welcome_message:        
-subject: "Activación de cuenta de administrador."
-welcome_message: 
-message: "Sus equipos de registro de la cuenta a los campeonatos del mundo de la agility se ha activado."
-subject: "Activación de la cuenta."
-registration: 
-controller:
-successfully_created_new_user: "Un nuevo usuario se ha creado correctamente."
-links: 
-teams: 
-edit: "Editar"
-back: "Atrás"
-show: "Mostrar"
-destroy: "Borrar"
-new: "Nuevo equipo"
-application:
-login: "Iniciar la sesión"
-logout: "Finalizar la sesión"
-new_admin: "Nuevo administrador"
-new_user: "Nuevo usuario"
-teams: "Equipos"
-confirmation: "Confirmación"
-payment_information: "Información de pago"
+      edit: "Editar"
+      back: "Atrás"
+      show: "Mostrar"
+      destroy: "Borrar"
+      new: "Nuevo equipo"
+    application:
+      login: "Iniciar la sesión"
+      logout: "Finalizar la sesión"
+      new_admin: "Nuevo administrador"
+      new_user: "Nuevo usuario"
+      teams: "Equipos"
+      confirmation: "Confirmación"
+      payment_information: "Información de pago"
