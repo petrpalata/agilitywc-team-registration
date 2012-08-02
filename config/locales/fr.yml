@@ -1,0 +1,93 @@
+cs:
+  application:
+    title: "Équipes registrece."
+  teams: 
+    form: 
+      actions: "Action"
+      correct_errors: "Corriger les erreurs suivantes."
+      email: "Email"
+      password: "Mot de passe"
+      remember_me:"Rappeler"
+      sign_in: "Connectez-vous"
+      add_dog: "Ajoutez un chien"
+      first_name: "Prénom"
+      last_name: "Nom"
+      insurance_company: "Compagnie dʼassurances"
+      insurance_contract_number: "Nombre de contrats d'assurance"
+      picture: "Image"
+      nickname: "Surnom"
+      registered_name: "Nom enregistré"
+      category: "Catégorie"
+      small: "Small"
+      medium: "Medium"
+      large: "Large"
+      breed: "Race"
+      date_of_birth: "Date de naissance"
+      license: "Licence"
+      microchip: "Micropuce"
+      microchip_position: "La position de la micropuce"
+      recordbook: "Livre des records"
+      studbook: "Stud-book"
+      studbook_number: "Nombre livre reproduceur"
+      tatoo: "Tatouage"
+      owner_first_name: "Prénom de propriétaire"
+      owner_last_name: "Nom de propriétaire"
+      owner_phone_number: "Numéro de téléphone le propriétaire"
+      owner_address: "Adresse du propriétaire"
+      remove_this_dog: "Retirer ce chien"
+      submit: "Envoyer"
+      controller:
+        successfully_created: "L'équipe a été ajouté avec succès."
+        successfully_updated: "L'équipe a été mis à jour."
+        successfully_deleted: "L'équipe a été supprimé avec succès."
+        dont_have_permission: "Pour vous affichez ne disposez pas des autorisations suffisantes."
+        no_changed_allowed: "Vous avez déjà présenté des demandes, d'autres changements sont possibles."
+        new: 
+          title: "Nouvelle équipe"
+          edit:
+            title: "Modifier l'équipe"
+            index:
+              title: "Équipes"
+              confirmation:
+                mailer:
+                  send_confirmation: "Envoyer la confirmation"
+                  subject: "Information sur le paiement"
+                  payment_information:
+                    title: "Informations de paiement"
+                    account_number: "Numéro de compte"
+                    held_by_raiffeisen_bank: "Dirigée par les banques Raiffeisen"
+                    payment_id: "Symbole variable"
+                    total_teams: "Équipes au total"
+                    total_amount_euro: "Prix total (en euros)"
+                    title:
+                      controller:
+                        successfully_confirmed_all_entries: "Toutes les demandes ont été validées avec succès."
+                        already_confirmed_all_entries: "Vous avez déjà soumis toutes les applications."
+                        views:
+                          index:
+                            link_to_confirmation: "Soumettre toutes les applications et les données pour générer le paiement (pas de retour)."
+                            user: 
+                              mailer:
+                                admin_welcome_message:
+                                  subject: "Activation du compte Administrateur"
+                                  welcome_message:
+                                    message: "Vos équipes d'inscription en compte à des championnats du monde en agilité a été activé."
+                                    subject: "Activation du compte"
+                                    registration: 
+                                      controller: 
+                                        successfully_created_new_user: "Un nouvel utilisateur a été créé avec succès."
+                                        links:
+                                          teams: 
+                                            edit:
+                                              back: "Dos"
+                                              show: "Afficher"
+                                              destroy: "Effacer"
+                                              new: "Nouvelle équipe"
+                                              application:
+                                                login: "Login"
+                                                logout: "Check-out"
+                                                new_admin: "Nouvel administrateur"
+                                                new_user: "Nouvel utilisateur"
+                                                teams: "Équipes"
+                                                confirmation: "Confirmation"
+                                                payment_information: "Information sur le paiement."
