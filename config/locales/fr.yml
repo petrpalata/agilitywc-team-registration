@@ -78,7 +78,7 @@ fr:
       successfully_created_new_user: "Un nouvel utilisateur a été créé avec succès."
   links:
     teams: 
-      edit: ""
+      edit: "Éditer"
       back: "Dos"
       show: "Afficher"
       destroy: "Effacer"
@@ -91,3 +91,58 @@ fr:
       teams: "Équipes"
       confirmation: "Confirmation"
       payment_information: "Information sur le paiement."
+  activerecord:
+    models:
+      dog: Chien
+      handler: Conducteur
+      dogs: Chiens
+      owner: Propriétaire
+    attributes:
+      handler:
+        first_name: "Prénom"
+        last_name: "Nom"
+        picture: "Image"
+        picture_file_name: "Image"
+      handler/dogs:
+        breed_id: "Race"
+        license: "License"
+        date_of_birth: "Date de naissance"
+        microchip: "Micropuce"
+        microchip_position: "La position de la micropuce"
+        nickname: "Surnom"
+        owner_first_name: "Prénom"
+        owner_last_name: "Nom"
+        owner_phone_number: "Numéro de téléphone"
+        owner_address: "Adresse"
+        record_book: "Carnet de travail"
+        registered_name: "Nom enregistré"
+        studbook: "Livre des origines"
+        studbook_number: "Livre des origines No."
+        tatoo: "Tatoo"
+        category: "Catégorie"
+  helpers:
+    label:
+      handler:
+        first_name: "Prénom"
+        last_name: "Nom"
+        picture: "Image"
+        picture_file_name: "Image"
+        insurance_company: "Compagnie dʼassurances"
+        insurance_contract_number: "Nombre de contrats d'assurance"
+      dog:
+        breed_id: "Race"
+        license: "License"
+        date_of_birth: "Date de naissance"
+        microchip: "Micropuce"
+        microchip_position: "La position de la micropuce"
+        nickname: "Surnom"
+        owner_first_name: "Prénom"
+        owner_last_name: "Nom"
+        owner_phone_number: "Numéro de téléphone"
+        owner_address: "Adresse"
+        record_book: "Carnet de travail"
+        registered_name: "Nom enregistré"
+        studbook: "Livre des origines"
+        studbook_number: "Livre des origines No."
+        tatoo: "Tatoo"
+        category: "Catégorie"

@@ -91,3 +91,58 @@ cs:
        teams: "Týmy"
        confirmation: "Potvrzení"
        payment_information: "Informace o platbě"
+  activerecord:
+    models:
+      dog: Pes
+      handler: Psovod
+      dogs: Psi
+      owner: Majitel
+    attributes:
+      handler:
+        first_name: "Jméno"
+        last_name: "Příjmení"
+        picture: "Obrázek"
+        picture_file_name: "Cesta k obrázku"
+      handler/dogs:
+        breed_id: "Plemeno"
+        date_of_birth: "Datum narození"
+        license: "Licence"
+        microchip: "Mikročip"
+        microchip_position: "Pozice mikročipu"
+        nickname: "Přezdívka"
+        owner_address: "Adresa majitele"
+        owner_first_name: "Jméno majitele"
+        owner_last_name: "Příjmení majitele"
+        owner_phone_number: "Telefon majitele"
+        record_book: "Výkonnostní průkaz"
+        registered_name: "Jméno"
+        studbook: "Plemenná kniha"
+        studbook_number: "Číslo plemenné knihy"
+        tatoo: "Tetování"
+        category: "Velikostní kategorie"
+  helpers:
+    label:
+      handler:
+        first_name: "Jméno"
+        last_name: "Příjmení"
+        picture: "Obrázek"
+        picture_file_name: "Cesta k obrázku"
+        insurance_company: "Pojišťovna"
+        insurance_contract_number: "Číslo pojišťovací smlouvy"
+      dog:
+        breed_id: "Plemeno"
+        date_of_birth: "Datum narození"
+        license: "Licence"
+        microchip: "Mikročip"
+        microchip_position: "Pozice mikročipu"
+        nickname: "Přezdívka"
+        owner_address: "Adresa majitele"
+        owner_first_name: "Jméno majitele"
+        owner_last_name: "Příjmení majitele"
+        owner_phone_number: "Telefon majitele"
+        record_book: "Výkonnostní průkaz"
+        registered_name: "Jméno"
+        studbook: "Plemenná kniha"
+        studbook_number: "Číslo plemenné knihy"
+        tatoo: "Tetování"
+        category: "Velikostní kategorie"

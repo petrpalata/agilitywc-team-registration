@@ -26,9 +26,9 @@ es:
       license: "Licencia"
       microchip: "Microchip"
       microchip_position: "Posición del microchip"
-      recordbook: "Recordbook"
-      studbook: "Studbook"
-      studbook_number: "Studbook número"
+      recordbook: "Cartilla de punctvacion"
+      studbook: "Registro"
+      studbook_number: "Registro número"
       tatoo: "Tatuaje"
       owner_first_name: "Nombre del propietario"
       owner_last_name: "Apellido del propietario"
@@ -91,3 +91,58 @@ es:
       teams: "Equipos"
       confirmation: "Confirmación"
       payment_information: "Información de pago"
+  activerecord:
+    models:
+      dog: Perro
+      handler: Conductor
+      dogs: Perruno
+      owner: Propietario
+    attributes:
+      handler:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        picture: "Cuadro"
+        picture_file_name: "Cuadro"
+      handler/dogs:
+        breed_id: "Raza"
+        date_of_birth: "Fecha de nacimiento"
+        license: "Licencia"
+        microchip: "Microchip"
+        microchip_position: "Posición del microchip"
+        nickname: "Apodo"
+        owner_first_name: "Nombre"
+        owner_last_name: "Apellido"
+        owner_phone_number: "Número de teléfono"
+        owner_address: "Dirección"
+        record_book: "Cartilla de punctvacion"
+        registered_name: "Name"
+        studbook: "Registro"
+        studbook_number: "Registro número"
+        tatoo: "Tatuaje"
+        category: "Categoría"
+  helpers:
+    label:
+      handler:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        picture: "Cuadro"
+        picture_file_name: "Cuadro"
+        insurance_company: "Compaňía de seguros"
+        insurance_contract_number: "Número de contratos de seguros"
+      dog:
+        breed_id: "Raza"
+        date_of_birth: "Fecha de nacimiento"
+        license: "Licencia"
+        microchip: "Microchip"
+        microchip_position: "Posición del microchip"
+        nickname: "Apodo"
+        owner_first_name: "Nombre"
+        owner_last_name: "Apellido"
+        owner_phone_number: "Número de teléfono"
+        owner_address: "Dirección"
+        record_book: "Cartilla de punctvacion"
+        registered_name: "Name"
+        studbook: "Registro"
+        studbook_number: "Registro número"
+        tatoo: "Tatuaje"
+        category: "Categoría"

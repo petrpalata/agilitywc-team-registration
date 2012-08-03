@@ -91,3 +91,58 @@ en:
        teams: "Teams"
        confirmation: "Confirmation"
        payment_information: "Payment information"
+  activerecord:
+    models:
+      dog: Dog
+      handler: Handler
+      dogs: Dogs
+      owner: Owner
+    attributes:
+      handler:
+        first_name: "First name"
+        last_name: "Last name"
+        picture: "Picture"
+        picture_file_name: "Picture path"
+      handler/dogs:
+        breed_id: "Breed"
+        date_of_birth: "Date of birth"
+        license: "License"
+        microchip: "Microchip"
+        microchip_position: "Microchip position"
+        nickname: "Nickname"
+        owner_address: "Address"
+        owner_first_name: "Name"
+        owner_last_name: "Surname"
+        owner_phone_number: "Phone"
+        record_book: "Record book"
+        registered_name: "Name"
+        studbook: "Studbook"
+        studbook_number: "Studbook number"
+        tatoo: "Tatoo"
+        category: "Category"
+  helpers:
+    label:
+      handler:
+        first_name: "First name"
+        last_name: "Last name"
+        picture: "Picture"
+        picture_file_name: "Picture path"
+        insurance_company: "Insurance company"
+        insurance_contract_number: "Insurance contract number"
+      dog:
+        breed_id: "Breed"
+        date_of_birth: "Date of birth"
+        license: "License"
+        microchip: "Microchip"
+        microchip_position: "Microchip position"
+        nickname: "Nickname"
+        owner_address: "Address"
+        owner_first_name: "Name"
+        owner_last_name: "Surname"
+        owner_phone_number: "Phone"
+        record_book: "Record book"
+        registered_name: "Name"
+        studbook: "Studbook"
+        studbook_number: "Studbook number"
+        tatoo: "Tatoo"
+        category: "Category"

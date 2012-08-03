@@ -1,0 +1,148 @@
+de:
+  application:
+    title: "Registration der Teams"
+  teams:
+    form:
+      actions: "Aktion"
+      correct_errors: "Korrigieren Sie folgende Fehler"
+      email: "E-mail"
+      password: "Passwort"
+      remember_me: "im Gedächtniss behalten"
+      sign_in: "sich anmelden"
+      add_dog: "den Hund zufügen"
+      first_name: "Vorname"
+      last_name: "Name"
+      insurance_company: "Vericherungsanstalt"
+      insurance_contract_number: "Versicherungsvertragsnummer"
+      picture: "Bild"
+      nickname: "Rufname"
+      registered_name: "Zwingername"
+      category: "Kategorie"
+      small: "Small"
+      medium: "Medium"
+      large: "Large"
+      breed: "Rasse"
+      date_of_birth: "Wurftag"
+      license: "Lizenz"
+      microchip: "Mikrochip"
+      microchip_position: "Mikrochip position"
+      recordbook: "Recordbook"
+      studbook: "Studbook"
+      studbook_number: "Studbooknumber"
+      tatoo: "Täto"
+      owner_first_name: "Vorname"
+      owner_last_name: "Name"
+      owner_phone_number: "Telefon"
+      owner_address: "Adresse"
+      remove_this_dog: "Diesen Hund abnehmen"
+      submit: "Absenden"
+    controller:
+      successfully_created: "Das Team wurde erfolgreich eingefügt."
+      successfully_updated: "Das Team wurde erfolgreich geändert."
+      successfully_deleted: "Das Team wurde erfolgreich gelöscht."
+      dont_have_permission: "Leider haben Sie dafür keine Berechtigung."
+      no_changed_allowed: "Keine Änderung möglich."
+    new:
+      title: "Neues Team"
+    edit:
+      title: "Team herrichten"
+    index:
+      title: "Teams"
+  confirmation:
+    mailer:
+      send_confirmation:
+        subject: "Zahlungsinformationen" 
+    payment_information:
+      title: "Zahlungsinformationen"
+      account_number: "Kontonummer"
+      held_by_raiffeisen_bank: "wurde bei Raiffeisen Bank geführt"
+      payment_id: "Variables Symbol"
+      total_teams: "Total Teams"
+      total_amount_euro: "Zahlungsbetrag (in Euro)"
+    title:
+    controller:
+      successfully_confirmed_all_entries: "Alle Anmeldungen wurden erfolgreich bestätigt."
+      already_confirmed_all_entries: "Bereits haben Sie alle Anmeldungen bestätigt."
+    views:
+      index:
+        link_to_confirmation: "Alle Anmeldungen bestätigen und Zahlungsangabe erstellen."
+  user:
+    mailer:
+      admin_welcome_message: 
+        subject: "Aktivierung der Administratorrechnung"
+      welcome_message:
+        message: "Ihr Konto für die Registrierung der Teams zur Weltmeisterschaft in Agility wurde aktiviert."
+        subject: "Aktivierung des Kontos"
+  registration:
+    controller:
+      successfully_created_new_user: "NeuerBenutzerwurdeerfolgreich"
+  links:
+    teams:
+      edit: "Editieren"
+      back: "Zurück"
+      show: "Zeigen"
+      destroy: "Löschen"
+      new: "Neues Team"
+    application:
+      login: "Anmeldung"
+      logout: "Abmeldung"
+      new_admin: "Neuer Administrator"
+      new_user: "Neuer Benutzer"
+      teams: "Teams"
+      confirmation: "Bestätigung"
+      payment_information: "Informationen über Zahlung"
+  activerecord:
+    models:
+      dog: Hunde
+      handler: Hundeführer
+      dogs: Hundes
+      owner: Eigentuemer
+    attributes:
+      handler:
+        first_name: "Vorname"
+        last_name: "Name"
+        picture: "Bild"
+        picture_file_name: "Bild"
+      handler/dogs:
+        breed_id: "Rasse"
+        date_of_birth: "Wurftag"
+        license: "Lizenz"
+        nickname: "Rufname"
+        microchip: "Mikrochip"
+        microchip_position: "Mikrochip position"
+        registered_name: "Zwingername"
+        owner_first_name: "Vorname"
+        owner_last_name: "Name"
+        owner_phone_number: "Telefon"
+        owner_address: "Adresse"
+        record_book: "Leistungsbuch-No"
+        studbook: "Zuchtbuch"
+        studbook_number: "Zuchtbuch-No"
+        tatoo: "Täto"
+        category: "Kategorie"
+  helpers:
+    label:
+      handler:
+        first_name: "Vorname"
+        last_name: "Name"
+        picture: "Bild"
+        picture_file_name: "Bild"
+        insurance_company: "Vericherungsanstalt"
+        insurance_contract_number: "Versicherungsvertrags nummer"
+      dog:
+        breed_id: "Rasse"
+        date_of_birth: "Wurftag"
+        license: "Lizenz"
+        nickname: "Rufname"
+        microchip: "Mikrochip"
+        microchip_position: "Mikrochip position"
+        registered_name: "Zwingername"
+        owner_first_name: "Vorname"
+        owner_last_name: "Name"
+        owner_phone_number: "Telefon"
+        owner_address: "Adresse"
+        record_book: "Leistungsbuch-No"
+        studbook: "Zuchtbuch"
+        studbook_number: "Zuchtbuch-No"
+        tatoo: "Täto"
+        category: "Kategorie"
