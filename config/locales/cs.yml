@@ -104,6 +104,7 @@ cs:
         picture: "Obrázek"
         picture_file_name: "Cesta k obrázku"
       handler/dogs:
+        reserve: "Náhradník"
         breed_id: "Plemeno"
         date_of_birth: "Datum narození"
         license: "Licence"
@@ -130,6 +131,7 @@ cs:
         insurance_company: "Pojišťovna"
         insurance_contract_number: "Číslo pojišťovací smlouvy"
       dog:
+        reserve: "Náhradník"
         breed_id: "Plemeno"
         date_of_birth: "Datum narození"
         license: "Licence"

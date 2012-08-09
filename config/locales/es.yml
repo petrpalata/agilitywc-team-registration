@@ -104,6 +104,7 @@ es:
         picture: "Cuadro"
         picture_file_name: "Cuadro"
       handler/dogs:
+        reserve: "Reserva"
         breed_id: "Raza"
         date_of_birth: "Fecha de nacimiento"
         license: "Licencia"
@@ -130,6 +131,7 @@ es:
         insurance_company: "Compaňía de seguros"
         insurance_contract_number: "Número de contratos de seguros"
       dog:
+        reserve: "Reserva"
         breed_id: "Raza"
         date_of_birth: "Fecha de nacimiento"
         license: "Licencia"

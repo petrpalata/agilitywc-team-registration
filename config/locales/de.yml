@@ -104,6 +104,7 @@ de:
         picture: "Bild"
         picture_file_name: "Bild"
       handler/dogs:
+        reserve: "Reserverhund"
         breed_id: "Rasse"
         date_of_birth: "Wurftag"
         license: "Lizenz"
@@ -130,6 +131,7 @@ de:
         insurance_company: "Vericherungsanstalt"
         insurance_contract_number: "Versicherungsvertrags nummer"
       dog:
+        reserve: "Reserverhund"
         breed_id: "Rasse"
         date_of_birth: "Wurftag"
         license: "Lizenz"

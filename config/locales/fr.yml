@@ -104,6 +104,7 @@ fr:
         picture: "Image"
         picture_file_name: "Image"
       handler/dogs:
+        reserve: "Réserve"
         breed_id: "Race"
         license: "License"
         date_of_birth: "Date de naissance"
@@ -130,6 +131,7 @@ fr:
         insurance_company: "Compagnie dʼassurances"
         insurance_contract_number: "Nombre de contrats d'assurance"
       dog:
+        reserve: "Réserve"
         breed_id: "Race"
         license: "License"
         date_of_birth: "Date de naissance"
