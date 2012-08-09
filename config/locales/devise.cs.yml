@@ -29,8 +29,9 @@ cs:
       inactive: 'Váš účet ještě nebyl aktivován.'
       already_authenticated: 'Přihlášení již proběhlo.'
     sessions:
-      signed_in: 'Přihlášení úspěšné.'
-      signed_out: 'Odhlášení úspěšné.'
+      user:
+        signed_in: 'Přihlášení úspěšné.'
+        signed_out: 'Odhlášení úspěšné.'
     passwords:
       send_instructions: 'Za několik minut obdržíte email s instrukcemi k nastavení nového hesla.'
       updated: 'Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a).'

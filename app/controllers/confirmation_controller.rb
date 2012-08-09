@@ -2,12 +2,12 @@ class ConfirmationController < ApplicationController
     before_filter :authenticate_user!
 
     def index
-        @handlers = Handler.all(:conditions => { :country_id => current_user.country_id })
+        @handlers = Handler.where(:country_id => current_user.country_id).all
     end
     
     def confirm_all
         if not current_user.confirm_all 
-            users = User.all(:conditions => { :country_id => current_user.country_id })
+            users = User.where(:country_id => current_user.country_id).all
             users.each do |user|
                 user.confirm_all = true
                 user.save
@@ -18,37 +18,43 @@ class ConfirmationController < ApplicationController
         else 
             flash[:notice] = t('confirmation.controller.already_confirmed_all_entries')
         end
-        redirect_to "/confirmation/payment_information"
+        redirect_to confirmation_payment_information_path
     end
 
     def payment_information
         @payment = Payment.find_by_country_id(current_user.country_id)
+        if @payment.nil? 
+            redirect_to handlers_path
+        end
     end
 
     private
     def generate_payment_information_for_country(country_id)
-        small, medium, large = 0, 0, 0
-        handlers = Handler.all(:conditions => { :country_id => current_user.country_id })
+        total_teams = 0
+        reserves = {
+            'S' => 0,
+            'M' => 0, 
+            'L' => 0
+        }
+        handlers = Handler.where(:country_id => current_user.country_id).all
         handlers.each do |handler|
             handler.dogs.collect.each do |dog|
-                if dog.category == "S"
-                    small += 1
-                elsif dog.category == "M"
-                    medium += 1
-                elsif dog.category == "L"
-                    large += 1
+                if dog.reserve 
+                    reserves[dog.category] += 1
                 end
+                total_teams += 1
             end
         end
-        total_teams = ((small - 1) + (medium - 1) + (large - 1))
-        total_price = total_teams * 85
-        if total_price < 0
-            total_price = 0
-        end
-        @payment = Payment.create!(:country_id => country_id, :price_in_euros => total_price, :total_teams => total_teams + 3)
+        total_reserves = 0
+        total_reserves += 1 if reserves['S'] > 0 
+        total_reserves += 1 if reserves['M'] > 0 
+        total_reserves += 1 if reserves['L'] > 0 
+
+        total_price = (total_teams * 85) - (total_reserves * 85)
+        @payment = Payment.create!(:country_id => country_id, :price_in_euros => total_price, :total_teams => total_teams)
     end
 
     def send_confirmation_mail
-        ConfirmationMailer.send_confirmation(current_user, @payment).deliver
+        ConfirmationMailer.send_confirmation_mail(current_user, @payment).deliver
     end
 end

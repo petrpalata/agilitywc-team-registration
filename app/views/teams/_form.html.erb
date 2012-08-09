@@ -50,6 +50,13 @@
     <h2><%= t('activerecord.models.dogs') %></h2>
     <%= f.fields_for :dogs do |dog_form| %>
         <div class="control-group">
+            <%= dog_form.label :reserve,  :class => 'control-label' %>
+            <div class="controls">
+                <%= dog_form.check_box :reserve %>
+            </div>
+        </div>
+
+        <div class="control-group">
             <%= dog_form.label :nickname,  :class => 'control-label' %>
             <div class="controls">
                 <%= dog_form.text_field :nickname %>

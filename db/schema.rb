@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731024847) do
+ActiveRecord::Schema.define(:version => 20120808224607) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -54,10 +54,11 @@ ActiveRecord::Schema.define(:version => 20120731024847) do
     t.string   "owner_last_name"
     t.text     "owner_address"
     t.string   "owner_phone_number"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.integer  "handler_id"
     t.string   "category"
+    t.boolean  "reserve",            :default => false
   end
 
   create_table "handlers", :force => true do |t|

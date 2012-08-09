@@ -8,8 +8,14 @@ class RegistrationController < DeviseController
 
     def create
         params[:user][:password] = Devise.friendly_token[0,12]
-        params[:user][:country_id] = Country[params[:user][:country_id]].number
+        country_id = Country[params[:user][:country_id]].number
+        params[:user][:country_id] = country_id
+        users_by_country = User.where(:country_id => country_id, :confirm_all => true).all
+
         @user = User.new(params[:user])
+        if users_by_country.count > 0
+            @user.confirm_all = true
+        end
 
         if current_user.superadmin?
             @user.role = :admin
