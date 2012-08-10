@@ -11,7 +11,7 @@
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="/"><%= t 'application.title' %></a>
+                    <%= link_to t('application.title'), root_url, :class => "brand" %>
                     <% if user_signed_in? %>
                         <%= link_to t('links.application.logout'), destroy_user_session_path, :method => :delete, :class => "btn" %>
                     <% else %>
