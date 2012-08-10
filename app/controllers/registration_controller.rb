@@ -24,7 +24,7 @@ class RegistrationController < DeviseController
         end
 
         if @user.save
-            redirect_to new_user_session_path, :notice => t('registration.controller.successfully_created_new_user')
+            redirect_to new_user_registration_path, :notice => t('registration.controller.successfully_created_new_user')
         else
             clean_up_passwords @user
             render :new
