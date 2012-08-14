@@ -1,9 +1,10 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
 set :application, "team_registration"
-set :repository, "ssh://petr@kacr.info:10522/home/git/repositories/team_registration.git"
+#set :repository, "ssh://petr@kacr.info:10522/home/git/repositories/team_registration.git"
+set :repository, "ssh://git@bitbucket.org/petrpalata/team_registration.git"
 set :branch, "master"
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 set :scm, :git
 set :rvm_ruby_string, 'ree-1.8.7-2011.12'
 set :rvm_type, :system
