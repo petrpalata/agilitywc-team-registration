@@ -36,6 +36,10 @@ cs:
         owner_address: "Adresa majitele"
         remove_this_dog: "Odebrat tohoto psa"
         submit: "Odeslat"
+        insurance_message: "Psovod má pojištění odpovědnosti za škody na zdraví a věcech třetích osob, pro území České republiky."
+        this_name_will_be_listed_in_catalogue: "Toto jméno bude použito v katalogu"
+        male: "Pes"
+        female: "Fena"
      controller:
         successfully_created: "Tým byl úspěšně přidán."
         successfully_updated: "Tým byl úspěšně upraven."
@@ -49,6 +53,8 @@ cs:
      index:
         title: "Týmy"
   confirmation:
+     index:
+       warning_message: "Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!"
      mailer:
         send_confirmation:
           subject: "Informace o platbě"
@@ -103,11 +109,12 @@ cs:
         last_name: "Příjmení"
         picture: "Obrázek"
         picture_file_name: "Cesta k obrázku"
+        insurance: "Pojištění"
       handler/dogs:
         reserve: "Náhradník"
         breed_id: "Plemeno"
         date_of_birth: "Datum narození"
-        license: "Licence"
+        record_book_or_license: "Výkonnostní průkaz/Licence"
         microchip: "Mikročip"
         microchip_position: "Pozice mikročipu"
         nickname: "Přezdívka"
@@ -115,12 +122,11 @@ cs:
         owner_first_name: "Jméno majitele"
         owner_last_name: "Příjmení majitele"
         owner_phone_number: "Telefon majitele"
-        record_book: "Výkonnostní průkaz"
         registered_name: "Jméno"
-        studbook: "Plemenná kniha"
-        studbook_number: "Číslo plemenné knihy"
+        studbook_and_number: "Plemenná kniha"
         tatoo: "Tetování"
         category: "Velikostní kategorie"
+        sex: "Pohlaví"
   helpers:
     label:
       handler:
@@ -128,13 +134,12 @@ cs:
         last_name: "Příjmení"
         picture: "Obrázek"
         picture_file_name: "Cesta k obrázku"
-        insurance_company: "Pojišťovna"
-        insurance_contract_number: "Číslo pojišťovací smlouvy"
+        insurance: "Pojištění"
       dog:
+        sex: "Pohlaví"
         reserve: "Náhradník"
         breed_id: "Plemeno"
         date_of_birth: "Datum narození"
-        license: "Licence"
         microchip: "Mikročip"
         microchip_position: "Pozice mikročipu"
         nickname: "Přezdívka"
@@ -142,9 +147,8 @@ cs:
         owner_first_name: "Jméno majitele"
         owner_last_name: "Příjmení majitele"
         owner_phone_number: "Telefon majitele"
-        record_book: "Výkonnostní průkaz"
+        record_book_or_license: "Výkonnostní průkaz/Licence"
         registered_name: "Jméno"
-        studbook: "Plemenná kniha"
-        studbook_number: "Číslo plemenné knihy"
+        studbook_and_number: "Plemenná kniha"
         tatoo: "Tetování"
         category: "Velikostní kategorie"
