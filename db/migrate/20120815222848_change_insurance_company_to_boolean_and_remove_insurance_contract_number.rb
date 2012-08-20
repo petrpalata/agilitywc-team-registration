@@ -1,7 +1,8 @@
 class ChangeInsuranceCompanyToBooleanAndRemoveInsuranceContractNumber < ActiveRecord::Migration
   def up
       change_table :handlers do |t|
-          t.change :insurance_company, :boolean
+          t.remove :insurance_company
+          t.column :insurance_company, :boolean
           t.rename :insurance_company, :insurance
           t.remove :insurance_contract_number
       end
