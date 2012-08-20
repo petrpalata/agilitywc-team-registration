@@ -1,4 +1,12 @@
 <h1><%= t 'links.application.confirmation' %></h1>
 <br />
-<p class="alert alert-error"><%= t '.warning_message' %></p>
-<%= link_to t('confirmation.views.index.link_to_confirmation'), confirmation_confirm_all_path , :class => "btn btn-large" %>
+<%= form_tag (confirmation_confirm_all_path, :method => "post") do %>
+    My country will participate in "Teams competition" of category:
+    <div class="control-group">
+        <label class="checkbox inline">Small<input id="checkbox_small" type="checkbox" name="small"></label>
+        <label class="checkbox inline">Medium<input id="checkbox_medium" type="checkbox" name="medium"></label>
+        <label class="checkbox inline">Large<input id="checkbox_large" type="checkbox" name="large"></label>
+    </div>
+    <p class="alert alert-error"><%= t '.warning_message' %></p>
+    <input type="submit" class="btn btn-danger btn-large" value="<%= t('confirmation.views.index.link_to_confirmation') %>">
+<% end %>

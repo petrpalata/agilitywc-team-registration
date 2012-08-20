@@ -36,6 +36,10 @@ es:
       owner_address: "Dirección del propietario"
       remove_this_dog: "Quitar este perro"
       submit: "Enviar"
+      insurance_message: "El controlador tiene seguro de responsabilidad civil por lesiones corporales ya la propiedad de terceros para la República Checa. "
+      this_name_will_be_listed_in_catalogue: "Este nombre se utiliza en el catálogo."
+      male: "Perro"
+      female: "Perra"
     controller:
       successfully_created: "El equipo ha sido agregado con éxito."
       successfully_updated: "El equipo se adaptó con éxito. "
@@ -49,6 +53,8 @@ es:
     index:
       title: "Equipos"
   confirmation: 
+    index:
+      warning_message: "Atención! Después de pulsar este botón será confirmado y todos los demás registros ajustes (añadir / editar / borrar) no será posible!"
     mailer: 
      send_confirmation: 
        subject: "Información de pago"
@@ -103,11 +109,13 @@ es:
         last_name: "Apellido"
         picture: "Cuadro"
         picture_file_name: "Cuadro"
+        insurance: "Seguro"
+        dogs: "Perruno"
       handler/dogs:
         reserve: "Reserva"
         breed_id: "Raza"
         date_of_birth: "Fecha de nacimiento"
-        license: "Licencia"
+        record_book_or_license: "Cartilla de punctvacion/Licencia"
         microchip: "Microchip"
         microchip_position: "Posición del microchip"
         nickname: "Apodo"
@@ -115,12 +123,11 @@ es:
         owner_last_name: "Apellido"
         owner_phone_number: "Número de teléfono"
         owner_address: "Dirección"
-        record_book: "Cartilla de punctvacion"
         registered_name: "Name"
-        studbook: "Registro"
-        studbook_number: "Registro número"
+        studbook_and_number: "Registro"
         tatoo: "Tatuaje"
         category: "Categoría"
+        sex: "Sexo"
   helpers:
     label:
       handler:
@@ -128,13 +135,12 @@ es:
         last_name: "Apellido"
         picture: "Cuadro"
         picture_file_name: "Cuadro"
-        insurance_company: "Compaňía de seguros"
-        insurance_contract_number: "Número de contratos de seguros"
-      dog:
+        insurance: "Seguro"
+      dog: 
+        sex: "Sexo"
         reserve: "Reserva"
         breed_id: "Raza"
         date_of_birth: "Fecha de nacimiento"
-        license: "Licencia"
         microchip: "Microchip"
         microchip_position: "Posición del microchip"
         nickname: "Apodo"
@@ -142,9 +148,8 @@ es:
         owner_last_name: "Apellido"
         owner_phone_number: "Número de teléfono"
         owner_address: "Dirección"
-        record_book: "Cartilla de punctvacion"
+        record_book_or_license: "Cartilla de punctvacion/Licencia"
         registered_name: "Name"
-        studbook: "Registro"
-        studbook_number: "Registro número"
+        studbook_and_number: "Registro"
         tatoo: "Tatuaje"
         category: "Categoría"

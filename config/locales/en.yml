@@ -36,6 +36,10 @@ en:
         owner_address: "Owner's address"
         remove_this_dog: "Remove this dog"
         submit: "Submit"
+        insurance_message: "The handler has liability insurance for the health and property of third parties, valid for Czech Republic."
+        this_name_will_be_listed_in_catalogue: "This name will be used in the catalogue"
+        male: "Male"
+        female: "Female"
      controller:
         successfully_created: "Team successfully created."
         successfully_updated: "Team successfully updated."
@@ -49,6 +53,8 @@ en:
      index:
         title: "Listing teams"
   confirmation:
+     index:
+       warning_message: "Attention! After you press this button, all entries will be confirmed and no further changes (adding/editing/deleting) will be possible!"
      mailer:
         send_confirmation:
           subject: "Payment information"
@@ -103,11 +109,13 @@ en:
         last_name: "Last name"
         picture: "Picture"
         picture_file_name: "Picture path"
+        insurance: "Insurance"
+        dogs: "Dogs"
       handler/dogs:
         reserve: "Reserve"
         breed_id: "Breed"
         date_of_birth: "Date of birth"
-        license: "License"
+        record_book_or_license: "Record book/License"
         microchip: "Microchip"
         microchip_position: "Microchip position"
         nickname: "Nickname"
@@ -115,12 +123,11 @@ en:
         owner_first_name: "Name"
         owner_last_name: "Surname"
         owner_phone_number: "Phone"
-        record_book: "Record book"
-        registered_name: "Name"
-        studbook: "Studbook"
-        studbook_number: "Studbook number"
+        registered_name: "Registered name"
+        studbook_and_number: "Studbook"
         tatoo: "Tatoo"
         category: "Category"
+        sex: "Sex"
   helpers:
     label:
       handler:
@@ -128,13 +135,12 @@ en:
         last_name: "Last name"
         picture: "Picture"
         picture_file_name: "Picture path"
-        insurance_company: "Insurance company"
-        insurance_contract_number: "Insurance contract number"
+        insurance: "Insurance"
       dog:
+        sex: "Sex"
         reserve: "Reserve"
         breed_id: "Breed"
         date_of_birth: "Date of birth"
-        license: "License"
         microchip: "Microchip"
         microchip_position: "Microchip position"
         nickname: "Nickname"
@@ -142,9 +148,8 @@ en:
         owner_first_name: "Name"
         owner_last_name: "Surname"
         owner_phone_number: "Phone"
-        record_book: "Record book"
-        registered_name: "Name"
-        studbook: "Studbook"
-        studbook_number: "Studbook number"
+        record_book_or_license: "Record book/License"
+        registered_name: "Registered name"
+        studbook_and_number: "Studbook"
         tatoo: "Tatoo"
         category: "Category"

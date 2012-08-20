@@ -1,24 +1,55 @@
 <h1><%= t 'teams.index.title' %> </h1>
 <br />
 
-<table class="table">
-  <tr>
-      <th><%= t 'teams.form.first_name' %></th>
-      <th><%= t 'teams.form.last_name' %></th>
-      <th><%= t 'teams.form.actions' %></th>
-  </tr>
+<% if current_user.admin? || current_user.superadmin? %>
+    <% @countries.sort.each do |country, handlers| %>
+        <h2><%= country %></h2>
+        <% if TeamParticipation.find_by_country_id(handlers[0].country_id) %>
+            <p>Ucast ve druzstvech: 
+            small - <% if TeamParticipation.find_by_country_id(handlers[0].country_id).small %>ano<% else %>ne<% end %>,
+            medium - <% if TeamParticipation.find_by_country_id(handlers[0].country_id).medium %>ano<% else %>ne<% end %>,
+            large - <% if TeamParticipation.find_by_country_id(handlers[0].country_id).large %>ano<% else %>ne<% end %>
+            </p>
+        <% end %>
+        <table class="table">
+            <tr>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+                <th>Počet psů</th>
+                <th>Země</th>
+            </tr>
 
-<% @handlers.each do |handler| %>
+            <% handlers.each do |handler| %>
+                <tr onclick="location.href='<%= handler_path(handler) %>'">
+                    <td><%= handler.first_name %></td>
+                    <td><%= handler.last_name %></td>
+                    <td><%= handler.dogs.count %></td>
+                    <td><%= Country.find_country_by_number("0" * (3 - handler.country_id.to_s.length)  + handler.country_id.to_s).name  %></td>
+                </tr>
+            <% end %>
+        </table>
+    <% end %>
+<% else %>
+    <table class="table">
+        <tr>
+            <th><%= t 'teams.form.first_name' %></th>
+            <th><%= t 'teams.form.last_name' %></th>
+            <th><%= t 'teams.form.actions' %></th>
+        </tr>
 
-  <tr>
-      <td><%= handler.first_name %></td>
-      <td><%= handler.last_name %></td>
-      <td><%= link_to t('links.teams.show'), handler, :class => "btn" %> <%= link_to t('links.teams.edit'), edit_handler_path(handler), :class => "btn" %>
-       <%= link_to t('links.teams.destroy'), handler, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %></td>
-  </tr>
+        <% @handlers.each do |handler| %>
+
+            <tr>
+                <td><%= handler.first_name %></td>
+                <td><%= handler.last_name %></td>
+                <td><%= link_to t('links.teams.show'), handler, :class => "btn" %> <%= link_to t('links.teams.edit'), edit_handler_path(handler), :class => "btn" %>
+                    <%= link_to t('links.teams.destroy'), handler, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %></td>
+            </tr>
+        <% end %>
+    </table>
 <% end %>
-</table>
-
 <br />
 
-<%= link_to t('links.teams.new'), new_handler_path, :class => "btn" %>
+<% if not current_user.admin? %>
+    <%= link_to t('links.teams.new'), new_handler_path, :class => "btn" %>
+<% end %>

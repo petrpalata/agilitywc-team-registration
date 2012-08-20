@@ -36,6 +36,10 @@ fr:
       owner_address: "Adresse du propriétaire"
       remove_this_dog: "Retirer ce chien"
       submit: "Envoyer"
+      insurance_message: "Handler a une assurance responsabilité civile pour les dommages corporels et les biens de tiers pour la République tchèque."
+      this_name_will_be_listed_in_catalogue: "Ce nom sera utilisé dans le catalogue"
+      male: "Le chien"
+      female: "Le chienne"
     controller:
       successfully_created: "L'équipe a été ajouté avec succès."
       successfully_updated: "L'équipe a été mis à jour."
@@ -49,6 +53,8 @@ fr:
     index:
       title: "Équipes"
   confirmation:
+    index:
+      warning_message: "Attention! Après avoir appuyé sur ce bouton, tous les enregistrements seront confirmés et d'autres ajustements (ajouter / modifier / supprimer) seront possibles!"
     mailer:
       send_confirmation:
         subject: "Information sur le paiement"
@@ -103,11 +109,13 @@ fr:
         last_name: "Nom"
         picture: "Image"
         picture_file_name: "Image"
+        dogs: "Chiens"
+        insurance: "Assurance"
       handler/dogs:
         reserve: "Réserve"
         breed_id: "Race"
-        license: "License"
         date_of_birth: "Date de naissance"
+        record_book_or_license: "Carnet de travail/License"
         microchip: "Micropuce"
         microchip_position: "La position de la micropuce"
         nickname: "Surnom"
@@ -115,12 +123,11 @@ fr:
         owner_last_name: "Nom"
         owner_phone_number: "Numéro de téléphone"
         owner_address: "Adresse"
-        record_book: "Carnet de travail"
         registered_name: "Nom enregistré"
-        studbook: "Livre des origines"
-        studbook_number: "Livre des origines No."
+        studbook_and_number: "Livre des origines"
         tatoo: "Tatoo"
         category: "Catégorie"
+        sex: "Sexe"
   helpers:
     label:
       handler:
@@ -128,12 +135,11 @@ fr:
         last_name: "Nom"
         picture: "Image"
         picture_file_name: "Image"
-        insurance_company: "Compagnie dʼassurances"
-        insurance_contract_number: "Nombre de contrats d'assurance"
+        insurance: "Assurance"
       dog:
+        sex: "Sexe"
         reserve: "Réserve"
         breed_id: "Race"
-        license: "License"
         date_of_birth: "Date de naissance"
         microchip: "Micropuce"
         microchip_position: "La position de la micropuce"
@@ -142,9 +148,8 @@ fr:
         owner_last_name: "Nom"
         owner_phone_number: "Numéro de téléphone"
         owner_address: "Adresse"
-        record_book: "Carnet de travail"
+        record_book_or_license: "Carnet de travail/License"
         registered_name: "Nom enregistré"
-        studbook: "Livre des origines"
-        studbook_number: "Livre des origines No."
+        studbook_and_number: "Livre des origines"
         tatoo: "Tatoo"
         category: "Catégorie"

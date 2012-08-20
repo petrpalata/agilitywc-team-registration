@@ -36,6 +36,10 @@ de:
       owner_address: "Adresse"
       remove_this_dog: "Diesen Hund abnehmen"
       submit: "Absenden"
+      insurance_message: "Der Hundeführer verfügt über eine Haftpflichtversicherung für Personenschäden und Sachschäden Dritter Personen für das Staatsgebiet der Tschechischen Republik."
+      this_name_will_be_listed_in_catalogue: "Dieser Name wird im Katalog benützt"
+      male: "Rüde"
+      female: "Hündin"
     controller:
       successfully_created: "Das Team wurde erfolgreich eingefügt."
       successfully_updated: "Das Team wurde erfolgreich geändert."
@@ -49,6 +53,8 @@ de:
     index:
       title: "Teams"
   confirmation:
+    index:
+      warning_message: "Vorsicht! Nach dem Drücken dieses Druckknopfes werden alle Registrierungen bestätigt und weitere Änderungen (Zufügung/Editieren/Löschen) werden nicht möglich."
     mailer:
       send_confirmation:
         subject: "Zahlungsinformationen" 
@@ -103,11 +109,12 @@ de:
         last_name: "Name"
         picture: "Bild"
         picture_file_name: "Bild"
+        insurance: "Versicherung"
+        dogs: "Hundes"
       handler/dogs:
         reserve: "Reserverhund"
         breed_id: "Rasse"
         date_of_birth: "Wurftag"
-        license: "Lizenz"
         nickname: "Rufname"
         microchip: "Mikrochip"
         microchip_position: "Mikrochip position"
@@ -116,11 +123,11 @@ de:
         owner_last_name: "Name"
         owner_phone_number: "Telefon"
         owner_address: "Adresse"
-        record_book: "Leistungsbuch-No"
-        studbook: "Zuchtbuch"
-        studbook_number: "Zuchtbuch-No"
+        record_book_or_license: "Leistungsbuch/Lizenz"
+        studbook_and_number: "Zuchtbuch"
         tatoo: "Täto"
         category: "Kategorie"
+        sex: "Geschlecht"
   helpers:
     label:
       handler:
@@ -128,13 +135,12 @@ de:
         last_name: "Name"
         picture: "Bild"
         picture_file_name: "Bild"
-        insurance_company: "Vericherungsanstalt"
-        insurance_contract_number: "Versicherungsvertrags nummer"
+        insurance: "Versicherung"
       dog:
+        sex: "Geschlecht"
         reserve: "Reserverhund"
         breed_id: "Rasse"
         date_of_birth: "Wurftag"
-        license: "Lizenz"
         nickname: "Rufname"
         microchip: "Mikrochip"
         microchip_position: "Mikrochip position"
@@ -143,8 +149,7 @@ de:
         owner_last_name: "Name"
         owner_phone_number: "Telefon"
         owner_address: "Adresse"
-        record_book: "Leistungsbuch-No"
-        studbook: "Zuchtbuch"
-        studbook_number: "Zuchtbuch-No"
+        record_book_or_license: "Leistungsbuch/Lizenz"
+        studbook_and_number: "Zuchtbuch"
         tatoo: "Täto"
         category: "Kategorie"

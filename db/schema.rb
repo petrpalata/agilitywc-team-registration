@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808224607) do
+ActiveRecord::Schema.define(:version => 20120818031541) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -42,23 +42,22 @@ ActiveRecord::Schema.define(:version => 20120808224607) do
     t.string   "registered_name"
     t.integer  "breed_id"
     t.date     "date_of_birth"
-    t.string   "studbook"
-    t.integer  "studbook_number"
-    t.string   "record_book"
-    t.string   "license"
-    t.integer  "tatoo"
-    t.integer  "microchip"
+    t.string   "studbook_and_number"
+    t.string   "record_book_or_license"
+    t.string   "tatoo"
+    t.string   "microchip"
     t.string   "microchip_position"
     t.integer  "user_id"
     t.string   "owner_first_name"
     t.string   "owner_last_name"
     t.text     "owner_address"
     t.string   "owner_phone_number"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.integer  "handler_id"
     t.string   "category"
-    t.boolean  "reserve",            :default => false
+    t.boolean  "reserve",                :default => false
+    t.string   "sex"
   end
 
   create_table "handlers", :force => true do |t|
@@ -66,14 +65,13 @@ ActiveRecord::Schema.define(:version => 20120808224607) do
     t.string   "last_name"
     t.integer  "country_id"
     t.integer  "user_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.string   "insurance_company"
-    t.string   "insurance_contract_number"
-    t.integer  "picture_file_size"
-    t.string   "picture_content_type"
-    t.string   "picture_file_name"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.boolean  "insurance",            :limit => 255
     t.datetime "picture_updated_at"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.string   "picture_file_name"
   end
 
   create_table "payments", :force => true do |t|
@@ -102,6 +100,15 @@ ActiveRecord::Schema.define(:version => 20120808224607) do
 
   add_index "super_admins", ["email"], :name => "index_super_admins_on_email", :unique => true
   add_index "super_admins", ["reset_password_token"], :name => "index_super_admins_on_reset_password_token", :unique => true
+
+  create_table "team_participations", :force => true do |t|
+    t.integer  "country_id"
+    t.boolean  "small"
+    t.boolean  "medium"
+    t.boolean  "large"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
