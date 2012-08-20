@@ -8,5 +8,5 @@
         <label class="checkbox inline">Large<input id="checkbox_large" type="checkbox" name="large"></label>
     </div>
     <p class="alert alert-error"><%= t '.warning_message' %></p>
-    <input type="submit" class="btn btn-danger btn-large" value="<%= t('confirmation.views.index.link_to_confirmation') %>">
+    <%= submit_tag t('confirmation.views.index.link_to_confirmation'), :class => 'btn btn-danger btn-large', :confirm => t('.warning_message') %>
 <% end %>
