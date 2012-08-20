@@ -39,10 +39,12 @@
                         <% if current_user.superadmin? %>
                             <li><%= link_to t('links.application.new_admin'), new_user_registration_path %></li>
                             <li><%= link_to t('links.application.teams'), handlers_path %></li>
+                            <li><%= link_to "Platby", root_url %></li>
                         <% end %>
                         <% if current_user.admin? %>
                             <li><%= link_to t('links.application.new_user'), new_user_registration_path %></li>
                             <li><%= link_to t('links.application.teams'), handlers_path %></li>
+                            <li><%= link_to "Platby", root_url %></li>
                         <% end %>
                         <% if current_user.user? %>
                             <li><%= link_to t('links.application.teams'), handlers_path %></li>

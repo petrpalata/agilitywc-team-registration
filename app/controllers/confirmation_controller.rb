@@ -1,5 +1,6 @@
 class ConfirmationController < ApplicationController
     before_filter :authenticate_user!
+    before_filter :check_admin_or_superadmin
 
     def index
         @handlers = Handler.where(:country_id => current_user.country_id).all
@@ -62,5 +63,11 @@ class ConfirmationController < ApplicationController
 
     def send_confirmation_mail
         ConfirmationMailer.send_confirmation_mail(current_user, @payment).deliver
+    end
+
+    def check_admin_or_superadmin
+        if current_user.admin? || current_user.superadmin?
+            redirect_to handlers_path
+        end
     end
 end

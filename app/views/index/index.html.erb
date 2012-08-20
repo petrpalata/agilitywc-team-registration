@@ -1,0 +1,19 @@
+<% if current_user && (current_user.admin? || current_user.superadmin?) %>
+    <h1>Seznam plateb</h1>
+    <table class="table">
+        <tr>
+            <th>Variabilní symbol</th>
+            <th>Částka (eur)</th>
+            <th>Země</th>
+        </tr>
+        <% if @payments %>
+            <% @payments.each do |payment| %>
+                <tr>
+                    <td><%= 22220000 + payment.id %></td>
+                    <td><%= payment.price_in_euros %></td>
+                    <td><%= Country.find_country_by_number("0" * (3 - payment.country_id.to_s.length)  + payment.country_id.to_s).name  %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </table>
+<% end %>
