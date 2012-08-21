@@ -1,0 +1,16 @@
+<table>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Dog</th>
+    <th>Category</th>
+    <% @handlers.each do |handler| %>
+        <% handler.dogs.all.each do |dog| %>
+            <tr>
+                <td><%= handler.first_name %></td>
+                <td><%= handler.first_name %></td>
+                <td><%= dog.registered_name %></td>
+                <td><%= dog.category %></td>
+            </tr>
+        <% end %>
+    <% end %>
+</table>

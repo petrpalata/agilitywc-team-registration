@@ -17,6 +17,7 @@ TeamRegistration::Application.routes.draw do
     match "/confirmation" => "confirmation#index", :as => 'confirmation_index'
     match "/confirmation/confirm_all" => "confirmation#confirm_all", :as => 'confirmation_confirm_all'
     match "/confirmation/payment_information" => "confirmation#payment_information", :as => 'confirmation_payment_information'
+    match "/all_handlers" => "index#all_handlers"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 

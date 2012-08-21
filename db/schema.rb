@@ -65,13 +65,13 @@ ActiveRecord::Schema.define(:version => 20120818031541) do
     t.string   "last_name"
     t.integer  "country_id"
     t.integer  "user_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.datetime "picture_updated_at"
-    t.string   "picture_content_type"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.boolean  "insurance",            :limit => 255
     t.integer  "picture_file_size"
+    t.string   "picture_content_type"
     t.string   "picture_file_name"
-    t.boolean  "insurance"
+    t.datetime "picture_updated_at"
   end
 
   create_table "payments", :force => true do |t|

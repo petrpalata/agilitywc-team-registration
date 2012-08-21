@@ -4,4 +4,13 @@ class IndexController < ApplicationController
           @payments = Payment.all
       end
   end
+
+  def all_handlers
+      @handlers = Handler.all
+      respond_to do |format|
+          format.html {
+              render :partial => "index/all_handlers.html"
+          }
+      end
+  end
 end
