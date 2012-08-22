@@ -21,6 +21,13 @@ class User < ActiveRecord::Base
       send_welcome_message
   end
 
+  def update_password(password)
+      self.password = password
+      self.password_confirmation = password
+      update
+      send_welcome_message
+  end
+
   private
 
   def send_welcome_message

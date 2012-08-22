@@ -6,6 +6,9 @@ TeamRegistration::Application.routes.draw do
     devise_scope :user do 
         get "/new_user" => "registration#new", :as => 'new_user_registration'
         post "/new_user" => "registration#create", :as => 'create_user_registration'
+        get "/users" => "registration#index", :as => 'list_users'
+        delete "/user/:id" => "registration#destroy", :as => 'delete_user'
+        get "/user/:id/resend_email" => "registration#resend_email", :as => 'user_resend_email'
 
         get "/login" => "devise/sessions#new", :as => 'new_user_session'
         post "/login" => "devise/sessions#create", :as => 'user_session'
