@@ -1,0 +1,25 @@
+<% if not @country_name.empty? %>
+    <h1><%= t '.'+@country_name %></h1>
+<% end %>
+<% if @handlers.empty? %>
+<% else %>
+    <br />
+    <table>
+        <th><%= t 'teams.form.first_name' %></th>
+        <th><%= t 'teams.form.last_name' %></th>
+        <th><%= t 'activerecord.models.dog' %></th>
+        <th><%= t 'teams.form.category' %></th>
+        <th><%= t 'teams.form.breed' %></th>
+        <% @handlers.each do |handler| %>
+            <% handler.dogs.all.each do |dog| %>
+                <tr>
+                    <td><%= handler.first_name %></td>
+                    <td><%= handler.last_name %></td>
+                    <td><%= dog.registered_name %></td>
+                    <td><%= dog.category %></td>
+                    <td><%= Breed.find(dog.breed_id).name %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </table>
+<% end %>
