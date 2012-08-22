@@ -1,5 +1,8 @@
 <h1><%= t 'confirmation.payment_information.title' %></h1>
 <br />
+<% if @payment.confirmed %>
+    <p class="alert alert-success">Your payment with id <%= @payment.id + 22220000 %> has been successfully accepted, Thank you.</p>
+<% else %>
 <p>
 <%= t 'confirmation.payment_information.account_number' %> 6875362001/5500<br />
 <%= t 'confirmation.payment_information.held_by_raiffeisen_bank' %>, Vršovická 1527/68b, 100 00 Praha 10<br />
@@ -10,3 +13,4 @@ SWIFT RZBCCZPP<br />
 <%= t 'confirmation.payment_information.total_teams' %>: <%= @payment.total_teams %><br />
 <%= t 'confirmation.payment_information.total_amount_euro' %>: <%= @payment.price_in_euros %>.00
 </p>
+<% end %>

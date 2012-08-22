@@ -5,6 +5,8 @@
             <th>Variabilní symbol</th>
             <th>Částka (eur)</th>
             <th>Země</th>
+            <th>Potvrzeno</th>
+            <th>Akce</th>
         </tr>
         <% if @payments %>
             <% @payments.each do |payment| %>
@@ -12,6 +14,8 @@
                     <td><%= 22220000 + payment.id %></td>
                     <td><%= payment.price_in_euros %></td>
                     <td><%= Country.find_country_by_number("0" * (3 - payment.country_id.to_s.length)  + payment.country_id.to_s).name  %></td>
+                    <td><% if payment.confirmed %>Ano<% else %><%= link_to "Potvrdit platbu", payment_confirmation_path(:id => payment.id), :class => 'btn', :confirm => 'Opravdu chcete potvrdit platbu s variabilním symbolem %d?' % [(payment.id + 22220000)] %><% end %></td>
+                    <td><%= link_to "Smazat", delete_payment_path(payment.id), :method => :delete, :confirm => 'Opravdu chcete smazat platbu s variabilním symbolem %d?' % (payment.id + 22220000), :class => 'btn' %></td>
                 </tr>
             <% end %>
         <% end %>

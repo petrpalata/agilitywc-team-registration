@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120818031541) do
+ActiveRecord::Schema.define(:version => 20120822162246) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -65,22 +65,23 @@ ActiveRecord::Schema.define(:version => 20120818031541) do
     t.string   "last_name"
     t.integer  "country_id"
     t.integer  "user_id"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-    t.boolean  "insurance",            :limit => 255
-    t.integer  "picture_file_size"
-    t.string   "picture_content_type"
-    t.string   "picture_file_name"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.datetime "picture_updated_at"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.string   "picture_file_name"
+    t.boolean  "insurance"
   end
 
   create_table "payments", :force => true do |t|
     t.integer  "country_id"
     t.integer  "unique"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "total_teams"
     t.integer  "price_in_euros"
+    t.boolean  "confirmed",      :default => false
   end
 
   create_table "super_admins", :force => true do |t|

@@ -21,4 +21,34 @@ class IndexController < ApplicationController
           }
       end
   end
+  
+  def confirm_payment
+      if current_user && (current_user.admin? || current_user.superadmin?)
+          payment = Payment.find(params[:id])
+          payment.confirmed = true
+          payment.save
+          redirect_to root_url, :notice => "Platba potvrzena."
+      else 
+          redirect_to root_url, :notice => "You are not authorized for this operation."
+      end
+  end
+
+  def delete_payment
+      if current_user && (current_user.admin? || current_user.superadmin?)
+          payment = Payment.find(params[:id])
+          if payment.confirmed
+              redirect_to root_url, :notice => "Potvrzené platby nelze smazat."
+              return
+          end
+          users = User.where(:country_id => payment.country_id).all
+          users.each do |user|
+              user.confirm_all = false
+              user.save
+          end
+          payment.destroy
+          redirect_to root_url, :notice => "Platba úspěšně smazána."
+      else 
+          redirect_to root_url, :notice => "You are not authorized for this operation."
+      end
+  end
 end
