@@ -1,16 +1,20 @@
-<table>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Dog</th>
-    <th>Category</th>
-    <% @handlers.each do |handler| %>
-        <% handler.dogs.all.each do |dog| %>
-            <tr>
-                <td><%= handler.first_name %></td>
-                <td><%= handler.first_name %></td>
-                <td><%= dog.registered_name %></td>
-                <td><%= dog.category %></td>
-            </tr>
+<% if @handlers.empty? %>
+<% else %>
+    <h1><%= t '.'+@country_name %>
+    <table>
+        <th><%= t 'teams.form.first_name' %></th>
+        <th><%= t 'teams.form.last_name' %></th>
+        <th><%= t 'activerecord.models.dog' %></th>
+        <th><%= t 'teams.form.category' %></th>
+        <% @handlers.each do |handler| %>
+            <% handler.dogs.all.each do |dog| %>
+                <tr>
+                    <td><%= handler.first_name %></td>
+                    <td><%= handler.last_name %></td>
+                    <td><%= dog.registered_name %></td>
+                    <td><%= dog.category %></td>
+                </tr>
+            <% end %>
         <% end %>
-    <% end %>
-</table>
+    </table>
+<% end %>

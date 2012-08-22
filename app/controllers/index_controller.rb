@@ -6,7 +6,9 @@ class IndexController < ApplicationController
   end
 
   def all_handlers
-      @handlers = Handler.all
+      I18n.locale = params[:language]
+      @handlers = Handler.where(:country_id => Country[params[:country_id].upcase].number.to_i).all
+      @country_name = Country[params[:country_id].upcase].name
       respond_to do |format|
           format.html {
               render :partial => "index/all_handlers.html"
