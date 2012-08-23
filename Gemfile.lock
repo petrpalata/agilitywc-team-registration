@@ -30,6 +30,9 @@ GEM
       multi_json (~> 1.0)
     annotate (2.4.0)
     arel (3.0.2)
+    backup (3.0.25)
+      open4 (~> 1.3.0)
+      thor (~> 0.15.4)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cancan (1.6.8)
@@ -89,6 +92,7 @@ GEM
     net-ssh (2.5.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    open4 (1.3.0)
     orm_adapter (0.4.0)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
@@ -170,6 +174,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  backup
   cancan
   capistrano
   coffee-rails (~> 3.2.1)

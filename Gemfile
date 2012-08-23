@@ -16,6 +16,7 @@ gem 'paperclip', '~> 2.7'
 gem 'rails-i18n'
 gem 'twitter-bootstrap-rails'
 gem 'pg'
+gem 'backup'
 
 # Gems used only for assets and not required
 # in production environments by default.
