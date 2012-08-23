@@ -16,7 +16,7 @@ gem 'paperclip', '~> 2.7'
 gem 'rails-i18n'
 gem 'twitter-bootstrap-rails'
 gem 'pg'
-gem 'dropbox-sdk'
+gem 'dropbox-sdk', '~> 1.2.0'
 gem 'backup'
 
 # Gems used only for assets and not required
