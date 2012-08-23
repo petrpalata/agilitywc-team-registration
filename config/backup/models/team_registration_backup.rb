@@ -34,7 +34,7 @@ Backup::Model.new(:team_registration_backup, 'Description for team_registration_
   end
 
   archive :handler_pictures do |archive|
-      archive.add '/webapps/team_registration/current/public/system/'
+      archive.add '/webapps/team_registration/current/public/system/pictures/'
   end
 
   ##
