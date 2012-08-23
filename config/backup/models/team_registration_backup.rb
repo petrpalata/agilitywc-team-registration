@@ -24,7 +24,7 @@ Backup::Model.new(:team_registration_backup, 'Description for team_registration_
     db.password           = "chorgoj"
     db.host               = "localhost"
     db.port               = 5432
-    db.socket             = "/tmp/pg.sock"
+    db.socket             = "/var/run/postgresql"
     db.skip_tables        = []
     db.only_tables        = []
     db.additional_options = ["-xc", "-E=utf8"]
