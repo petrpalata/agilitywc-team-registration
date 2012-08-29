@@ -14,7 +14,7 @@
         <% @handlers.each do |handler| %>
             <% handler.dogs.all.each do |dog| %>
                 <tr>
-                    <td><img src="http://agility2012.cz/team_registration<%= handler.picture.url(:thumbnail) %>" /></td>
+                    <td><img src="http://agility2012.cz/team_registration<%= handler.picture.url(:big_thumb) %>" /></td>
                     <td><%= handler.first_name %></td>
                     <td><%= handler.last_name %></td>
                     <td><%= dog.registered_name %></td>
