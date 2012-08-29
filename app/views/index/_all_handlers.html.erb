@@ -5,6 +5,7 @@
 <% else %>
     <br />
     <table class="handlers">
+        <th></th>
         <th><%= t 'teams.form.first_name' %></th>
         <th><%= t 'teams.form.last_name' %></th>
         <th><%= t 'activerecord.models.dog' %></th>
@@ -13,6 +14,7 @@
         <% @handlers.each do |handler| %>
             <% handler.dogs.all.each do |dog| %>
                 <tr>
+                    <td><img src="<%= handler.picture.url(:thumbnail) %>" /></td>
                     <td><%= handler.first_name %></td>
                     <td><%= handler.last_name %></td>
                     <td><%= dog.registered_name %></td>
