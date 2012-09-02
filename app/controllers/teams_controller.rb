@@ -65,7 +65,9 @@ class TeamsController < ApplicationController
         if not check_users_country
             return
         end
-        @handler.country_id = current_user.country_id
+        if not current_user.superadmin?
+            @handler.country_id = current_user.country_id
+        end
         if @handler.update_attributes(params[:handler])
             redirect_to handlers_path, :notice => t('teams.controller.successfully_updated')
         else
