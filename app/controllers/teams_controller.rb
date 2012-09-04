@@ -49,7 +49,11 @@ class TeamsController < ApplicationController
     # POST /teams.json
     def create
         @handler = Handler.new(params[:handler])
-        @handler.country_id = current_user.country_id
+        if not current_user.superadmin?
+            @handler.country_id = current_user.country_id
+        else 
+            @handler.country_id = Country[params[:handler][:country_id]].number
+        end
         authorize! :create, @handler
         if @handler.save
             redirect_to handlers_path, :notice => t('teams.controller.successfully_created')
@@ -65,10 +69,10 @@ class TeamsController < ApplicationController
         if not check_users_country
             return
         end
-        if not current_user.superadmin?
-            @handler.country_id = current_user.country_id
-        end
+        country_id = @handler.country_id
         if @handler.update_attributes(params[:handler])
+            @handler.country_id = country_id
+            @handler.save
             redirect_to handlers_path, :notice => t('teams.controller.successfully_updated')
         else
             render :action => 'new'
