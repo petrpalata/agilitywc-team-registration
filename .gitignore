@@ -16,3 +16,6 @@
 
 # Ignore vim swap files
 *.swp
+
+# Localy uploaded images
+/public/system/pictures/
