@@ -17,6 +17,9 @@
                 <th>Příjmení</th>
                 <th>Počet psů</th>
                 <th>Země</th>
+                <% if current_user.superadmin? %>
+                    <th>Akce</th>
+                <% end %>
             </tr>
 
             <% handlers.each do |handler| %>
@@ -25,6 +28,9 @@
                     <td><%= handler.last_name %></td>
                     <td><%= handler.dogs.count %></td>
                     <td><%= Country.find_country_by_number("0" * (3 - handler.country_id.to_s.length)  + handler.country_id.to_s).name  %></td>
+                    <% if current_user.superadmin? %>
+                        <td><%= link_to "Smazat", handler, :method => :delete,  :class => "btn", :confirm => "Opravdu?" %> <%= link_to t('links.teams.edit'), edit_handler_path(handler), :class => "btn" %>
+                    <% end %>
                 </tr>
             <% end %>
         </table>
