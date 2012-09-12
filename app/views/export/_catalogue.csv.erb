@@ -1,0 +1,5 @@
+<% @handlers.each do |handler| %>
+    <% handler.dogs.all.each do |dog| %>
+        <%= handler.id %>;<%= dog.start_number %>;<%= handler.first_name %>;<%= handler.last_name %>;<%= Country.find_country_by_number("0" * (3 - handler.country_id.to_s.length)  + handler.country_id.to_s).name  %>;<%= dog.nickname %>;<%= dog.registered_name %>;<%= dog.owner_first_name %>;<%= dog.owner_last_name %>
+    <% end %>
+<% end %>

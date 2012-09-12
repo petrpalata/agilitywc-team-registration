@@ -24,6 +24,9 @@ TeamRegistration::Application.routes.draw do
 
     match "/payments/:id/confirm" => "index#confirm_payment", :as => 'payment_confirmation'
     delete "/payments/:id" => "index#delete_payment", :as => 'delete_payment'
+
+    match "/export/generate_random_startnumbers" => "export#generate_random_startnumbers"
+    match "/export/katalog" => "export#catalogue"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 
