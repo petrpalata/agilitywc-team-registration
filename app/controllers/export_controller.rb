@@ -77,6 +77,15 @@ class ExportController < ApplicationController
         end
     end
 
+    def for_main_judge
+        @handlers = Handler.all(:include => :dogs, :order => "dogs.start_number")
+        respond_to do |format|
+            format.csv {
+                render :partial => "export/catalogue_for_main_judge.csv"
+            }
+        end
+    end
+
 private 
     def clean_up_dogs
         dogs = Dog.all
