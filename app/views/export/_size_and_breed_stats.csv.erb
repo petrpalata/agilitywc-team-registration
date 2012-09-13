@@ -1,0 +1,9 @@
+Statistika plemen;
+Plemeno;pocet
+<% @dog_breeds.each do |dog_breed| %>
+    <%= Breed.find(dog_breed.breed_id).name %>;<%= dog_breed.count_all %>
+<% end %>
+Kategorie;pocet
+<% @dog_sizes.each do |dog_size| %>
+    <%= dog_size.category %>;<%= dog_size.count_all %>
+<% end %>

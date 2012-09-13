@@ -27,6 +27,9 @@ TeamRegistration::Application.routes.draw do
 
     match "/export/generate_random_startnumbers" => "export#generate_random_startnumbers"
     match "/export/katalog" => "export#catalogue"
+    match "/export/size_and_breed_stats" => "export#size_and_breed_stats"
+    match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
+    match "/export/squads" => "export#squads"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 

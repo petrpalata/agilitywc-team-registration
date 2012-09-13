@@ -1,0 +1,11 @@
+Druzstva small;
+Zeme;Poradi
+<% @small.each do |squad| %>
+<%= Country.find_country_by_number("0" * (3 - squad.country_id.to_s.length)  + squad.country_id.to_s).name %>;<%= squad.small_order %>
+<% end %>
+<% @medium.each do |squad| %>
+<%= Country.find_country_by_number("0" * (3 - squad.country_id.to_s.length)  + squad.country_id.to_s).name %>;<%= squad.medium_order %>
+<% end %>
+<% @large.each do |squad| %>
+<%= Country.find_country_by_number("0" * (3 - squad.country_id.to_s.length)  + squad.country_id.to_s).name %>;<%= squad.large_order %>
+<% end %>
