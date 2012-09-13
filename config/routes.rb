@@ -30,6 +30,7 @@ TeamRegistration::Application.routes.draw do
     match "/export/size_and_breed_stats" => "export#size_and_breed_stats"
     match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
     match "/export/squads" => "export#squads"
+    match "/export/for_main_judge" => "export#for_main_judge"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 

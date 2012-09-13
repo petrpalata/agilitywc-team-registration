@@ -14,12 +14,21 @@ class ConfirmationController < ApplicationController
                 user.save
             end
             generate_payment_information_for_country(current_user.country_id)
-            TeamParticipation.create(
-                :country_id => current_user.country_id,
-                :small => params[:small],
-                :medium => params[:medium],
-                :large => params[:large]
-            )
+
+            participation = TeamParticipation.find_by_country_id(current_user.country_id)
+            unless participation
+                TeamParticipation.create(
+                    :country_id => current_user.country_id,
+                    :small => params[:small],
+                    :medium => params[:medium],
+                    :large => params[:large]
+                )
+            else 
+                participation.small = params[:small]
+                participation.medium = params[:medium]
+                participation.large = params[:large]
+                participation.save
+            end
             send_confirmation_mail
             flash[:notice] = t('confirmation.controller.successfully_confirmed_all_entries')
         else 
