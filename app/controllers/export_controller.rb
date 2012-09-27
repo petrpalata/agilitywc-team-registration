@@ -13,7 +13,7 @@ class ExportController < ApplicationController
     end
 
     def catalogue
-        @dogs = Dog.all(:include => :handlers, :order => "dogs.category DESC, dogs.start_number")
+        @dogs = Dog.all(:include => :handler, :order => "dogs.category DESC, dogs.start_number")
         respond_to do |format|
             format.csv {
                 render :partial => "export/catalogue.csv"
@@ -76,7 +76,7 @@ class ExportController < ApplicationController
     end
 
     def for_main_judge
-        @dogs = Dog.all(:include => :handlers, :order => "dogs.category DESC, dogs.start_number")
+        @dogs = Dog.all(:include => :handler, :order => "dogs.category DESC, dogs.start_number")
         respond_to do |format|
             format.csv {
                 render :partial => "export/catalogue_for_main_judge.csv"
