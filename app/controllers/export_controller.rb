@@ -3,8 +3,8 @@ class ExportController < ApplicationController
 
     def generate_random_startnumbers
         start_number = 1
-        handlers = Dog.all(:include => :handlers, :order => "category DESC, handlers.last_name ASC")
-        dog.each do |dog|
+        dogs = Dog.all(:include => :handler, :order => "category DESC, handlers.last_name ASC")
+        dogs.each do |dog|
             dog.start_number = start_number
             start_number += 1
             dog.save
