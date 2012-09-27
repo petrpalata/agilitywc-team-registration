@@ -9,7 +9,6 @@ class ExportController < ApplicationController
             start_number += 1
             dog.save
         end
-        end
         redirect_to root_url
     end
 
