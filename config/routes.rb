@@ -25,7 +25,7 @@ TeamRegistration::Application.routes.draw do
     match "/payments/:id/confirm" => "index#confirm_payment", :as => 'payment_confirmation'
     delete "/payments/:id" => "index#delete_payment", :as => 'delete_payment'
 
-    #match "/export/generate_random_startnumbers" => "export#generate_random_startnumbers"
+    match "/export/generate_random_startnumbers" => "export#generate_random_startnumbers"
     match "/export/katalog" => "export#catalogue"
     match "/export/size_and_breed_stats" => "export#size_and_breed_stats"
     #match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
