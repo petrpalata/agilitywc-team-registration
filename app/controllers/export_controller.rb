@@ -3,13 +3,12 @@ class ExportController < ApplicationController
 
     def generate_random_startnumbers
         start_number = 1
-        handlers = Handler.all(:include => :dogs, :order => "dogs.category DESC, last_name ASC")
-        handlers.each do |handler|
-            handler.dogs.all.each do |dog|
-                dog.start_number = start_number
-                start_number += 1
-                dog.save
-            end
+        handlers = Dog.all(:include => :handlers, :order => "category DESC, handlers.last_name ASC")
+        dog.each do |dog|
+            dog.start_number = start_number
+            start_number += 1
+            dog.save
+        end
         end
         redirect_to root_url
     end
