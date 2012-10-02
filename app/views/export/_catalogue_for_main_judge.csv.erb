@@ -1,3 +1,3 @@
     <% @dogs.each do |dog| %>
-<%= dog.start_number %>;<%= dog.license %>;<%= dog.handler.first_name %>;<%= dog.handler.last_name %>;<%= dog.registered_name %>;<%= Breed.find(dog.breed_id).name %>;<%= dog.nickname %>;<%= dog.category %>;0;<%= Country.find_country_by_number("0" * (3 - dog.handler.country_id.to_s.length)  + dog.handler.country_id.to_s).alpha2 %>
+<%= dog.start_number %>;<%= dog.record_book_or_license %>;<%= dog.handler.first_name %>;<%= dog.handler.last_name %>;<%= dog.registered_name %>;<%= Breed.find(dog.breed_id).name %>;<%= dog.nickname %>;<%= dog.category %>;0;<%= Country.find_country_by_number("0" * (3 - dog.handler.country_id.to_s.length)  + dog.handler.country_id.to_s).alpha2 %>
     <% end %>
