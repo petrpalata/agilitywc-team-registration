@@ -1,3 +1,4 @@
+#;First name; Last name;Country;Nickname;Registered name;Owner first name;Owner last name;Size;Breed;Microchip;Date of birth;Sex;Studbook
     <% @dogs.each do |dog| %>
-<%= dog.start_number %>;<%= dog.record_book_or_license %>;<%= dog.handler.first_name %>;<%= dog.handler.last_name %>;<%= dog.registered_name %>;<%= Breed.find(dog.breed_id).name %>;<%= dog.nickname %>;<%= dog.category %>;0;<%= Country.find_country_by_number("0" * (3 - dog.handler.country_id.to_s.length)  + dog.handler.country_id.to_s).alpha2 %>
+<%= dog.start_number %>;<%= dog.handler.first_name %>;<%= dog.handler.last_name %>;<%= Country.find_country_by_number("0" * (3 - dog.handler.country_id.to_s.length)  + dog.handler.country_id.to_s).name  %>;<%= dog.nickname %>;<%= dog.registered_name %>;<%= dog.owner_first_name %>;<%= dog.owner_last_name %>;<%= dog.category %>;<%= Breed.find(dog.breed_id).name %>;<%= dog.microchip %>;<%= dog.date_of_birth %>;<%= dog.sex %>;<%= dog.studbook_and_number %>
     <% end %>
