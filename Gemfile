@@ -15,7 +15,7 @@ gem 'countries'
 gem 'simple_enum'
 gem 'paperclip', '~> 2.7'
 gem 'rails-i18n'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '~> 2.2.8'
 gem 'pg'
 gem 'dropbox-sdk', '~> 1.2.0'
 gem 'backup'
@@ -25,9 +25,10 @@ gem 'backup'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'less-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 
@@ -54,7 +55,7 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'capistrano-rbenv'
 
 # To use debugger
 # gem 'ruby-debug'

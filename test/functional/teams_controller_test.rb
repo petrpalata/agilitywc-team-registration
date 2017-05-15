@@ -1,14 +1,17 @@
 require 'test_helper'
 
 class TeamsControllerTest < ActionController::TestCase
+    include Devise::TestHelpers
+
   setup do
-    @team = teams(:one)
+    @team = handlers(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:teams)
+    assert_not_nil assigns(:handlers)
   end
 
   test "should get new" do
@@ -17,11 +20,11 @@ class TeamsControllerTest < ActionController::TestCase
   end
 
   test "should create team" do
-    assert_difference('Team.count') do
-      post :create, :team => {  }
+    assert_difference('Handler.count') do
+      post :create, :handler => { }
     end
 
-    assert_redirected_to team_path(assigns(:team))
+    assert_redirected_to handlers_path(assigns(:handler))
   end
 
   test "should show team" do
@@ -36,14 +39,14 @@ class TeamsControllerTest < ActionController::TestCase
 
   test "should update team" do
     put :update, :id => @team, :team => {  }
-    assert_redirected_to team_path(assigns(:team))
+    assert_redirected_to handlers_path(assigns(:handler))
   end
 
   test "should destroy team" do
-    assert_difference('Team.count', -1) do
+    assert_difference('Handler.count', -1) do
       delete :destroy, :id => @team
     end
 
-    assert_redirected_to teams_path
+    assert_redirected_to handlers_path
   end
 end

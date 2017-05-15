@@ -2,7 +2,7 @@ require 'bundler/capistrano'
 require 'rvm/capistrano'
 set :application, "team_registration"
 #set :repository, "ssh://petr@kacr.info:10522/home/git/repositories/team_registration.git"
-set :repository, "ssh://git@bitbucket.org/petrpalata/team_registration.git"
+set :repo_url, 'git@bitbucket.org:petrpalata/team_registration.git'
 set :branch, "master"
 #set :deploy_via, :remote_cache
 set :scm, :git
@@ -15,17 +15,17 @@ set :use_sudo, false
 load 'deploy/assets'
 
 default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
-set :deploy_to, "/webapps/#{application}"
 
-set :ssh_options, { :port => 10722, :forward_agent => true }
+set :deploy_to, '/home/kwertan/team_registration'
 
-role :assets, "kacr.info"
-role :app, "kacr.info"
-role :web, "kacr.info"
-role :db,  "kacr.info", :primary => true
+set :ssh_options, { :forward_agent => true }
 
-set :user, "petr"
+role :assets, "agility2017.cz"
+role :app, "agility2017.cz"
+role :web, "agility2017.cz"
+role :db,  "agility2017.cz", :primary => true
+
+set :user, "kwertan"
 
 namespace :passenger do
     desc "Restart Application"
@@ -42,3 +42,15 @@ namespace :deploy do
 end
 
 after :deploy, "passenger:restart"
+
+set :stages, ["production"]
+set :default_stage, "production"
+
+set :repository_cache, "git_cache"
+set :deploy_via, :remote_cache
+
+# Default value for :linked_files is []
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')

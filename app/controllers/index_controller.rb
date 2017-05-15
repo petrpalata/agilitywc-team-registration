@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class IndexController < ApplicationController
   def index
       if current_user && (current_user.admin? || current_user.superadmin?)

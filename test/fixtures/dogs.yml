@@ -5,10 +5,8 @@ one:
   registered_name: MyString
   breed_id: 1
   date_of_birth: 2012-07-29
-  studbook: MyString
-  studbook_number: 1
-  record_book: MyString
-  license: MyString
+  studbook_and_number: 1
+  record_book_or_license: MyString
   tatoo: 1
   microchip: 1
   microchip_position: MyString
@@ -23,10 +21,8 @@ two:
   registered_name: MyString
   breed_id: 1
   date_of_birth: 2012-07-29
-  studbook: MyString
-  studbook_number: 1
-  record_book: MyString
-  license: MyString
+  studbook_and_number: 1
+  record_book_or_license: MyString
   tatoo: 1
   microchip: 1
   microchip_position: MyString

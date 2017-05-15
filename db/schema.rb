@@ -69,10 +69,10 @@ ActiveRecord::Schema.define(:version => 20120913191151) do
     t.integer  "user_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-    t.datetime "picture_updated_at"
+    t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
-    t.string   "picture_file_name"
+    t.datetime "picture_updated_at"
     t.boolean  "insurance"
   end
 
