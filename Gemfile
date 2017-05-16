@@ -24,7 +24,7 @@ gem 'backup'
 # in production environments by default.
 gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
-gem 'less-rails'
+# gem 'less-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer'
@@ -40,6 +40,8 @@ group :test do
 end
 
 gem 'jquery-rails'
+
+gem 'font-awesome-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
