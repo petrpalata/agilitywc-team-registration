@@ -61,3 +61,14 @@ namespace :deploy do
   end
 
 end
+
+namespace :passenger do
+  desc "Restart Application"
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, current_path.join("tmp/restart.txt")
+    end
+  end
+end
+
+after :deploy, "passenger:restart"
