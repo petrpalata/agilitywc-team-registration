@@ -3,7 +3,7 @@ class ConfirmationController < ApplicationController
     before_filter :check_admin_or_superadmin
 
     def index
-        @handlers = Handler.where(:country_id => current_user.country_id).all
+        @handlers = Team.where(:country_id => current_user.country_id).all
     end
     
     def confirm_all
@@ -52,7 +52,7 @@ class ConfirmationController < ApplicationController
             'M' => 0, 
             'L' => 0
         }
-        handlers = Handler.where(:country_id => current_user.country_id).all
+        handlers = Team.where(:country_id => current_user.country_id).all
         handlers.each do |handler|
             handler.dogs.collect.each do |dog|
                 if dog.reserve 

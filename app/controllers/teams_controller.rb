@@ -1,62 +1,61 @@
 class TeamsController < ApplicationController
     before_filter :authenticate_user!
     before_filter :check_if_confirmed, :only => [:new, :create, :edit, :update, :destroy]
-    authorize_resource :handler, :dog
+    authorize_resource :team
     
     # GET /teams
     # GET /teams.json
     def index
         if current_user.admin? || current_user.superadmin?
-            @handlers = Handler.all
+            @teams = Team.all
             @countries = {}
-            @handlers.each do |h|
-                country_name = Country.find_country_by_number("0" * (3 - h.country_id.to_s.length) + h.country_id.to_s).name
+            @teams.each do |t|
+                country_name = Country.find_country_by_number("0" * (3 - t.country_id.to_s.length) + t.country_id.to_s).name
                 @countries[country_name] ||= []
                 @countries[country_name] << h
             end
         elsif 
-            @handlers = Handler.all(:conditions => { :country_id => current_user.country_id })
+            @teams = Team.all(:conditions => { :country_id => current_user.country_id })
         end
-        @handlers.each do |h|
-            authorize! :read, h
+        @teams.each do |t|
+            authorize! :read, t
         end
     end
 
     # GET /teams/1
     # GET /teams/1.json
     def show
-        @handler = Handler.find(params[:id])
+        @team = Team.find(params[:id])
         check_users_country
-        authorize! :read, @handler
+        authorize! :read, @team
     end
 
     # GET /teams/new
     # GET /teams/new.json
     def new
-        @handler = Handler.new
-        dogs = @handler.dogs.build
-        authorize! :create, @handler
+        @team = Team.new
+        authorize! :create, @team
     end
 
     # GET /teams/1/edit
     def edit
-        @handler = Handler.find(params[:id])
+        @team = Team.find(params[:id])
         check_users_country
-        authorize! :update, @handler
+        authorize! :update, @team
     end
 
     # POST /teams
     # POST /teams.json
     def create
-        @handler = Handler.new(params[:handler])
+        @team = Team.new(params[:team])
         if not current_user.superadmin?
-            @handler.country_id = current_user.country_id
+            @team.country_id = current_user.country_id
         else 
-            @handler.country_id = Country[params[:handler][:country_id]].number
+            @team.country_id = Country[params[:handler][:country_id]].number
         end
-        authorize! :create, @handler
-        if @handler.save
-            redirect_to handlers_path, :notice => t('teams.controller.successfully_created')
+        authorize! :create, @team
+        if @team.save
+            redirect_to teams_path, :notice => t('teams.controller.successfully_created')
         else
             render :action => 'new'
         end
@@ -65,31 +64,31 @@ class TeamsController < ApplicationController
     # PUT /teams/1
     # PUT /teams/1.json
     def update
-        @handler = Handler.find(params[:id])
+        @team = Team.find(params[:id])
         if not check_users_country
             return
         end
-        country_id = @handler.country_id
-        if @handler.update_attributes(params[:handler])
-            @handler.country_id = country_id
-            @handler.save
-            redirect_to handlers_path, :notice => t('teams.controller.successfully_updated')
+        country_id = @team.country_id
+        if @team.update_attributes(params[:handler])
+            @team.country_id = country_id
+            @team.save
+            redirect_to teams_path, :notice => t('teams.controller.successfully_updated')
         else
             render :action => 'new'
         end
-        authorize! :update, @handler
+        authorize! :update, @team
     end
 
     # DELETE /teams/1
     # DELETE /teams/1.json
     def destroy
-        @handler = Handler.find(params[:id])
-        authorize! :destroy, @handler
+        @team = Team.find(params[:id])
+        authorize! :destroy, @team
         if not check_users_country
             return
         end
-        @handler.destroy
-        redirect_to handlers_path, :notice => t('teams.controller.successfully_deleted')
+        @team.destroy
+        redirect_to teams_path, :notice => t('teams.controller.successfully_deleted')
     end
 
     private
@@ -97,8 +96,8 @@ class TeamsController < ApplicationController
             if current_user.admin? || current_user.superadmin?
                 return true
             end
-            if @handler.country_id != current_user.country_id
-                redirect_to handlers_path, :notice => t('teams.controller.dont_have_permission')
+            if @team.country_id != current_user.country_id
+                redirect_to teams_path, :notice => t('teams.controller.dont_have_permission')
                 return false
             end
             return true
@@ -107,7 +106,7 @@ class TeamsController < ApplicationController
         def check_if_confirmed
             if Payment.find_by_country_id(current_user.country_id)
                 flash[:error] = t('teams.controller.no_changed_allowed')
-                redirect_to handlers_path
+                redirect_to teams_path
             end
         end
 end

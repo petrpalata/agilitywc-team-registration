@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913191151) do
+ActiveRecord::Schema.define(:version => 20170522215841) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -62,20 +62,6 @@ ActiveRecord::Schema.define(:version => 20120913191151) do
     t.integer  "start_number"
   end
 
-  create_table "handlers", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "country_id"
-    t.integer  "user_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
-    t.boolean  "insurance"
-  end
-
   create_table "payments", :force => true do |t|
     t.integer  "country_id"
     t.integer  "unique"
@@ -114,6 +100,37 @@ ActiveRecord::Schema.define(:version => 20120913191151) do
     t.integer  "small_order",  :default => 0
     t.integer  "medium_order", :default => 0
     t.integer  "large_order",  :default => 0
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.boolean  "insurance"
+    t.string   "dog_nickname"
+    t.string   "dog_registered_name"
+    t.integer  "dog_breed_id"
+    t.date     "dog_date_of_birth"
+    t.string   "dog_studbook_and_number"
+    t.string   "dog_record_book_or_license"
+    t.string   "dog_tatoo"
+    t.string   "dog_microchip"
+    t.string   "dog_microchip_position"
+    t.string   "dog_owner_first_name"
+    t.string   "dog_owner_last_name"
+    t.text     "dog_owner_address"
+    t.string   "dog_owner_phone_number"
+    t.string   "category"
+    t.boolean  "reserve",                    :default => false
+    t.string   "dog_sex"
+    t.integer  "start_number"
   end
 
   create_table "users", :force => true do |t|

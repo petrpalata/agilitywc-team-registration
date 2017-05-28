@@ -1,10 +1,10 @@
-<%= nested_form_for(@handler, :html => {:class => 'form-horizontal well', :multipart => true }) do |f| %>
-    <% unless @handler.errors.full_messages.empty? %>
+<%= form_for(@team, :html => {:class => 'form-horizontal well', :multipart => true }) do |f| %>
+    <% unless @team.errors.full_messages.empty? %>
         <div class="alert alert-error">
             <button class="close" data-dismiss="alert">×</button>
             <h3><%= t 'teams.form.correct_errors' %></h3>
             <ul>
-                <% @handler.errors.full_messages.each do |msg| %>
+                <% @team.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
                 <% end %>
             </ul>
@@ -57,134 +57,128 @@
     <legend>
         <h2><%= t('activerecord.models.dogs') %></h2>
     </legend>
-    <%= f.fields_for :dogs do |dog_form| %>
+
         <fieldset>
             <div class="control-group">
-                <%= dog_form.label :nickname,  :class => 'control-label' %>
+                <%= f.label :dog_nickname,  :class => 'control-label' %>
                 <div class="controls">
-                    <%= dog_form.text_field :nickname %>
+                    <%= f.text_field :dog_nickname %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :registered_name, :class => 'control-label' %> 
+                <%= f.label :dog_registered_name, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :registered_name %>
+                    <%= f.text_field :dog_registered_name %>
                     <p class="help-block"><%= t('teams.form.this_name_will_be_listed_in_catalogue') %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :reserve,  :class => 'control-label' %>
+                <%= f.label :reserve,  :class => 'control-label' %>
                 <div class="controls">
-                    <%= dog_form.check_box :reserve %>
+                    <%= f.check_box :reserve %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :sex, :class => 'control-label' %> 
+                <%= f.label :dog_sex, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.select(:sex, [[t('teams.form.male'), "M"], [t('teams.form.female'), "F"]]) %>
+                    <%= f.select(:dog_sex, [[t('teams.form.male'), "M"], [t('teams.form.female'), "F"]]) %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :category, :class => 'control-label' %>
+                <%= f.label :category, :class => 'control-label' %>
                 <div class="controls">
-                    <%= dog_form.select(:category, [[t('teams.form.small'), "S"], [t('teams.form.medium'), "M"], [t('teams.form.large'), "L"]]) %>
+                    <%= f.select(:category, [[t('teams.form.small'), "S"], [t('teams.form.medium'), "M"], [t('teams.form.large'), "L"]]) %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :breed_id, :class => 'control-label' %> 
+                <%= f.label :dog_breed_id, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.select(:breed_id, Breed.find(:all, :order => :name).collect { |p| [p.name, p.id] } ) %>
+                    <%= f.select(:dog_breed_id, Breed.find(:all, :order => :name).collect { |p| [p.name, p.id] } ) %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :date_of_birth,  :class => 'control-label' %> 
+                <%= f.label :dog_date_of_birth,  :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.date_select :date_of_birth, :start_year => Time.now.year - 20, :end_year => Time.now.year  %>
+                    <%= f.date_select :dog_date_of_birth, :start_year => Time.now.year - 20, :end_year => Time.now.year  %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :microchip,  :class => 'control-label' %> 
+                <%= f.label :dog_microchip,  :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :microchip %>
+                    <%= f.text_field :dog_microchip %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :tatoo, :class => 'control-label' %> 
+                <%= f.label :dog_tatoo, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :tatoo %>
+                    <%= f.text_field :dog_tatoo %>
                 </div>
             </div>
 
 
             <div class="control-group">
-                <%= dog_form.label :microchip_position, :class => 'control-label' %> 
+                <%= f.label :dog_microchip_position, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :microchip_position %>
+                    <%= f.text_field :dog_microchip_position %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :record_book_or_license, :class => 'control-label' %> 
+                <%= f.label :dog_record_book_or_license, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :record_book_or_license %>
+                    <%= f.text_field :dog_record_book_or_license %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :studbook_and_number, :class => 'control-label' %> 
+                <%= f.label :dog_studbook_and_number, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :studbook_and_number %>
+                    <%= f.text_field :dog_studbook_and_number %>
                 </div>
             </div>
 
             <h3><%= t('activerecord.models.owner') %></h3>
 
             <div class="control-group">
-                <%= dog_form.label :owner_first_name, :class => 'control-label' %> 
+                <%= f.label :dog_owner_first_name, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :owner_first_name %>
+                    <%= f.text_field :dog_owner_first_name %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :owner_last_name, :class => 'control-label' %> 
+                <%= f.label :dog_owner_last_name, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :owner_last_name %>
+                    <%= f.text_field :dog_owner_last_name %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :owner_phone_number,  :class => 'control-label' %> 
+                <%= f.label :dog_owner_phone_number,  :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_field :owner_phone_number %>
+                    <%= f.text_field :dog_owner_phone_number %>
                 </div>
             </div>
 
             <div class="control-group">
-                <%= dog_form.label :owner_address, :class => 'control-label' %> 
+                <%= f.label :dog_owner_address, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= dog_form.text_area :owner_address, :rows => 5 %>
+                    <%= f.text_area :dog_owner_address, :rows => 5 %>
                 </div>
-            </div>
-
-            <div class="controls">
-                <%= dog_form.link_to_remove t('teams.form.remove_this_dog'), :class => 'btn' %>
             </div>
         </fieldset>
         <hr />
 
-    <% end %>
-    <%= f.link_to_add t('teams.form.add_dog'), :dogs, :class => 'btn' %>
     <div class="form-actions">
         <%= f.submit t('teams.form.submit'), :class => 'btn btn-primary' %>
-        <%= link_to t('links.teams.back'), handlers_path, :class => 'btn' %>
+        <%= link_to t('links.teams.back'), teams_path, :class => 'btn' %>
     </div>
 <% end %>

@@ -1,4 +1,4 @@
-<h1><%= @handler.first_name %> <%= @handler.last_name %></h1>
+<h1><%= @team.first_name %> <%= @team.last_name %></h1>
 <br />
 <h2><%= t('activerecord.models.dogs') %></h2>
 <table class="table">
@@ -11,20 +11,18 @@
         <th><%= t('activerecord.attributes.handler/dogs.microchip') %></th>
         <th><%= t('teams.form.breed') %></th>
     </tr>
-    <% @handler.dogs.each do |dog| %>
     <tr>
-        <td><%= dog.registered_name %></td>
-        <td><%= dog.category %></td>
-        <td><%= dog.record_book_or_license %></td>
-        <td><%= dog.studbook_and_number %></td>
-        <td><%= dog.date_of_birth %></td>
-        <td><%= dog.microchip %></td>
-        <td><%= Breed.find(dog.breed_id).name %></td>
+        <td><%= @team.dog_registered_name %></td>
+        <td><%= @team.category %></td>
+        <td><%= @team.dog_record_book_or_license %></td>
+        <td><%= @team.dog_studbook_and_number %></td>
+        <td><%= @team.dog_date_of_birth %></td>
+        <td><%= @team.dog_microchip %></td>
+        <td><%= Breed.find(@team.dog_breed_id).name %></td>
     <tr>
-    <% end %>
 </table>
 
 <% if not current_user.admin? %>
-    <%= link_to t('links.teams.edit'), edit_handler_path(@handler), :class => "btn" %>
+    <%= link_to t('links.teams.edit'), edit_team_path(@team), :class => "btn" %>
 <% end %>
-<%= link_to t('links.teams.back'), handlers_path, :class => "btn" %>
+<%= link_to t('links.teams.back'), teams_path, :class => "btn" %>

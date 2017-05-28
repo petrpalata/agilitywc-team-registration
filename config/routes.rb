@@ -15,7 +15,7 @@ TeamRegistration::Application.routes.draw do
         delete "/logout" => "devise/sessions#destroy", :as => 'destroy_user_session'
     end
 
-    resources :teams, :as => :handlers
+    resources :teams
 
     match "/confirmation" => "confirmation#index", :as => 'confirmation_index'
     match "/confirmation/confirm_all" => "confirmation#confirm_all", :as => 'confirmation_confirm_all'
