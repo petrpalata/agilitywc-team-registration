@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170522215841) do
+ActiveRecord::Schema.define(:version => 20170531214308) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -39,12 +39,8 @@ ActiveRecord::Schema.define(:version => 20170522215841) do
   end
 
   create_table "dogs", :force => true do |t|
-    t.string   "nickname"
     t.string   "registered_name"
-    t.integer  "breed_id"
     t.date     "date_of_birth"
-    t.string   "studbook_and_number"
-    t.string   "record_book_or_license"
     t.string   "tatoo"
     t.string   "microchip"
     t.string   "microchip_position"
@@ -53,13 +49,15 @@ ActiveRecord::Schema.define(:version => 20170522215841) do
     t.string   "owner_last_name"
     t.text     "owner_address"
     t.string   "owner_phone_number"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.integer  "handler_id"
     t.string   "category"
-    t.boolean  "reserve",                :default => false
+    t.boolean  "reserve",            :default => false
     t.string   "sex"
     t.integer  "start_number"
+    t.string   "name"
+    t.integer  "country_id"
   end
 
   create_table "payments", :force => true do |t|

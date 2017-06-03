@@ -1,4 +1,14 @@
 TeamRegistration::Application.routes.draw do
+  get "dogs/index"
+
+  get "dogs/new"
+
+  get "dogs/create"
+
+  get "dogs/edit"
+
+  get "dogs/destroy"
+
     root :to => "index#index"
 
     devise_for :users, :skip => ['sessions', 'registrations']
@@ -16,6 +26,7 @@ TeamRegistration::Application.routes.draw do
     end
 
     resources :teams
+    resources :dogs
 
     match "/confirmation" => "confirmation#index", :as => 'confirmation_index'
     match "/confirmation/confirm_all" => "confirmation#confirm_all", :as => 'confirmation_confirm_all'

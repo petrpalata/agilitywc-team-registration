@@ -9,11 +9,11 @@ class Ability
             cannot :edit, [User]
         elsif user.admin?
             can :manage, :all
-            cannot :manage, [SuperAdmin, Admin, Team]
+            cannot :manage, [SuperAdmin, Admin, Team, Dog]
             cannot :edit, [User]
-            can :read, [Team]
+            can :read, [Team, Dog]
         else 
-            can :manage, [Team]
+            can :manage, [Team, Dog]
         end
     end
 end

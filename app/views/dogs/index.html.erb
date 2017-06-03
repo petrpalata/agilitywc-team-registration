@@ -1,0 +1,47 @@
+<h1><%= t 'dogs.index.title' %> </h1>
+<br />
+
+<% if current_user.admin? || current_user.superadmin? %>
+    <% @countries.sort.each do |country, dogs| %>
+        <h2><%= country %></h2>
+        <table class="table">
+            <tr>
+                <th>Jméno</th>
+                <th>Země</th>
+                <% if current_user.superadmin? %>
+                    <th>Akce</th>
+                <% end %>
+            </tr>
+
+            <% dogs.each do |dog| %>
+                <tr onclick="location.href='<%= dog_path(dog) %>'">
+                    <td><%= dog.name %></td>
+                    <td><%= Country.find_country_by_number("0" * (3 - dog.country_id.to_s.length)  + dog.country_id.to_s).name  %></td>
+                    <% if current_user.superadmin? %>
+                        <td><%= link_to "Smazat", dog, :method => :delete,  :class => "btn", :confirm => "Opravdu?" %> <%= link_to t('links.teams.edit'), edit_dog_path(dog), :class => "btn" %>
+                    <% end %>
+                </tr>
+            <% end %>
+        </table>
+    <% end %>
+<% else %>
+    <table class="table">
+        <tr>
+            <th><%= t 'teams.form.name' %></th>
+            <th><%= t 'teams.form.actions' %></th>
+        </tr>
+
+        <% @dogs.each do |dog| %>
+            <tr>
+                <td><%= dog.name %></td>
+                <td><%= link_to t('links.teams.show'), dog, :class => "btn" %> <%= link_to t('links.teams.edit'), edit_dog_path(dog), :class => "btn" %>
+                    <%= link_to t('links.teams.destroy'), dog, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %></td>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+<br />
+
+<% if not current_user.admin? %>
+    <%= link_to t('links.dogs.new'), new_dog_path, :class => "btn" %>
+<% end %>

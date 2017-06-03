@@ -1,0 +1,96 @@
+<%= form_for(@dog, :html => {:class => 'form-horizontal well' }) do |f| %>
+    <% unless @dog.errors.full_messages.empty? %>
+        <div class="alert alert-error">
+            <button class="close" data-dismiss="alert">×</button>
+            <h3><%= t 'teams.form.correct_errors' %></h3>
+            <ul>
+                <% @dog.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+  <fieldset>
+      <div class="control-group">
+          <%= f.label :name,  :class => 'control-label' %>
+          <div class="controls">
+              <%= f.text_field :name %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :sex, :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.select(:sex, [[t('teams.form.male'), "M"], [t('teams.form.female'), "F"]]) %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :date_of_birth,  :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.date_select :date_of_birth, :start_year => Time.now.year - 20, :end_year => Time.now.year  %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :microchip,  :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_field :microchip %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :tatoo, :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_field :tatoo %>
+          </div>
+      </div>
+
+
+      <div class="control-group">
+          <%= f.label :microchip_position, :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_field :microchip_position %>
+          </div>
+      </div>
+
+
+      <h3><%= t('activerecord.models.owner') %></h3>
+
+      <div class="control-group">
+          <%= f.label :owner_first_name, :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_field :owner_first_name %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :owner_last_name, :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_field :owner_last_name %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :owner_phone_number,  :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_field :owner_phone_number %>
+          </div>
+      </div>
+
+      <div class="control-group">
+          <%= f.label :owner_address, :class => 'control-label' %> 
+          <div class="controls">
+              <%= f.text_area :owner_address, :rows => 5 %>
+          </div>
+      </div>
+  </fieldset>
+  <hr />
+
+    <div class="form-actions">
+        <%= f.submit t('dog.form.submit'), :class => 'btn btn-primary' %>
+        <%= link_to t('links.dog.back'), dogs_path, :class => 'btn' %>
+    </div>
+<% end %>
+

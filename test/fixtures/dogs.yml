@@ -1,12 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nickname: MyString
-  registered_name: MyString
-  breed_id: 1
+  name: MyString
   date_of_birth: 2012-07-29
-  studbook_and_number: 1
-  record_book_or_license: MyString
   tatoo: 1
   microchip: 1
   microchip_position: MyString
@@ -17,12 +13,8 @@ one:
   owner_phone_number: MyString
 
 two:
-  nickname: MyString
-  registered_name: MyString
-  breed_id: 1
+  name: MyString
   date_of_birth: 2012-07-29
-  studbook_and_number: 1
-  record_book_or_license: MyString
   tatoo: 1
   microchip: 1
   microchip_position: MyString

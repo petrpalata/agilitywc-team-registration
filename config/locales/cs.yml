@@ -95,6 +95,7 @@ cs:
        new_admin: "Nový administrátor"
        new_user: "Nový uživatel"
        teams: "Týmy"
+       non_running_dogs: "Nezávodící psi"
        confirmation: "Potvrzení"
        payment_information: "Informace o platbě"
   activerecord:
