@@ -51,6 +51,7 @@
                         <% if current_user.user? %>
                             <li><%= link_to t('links.application.teams'), teams_path %></li>
                             <li><%= link_to t('links.application.non_competing_dogs'), dogs_path %></li>
+                            <li><%= link_to t('links.application.staff_members'), staff_members_path %></li>
                         <% end %>
                         <% if current_user.confirm_all and current_user.user? %>
                             <li><%= link_to t('links.application.payment_information'), confirmation_payment_information_path %></li>

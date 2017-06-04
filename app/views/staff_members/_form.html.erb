@@ -1,0 +1,51 @@
+<%= form_for(@staff_member, :html => {:class => 'form-horizontal well' }) do |f| %>
+    <% unless @staff_member.errors.full_messages.empty? %>
+        <div class="alert alert-error">
+            <button class="close" data-dismiss="alert">×</button>
+            <h3><%= t 'teams.form.correct_errors' %></h3>
+            <ul>
+                <% @staff_member.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+
+    <fieldset>
+        <% if current_user.superadmin? %>
+            <div class="control-group">
+                <%= f.label :country_id, :class => 'control-label' %>
+                <div class="controls">
+                    <%= f.country_select :country_id %>
+                </div>
+            </div>
+        <% end %>
+
+        <div class="control-group">
+            <%= f.label :full_name, t('staff_member.form.full_name') %>
+            <div class="controls">
+                <%= f.text_field :full_name %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label :role_type, t('staff_member.form.role_type') %>
+            <div class="controls">
+                <%= role_select(f) %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label :picture, :class => 'control-label' %>
+            <div class="controls">
+                <%= f.file_field :picture %>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-actions">
+        <%= f.submit t('dog.form.submit'), :class => 'btn btn-primary' %>
+        <%= link_to t('links.dog.back'), dogs_path, :class => 'btn' %>
+    </div>
+<% end %>

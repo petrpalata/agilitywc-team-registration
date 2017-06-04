@@ -15,25 +15,25 @@ cs:
         insurance_company: "Pojišťovna"
         insurance_contract_number: "Číslo pojišťovací smlouvy"
         picture: "Obrázek"
-        nickname: "Přezdívka"
+        dog_nickname: "Přezdívka psa"
         registered_name: "Jméno"
         category: "Kategorie"
         small: "Small"
         medium: "Medium"
         large: "Large"
         breed: "Plemeno"
-        date_of_birth: "Datum narození"
-        license: "Licence"
-        microchip: "Mikročip"
-        microchip_position: "Pozice mikročipu"
-        recordbook: "Recordbook"
-        studbook: "Studbook"
-        studbook_number: "Studbook number"
-        tatoo: "Tetování"
-        owner_first_name: "Jméno majitele"
-        owner_last_name: "Příjmení majitele"
-        owner_phone_number: "Telefon majitele"
-        owner_address: "Adresa majitele"
+        dog_date_of_birth: "Datum narození"
+        dog_license: "Licence"
+        dog_microchip: "Mikročip"
+        dog_microchip_position: "Pozice mikročipu"
+        dog_recordbook: "Recordbook"
+        dog_studbook: "Studbook"
+        dog_studbook_number: "Studbook number"
+        dog_tatoo: "Tetování"
+        dog_owner_first_name: "Jméno majitele"
+        dog_owner_last_name: "Příjmení majitele"
+        dog_owner_phone_number: "Telefon majitele"
+        dog_owner_address: "Adresa majitele"
         remove_this_dog: "Odebrat tohoto psa"
         submit: "Odeslat"
         insurance_message: "Psovod má pojištění odpovědnosti za škody na zdraví a věcech třetích osob, pro území České republiky."
@@ -52,6 +52,19 @@ cs:
         title: "Upravit tým"
      index:
         title: "Týmy"
+  staff_members:
+    index:
+      title: "Trenéři a asistenti"
+    model:
+      teamleader: "Teamleader"
+      first_assistant: "První asistent"
+      second_assistant: "Druhý asistent"
+      physiotherapist: "Fyzioterapeut"
+      other: "Ostatní"
+    form:
+      full_name: "Celé jméno"
+      role_type: "Role"
+
   confirmation:
      index:
        warning_message: "Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!"
@@ -95,7 +108,8 @@ cs:
        new_admin: "Nový administrátor"
        new_user: "Nový uživatel"
        teams: "Týmy"
-       non_running_dogs: "Nezávodící psi"
+       non_competing_dogs: "Nezávodící psi"
+       staff_members: "Trenéři a asistenti"
        confirmation: "Potvrzení"
        payment_information: "Informace o platbě"
   activerecord:
@@ -104,6 +118,7 @@ cs:
       handler: Psovod
       dogs: Psi
       owner: Majitel
+      staff_member: "Trenér/Asistent"
     attributes:
       handler:
         first_name: "Jméno"

@@ -1,0 +1,51 @@
+<h1><%= t 'staff_members.index.title' %> </h1>
+<br />
+
+<% if current_user.admin? || current_user.superadmin? %>
+    <% @countries.sort.each do |country, staff_members| %>
+        <h2><%= country %></h2>
+        <table class="table">
+            <tr>
+                <th>Jméno</th>
+                <th>Role</th>
+                <th>Země</th>
+                <% if current_user.superadmin? %>
+                    <th>Akce</th>
+                <% end %>
+            </tr>
+
+            <% staff_members.each do |staff_member| %>
+                <tr onclick="location.href='<%= staff_members_path(staff_member) %>'">
+                    <td><%= staff_member.full_name %></td>
+                    <td><%= possible_roles[staff_member.role_type] %></th>
+                    <td><%= Country.find_country_by_number("0" * (3 - staff_member.country_id.to_s.length)  + staff_member.country_id.to_s).name  %></td>
+                    <% if current_user.superadmin? %>
+                        <td><%= link_to "Smazat", staff_member, :method => :delete,  :class => "btn", :confirm => "Opravdu?" %> <%= link_to t('links.teams.edit'), edit_staff_member_path(staff_member), :class => "btn" %>
+                    <% end %>
+                </tr>
+            <% end %>
+        </table>
+    <% end %>
+<% else %>
+    <table class="table">
+        <tr>
+            <th><%= t 'staff_members.form.full_name' %></th>
+            <th><%= t 'staff_members.form.role_type' %></th>
+            <th><%= t 'teams.form.actions' %></th>
+        </tr>
+
+        <% @staff_members.each do |staff_member| %>
+            <tr>
+                <td><%= staff_member.full_name %></td>
+                <td><%= possible_roles[staff_member.role_type] %></th>
+                <td><%= link_to t('links.teams.show'), staff_member, :class => "btn" %> <%= link_to t('links.teams.edit'), edit_staff_member_path(staff_member), :class => "btn" %>
+                    <%= link_to t('links.teams.destroy'), staff_member, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %></td>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+<br />
+
+<% if not current_user.admin? %>
+    <%= link_to t('links.staff_members.new'), new_staff_member_path, :class => "btn" %>
+<% end %>

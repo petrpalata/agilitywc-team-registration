@@ -1,5 +1,5 @@
 class ConfirmationMailer < ActionMailer::Base
-  default :from => "orders@agility2012.cz"
+  default :from => "teamleaders@agility2017.cz"
 
   def send_confirmation_mail(user, payment)
       @payment = payment

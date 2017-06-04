@@ -1,5 +1,17 @@
-<p id="notice"><%= notice %></p>
+<table class="table">
+    <tr>
+        <th><%= t('teams.form.registered_name') %></th>
+        <th><%= t('activerecord.attributes.handler/dogs.date_of_birth') %></th>
+        <th><%= t('activerecord.attributes.handler/dogs.microchip') %></th>
+    </tr>
+    <tr>
+        <td><%= @dog.name %></td>
+        <td><%= @dog.date_of_birth %></td>
+        <td><%= @dog.microchip %></td>
+    <tr>
+</table>
 
-
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<% if not current_user.admin? %>
+    <%= link_to t('links.teams.edit'), edit_dog_path(@dog), :class => "btn" %>
+<% end %>
+<%= link_to t('links.teams.back'), dogs_path, :class => "btn" %>

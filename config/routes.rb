@@ -1,4 +1,7 @@
 TeamRegistration::Application.routes.draw do
+  resources :staff_members
+
+
   get "dogs/index"
 
   get "dogs/new"
