@@ -21,7 +21,7 @@ cs:
         small: "Small"
         medium: "Medium"
         large: "Large"
-        breed: "Plemeno"
+        dog_breed: "Plemeno"
         dog_date_of_birth: "Datum narození"
         dog_license: "Licence"
         dog_microchip: "Mikročip"
@@ -40,6 +40,7 @@ cs:
         this_name_will_be_listed_in_catalogue: "Toto jméno bude použito v katalogu"
         male: "Pes"
         female: "Fena"
+        dog_name: "Jméno psa"
      controller:
         successfully_created: "Tým byl úspěšně přidán."
         successfully_updated: "Tým byl úspěšně upraven."
@@ -64,7 +65,8 @@ cs:
     form:
       full_name: "Celé jméno"
       role_type: "Role"
-
+      number_size: "Velikost čísla"
+      number_name: "Jméno na číslo"
   confirmation:
      index:
        warning_message: "Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!"
@@ -120,18 +122,32 @@ cs:
       owner: Majitel
       staff_member: "Trenér/Asistent"
     attributes:
-      handler:
+      team:
         first_name: "Jméno"
         last_name: "Příjmení"
         picture: "Obrázek"
         picture_file_name: "Cesta k obrázku"
         insurance: "Pojištění"
         dogs: "Psi"
-      handler/dogs:
         reserve: "Náhradník"
+        dog_breed_id: "Plemeno"
+        dog_date_of_birth: "Datum narození"
+        dog_record_book_or_license: "Výkonnostní průkaz/Licence"
+        dog_microchip: "Mikročip"
+        dog_microchip_position: "Pozice mikročipu"
+        dog_nickname: "Přezdívka"
+        dog_owner_address: "Adresa majitele"
+        dog_owner_first_name: "Jméno majitele"
+        dog_owner_last_name: "Příjmení majitele"
+        dog_owner_phone_number: "Telefon majitele"
+        dog_registered_name: "Jméno"
+        dog_studbook_and_number: "Plemenná kniha"
+        dog_tatoo: "Tetování"
+        category: "Velikostní kategorie"
+        dog_sex: "Pohlaví"
+      dog:
         breed_id: "Plemeno"
         date_of_birth: "Datum narození"
-        record_book_or_license: "Výkonnostní průkaz/Licence"
         microchip: "Mikročip"
         microchip_position: "Pozice mikročipu"
         nickname: "Přezdívka"
@@ -139,35 +155,33 @@ cs:
         owner_first_name: "Jméno majitele"
         owner_last_name: "Příjmení majitele"
         owner_phone_number: "Telefon majitele"
-        registered_name: "Jméno"
-        studbook_and_number: "Plemenná kniha"
         tatoo: "Tetování"
         category: "Velikostní kategorie"
         sex: "Pohlaví"
+        name: "Jméno"
   helpers:
     label:
-      handler:
+      team:
         first_name: "Jméno"
         last_name: "Příjmení"
         picture: "Obrázek"
         picture_file_name: "Cesta k obrázku"
         insurance: "Pojištění"
-      dog:
-        sex: "Pohlaví"
+        dog_sex: "Pohlaví"
         reserve: "Náhradník"
-        breed_id: "Plemeno"
-        date_of_birth: "Datum narození"
-        microchip: "Mikročip"
-        microchip_position: "Pozice mikročipu"
-        nickname: "Přezdívka"
-        owner_address: "Adresa majitele"
-        owner_first_name: "Jméno majitele"
-        owner_last_name: "Příjmení majitele"
-        owner_phone_number: "Telefon majitele"
-        record_book_or_license: "Výkonnostní průkaz/Licence"
-        registered_name: "Jméno"
-        studbook_and_number: "Plemenná kniha"
-        tatoo: "Tetování"
+        dog_breed_id: "Plemeno"
+        dog_date_of_birth: "Datum narození"
+        dog_microchip: "Mikročip"
+        dog_microchip_position: "Pozice mikročipu"
+        dog_nickname: "Přezdívka"
+        dog_owner_address: "Adresa majitele"
+        dog_owner_first_name: "Jméno majitele"
+        dog_owner_last_name: "Příjmení majitele"
+        dog_owner_phone_number: "Telefon majitele"
+        dog_record_book_or_license: "Výkonnostní průkaz/Licence"
+        dog_registered_name: "Jméno"
+        dog_studbook_and_number: "Plemenná kniha"
+        dog_tatoo: "Tetování"
         category: "Velikostní kategorie"
   index:
     all_handlers:

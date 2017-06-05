@@ -1,4 +1,4 @@
-<h1><%= t 'dogs.index.title' %> </h1>
+<h1><%= t 'links.application.non_competing_dogs' %> </h1>
 <br />
 
 <% if current_user.admin? || current_user.superadmin? %>
@@ -27,7 +27,7 @@
 <% else %>
     <table class="table">
         <tr>
-            <th><%= t 'dogs.form.name' %></th>
+            <th><%= t 'teams.form.dog_name' %></th>
             <th><%= t 'teams.form.actions' %></th>
         </tr>
 
@@ -43,5 +43,5 @@
 <br />
 
 <% if not current_user.admin? %>
-    <%= link_to t('links.dogs.new'), new_dog_path, :class => "btn" %>
+    <%= link_to t('teams.form.add_dog'), new_dog_path, :class => "btn" %>
 <% end %>

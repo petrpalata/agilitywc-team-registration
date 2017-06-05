@@ -25,14 +25,14 @@
         <% end %>
 
         <div class="control-group">
-            <%= f.label :first_name, :class => 'control-label' %>
+            <%= f.label :first_name, t('teams.form.first_name'), :class => 'control-label' %>
             <div class="controls">
                 <%= f.text_field :first_name %>
             </div>
         </div>
 
         <div class="control-group">
-            <%= f.label :last_name, :class => 'control-label' %>
+            <%= f.label :last_name, t('teams.form.last_name'), :class => 'control-label' %>
             <div class="controls">
                 <%= f.text_field :last_name %>
             </div>
@@ -47,20 +47,34 @@
         </div>
 
         <div class="control-group">
-            <%= f.label :picture, :class => 'control-label' %>
+            <%= f.label :picture, t('teams.form.picture'), :class => 'control-label' %>
             <div class="controls">
                 <%= f.file_field :picture %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label :number_size, t('staff_members.form.number_size'), :class => 'control-label' %>
+            <div class="controls">
+                <%= f.select :number_size, ["S", "M", "L", "XL", "XXL"] %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label :number_name, t('staff_members.form.number_name'), :class => 'control-label' %>
+            <div class="controls">
+                <%= f.text_field :number_name %>
             </div>
         </div>
     </fieldset>
 
     <legend>
-        <h2><%= t('activerecord.models.dogs') %></h2>
+        <h2><%= t('activerecord.models.dog') %></h2>
     </legend>
 
         <fieldset>
             <div class="control-group">
-                <%= f.label :dog_nickname,  :class => 'control-label' %>
+                <%= f.label :dog_nickname, :class => 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :dog_nickname %>
                 </div>

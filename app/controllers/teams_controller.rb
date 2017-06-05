@@ -51,7 +51,7 @@ class TeamsController < ApplicationController
         if not current_user.superadmin?
             @team.country_id = current_user.country_id
         else 
-            @team.country_id = Country[params[:handler][:country_id]].number
+            @team.country_id = Country[params[:team][:country_id]].number
         end
         authorize! :create, @team
         if @team.save
@@ -69,7 +69,7 @@ class TeamsController < ApplicationController
             return
         end
         country_id = @team.country_id
-        if @team.update_attributes(params[:handler])
+        if @team.update_attributes(params[:team])
             @team.country_id = country_id
             @team.save
             redirect_to teams_path, :notice => t('teams.controller.successfully_updated')

@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
   # handler
-  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture
-  validates_presence_of :first_name, :last_name, :country_id, :picture, :insurance
+  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :number_name
+  validates_presence_of :first_name, :last_name, :country_id, :picture, :insurance, :number_size, :number_name
 
   # dog
   attr_accessible :dog_breed_id, 
@@ -35,6 +35,7 @@ class Team < ActiveRecord::Base
 
   validates_format_of :dog_sex, :with => /M|F/
   validates_format_of :category, :with => /S|M|L/
+  validates_format_of :number_size, :with => /S|M|L|XL|XXL/
 
 
   # picture

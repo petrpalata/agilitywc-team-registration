@@ -104,18 +104,33 @@ es:
       dogs: Perruno
       owner: Propietario
     attributes:
-      handler:
+      team:
         first_name: "Nombre"
         last_name: "Apellido"
         picture: "Cuadro"
         picture_file_name: "Cuadro"
         insurance: "Seguro"
         dogs: "Perruno"
-      handler/dogs:
         reserve: "Reserva"
+        dog_breed_id: "Raza"
+        dog_date_of_birth: "Fecha de nacimiento"
+        dog_record_book_or_license: "Cartilla de punctvacion/Licencia"
+        dog_microchip: "Microchip"
+        dog_microchip_position: "Posición del microchip"
+        dog_nickname: "Apodo"
+        dog_owner_first_name: "Nombre"
+        dog_owner_last_name: "Apellido"
+        dog_owner_phone_number: "Número de teléfono"
+        dog_owner_address: "Dirección"
+        dog_registered_name: "Name"
+        dog_studbook_and_number: "Registro"
+        dog_tatoo: "Tatuaje"
+        category: "Categoría"
+        dog_sex: "Sexo"
+      dog:
+        sex: "Sexo"
         breed_id: "Raza"
         date_of_birth: "Fecha de nacimiento"
-        record_book_or_license: "Cartilla de punctvacion/Licencia"
         microchip: "Microchip"
         microchip_position: "Posición del microchip"
         nickname: "Apodo"
@@ -123,22 +138,37 @@ es:
         owner_last_name: "Apellido"
         owner_phone_number: "Número de teléfono"
         owner_address: "Dirección"
+        record_book_or_license: "Cartilla de punctvacion/Licencia"
         registered_name: "Name"
         studbook_and_number: "Registro"
         tatoo: "Tatuaje"
         category: "Categoría"
-        sex: "Sexo"
   helpers:
     label:
-      handler:
+      team:
         first_name: "Nombre"
         last_name: "Apellido"
         picture: "Cuadro"
         picture_file_name: "Cuadro"
         insurance: "Seguro"
-      dog: 
-        sex: "Sexo"
+        dog_sex: "Sexo"
         reserve: "Reserva"
+        dog_breed_id: "Raza"
+        dog_date_of_birth: "Fecha de nacimiento"
+        dog_microchip: "Microchip"
+        dog_microchip_position: "Posición del microchip"
+        dog_nickname: "Apodo"
+        dog_owner_first_name: "Nombre"
+        dog_owner_last_name: "Apellido"
+        dog_owner_phone_number: "Número de teléfono"
+        dog_owner_address: "Dirección"
+        dog_record_book_or_license: "Cartilla de punctvacion/Licencia"
+        dog_registered_name: "Name"
+        dog_studbook_and_number: "Registro"
+        dog_tatoo: "Tatuaje"
+        category: "Categoría"
+      dog:
+        sex: "Sexo"
         breed_id: "Raza"
         date_of_birth: "Fecha de nacimiento"
         microchip: "Microchip"

@@ -1,10 +1,16 @@
 class StaffMember < ActiveRecord::Base
     attr_accessible :full_name,
         :role_type,
-        :picture
+        :picture,
+        :number_size,
+        :number_name,
+        :phone_number,
+        :email
 
     validates_presence_of :full_name,
-        :role_type
+        :role_type,
+        :phone_number
+
         
     validates_inclusion_of :role_type, :in => 1..5
 
