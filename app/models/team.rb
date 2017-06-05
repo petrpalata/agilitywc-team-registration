@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
   # handler
-  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :number_name
-  validates_presence_of :first_name, :last_name, :country_id, :picture, :insurance, :number_size, :number_name
+  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :number_name, :individual, :individual_reserve, :squads, :squads_reserve, :handler_date_of_birth
+  validates_presence_of :first_name, :last_name, :country_id, :picture, :insurance, :number_size, :number_name, :handler_date_of_birth
 
   # dog
   attr_accessible :dog_breed_id, 
@@ -37,9 +37,17 @@ class Team < ActiveRecord::Base
   validates_format_of :category, :with => /S|M|L/
   validates_format_of :number_size, :with => /S|M|L|XL|XXL/
 
+  validate :must_have_at_least_one_checked
+
 
   # picture
   has_attached_file :picture, :styles => { :thumbnail => '50x80', :big_thumb => '120x120' }
   validates_attachment_presence :picture
   validates_attachment_size :picture, :maximum => 5.megabytes
+
+  def must_have_at_least_one_checked
+      unless individual || individual_reserve || squads || squads_reserve
+          errors.add(:base, I18n.t('teams.form.at_least_one_checked'))
+      end
+  end
 end

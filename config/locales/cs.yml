@@ -3,6 +3,7 @@ cs:
      title: "Registrace týmů"
   teams:
      form:
+        at_least_one_checked: "Zaškrkněte alespoň jedno z: Jednotlivec, Náhradník jednotlivců, Družstva, Náhradník družstva"
         actions: "Akce"
         correct_errors: "Opravte následující chyby."
         email: "E-mail"
@@ -62,11 +63,19 @@ cs:
       second_assistant: "Druhý asistent"
       physiotherapist: "Fyzioterapeut"
       other: "Ostatní"
-    form:
-      full_name: "Celé jméno"
-      role_type: "Role"
-      number_size: "Velikost čísla"
-      number_name: "Jméno na číslo"
+    controller:
+       successfully_created: "Trenér/asistent byl úspěšně přidán."
+       successfully_updated: "Trenér/asistent byl úspěšně upraven."
+       successfully_deleted: "Trenér/asistent byl úspěšně smazán."
+       dont_have_permission: "Pro zobrazení nemáte dostatečná oprávnění."
+       no_changed_allowed: "Již jste potvdili přihlášky, další změny nejsou možné."
+  dogs:
+    controller:
+       successfully_created: "Nezávodící pes byl úspěšně přidán."
+       successfully_updated: "Nezávodící pes byl úspěšně upraven."
+       successfully_deleted: "Nezávodící pes byl úspěšně smazán."
+       dont_have_permission: "Pro zobrazení nemáte dostatečná oprávnění."
+       no_changed_allowed: "Již jste potvdili přihlášky, další změny nejsou možné."
   confirmation:
      index:
        warning_message: "Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!"
@@ -114,6 +123,8 @@ cs:
        staff_members: "Trenéři a asistenti"
        confirmation: "Potvrzení"
        payment_information: "Informace o platbě"
+     staff_members:
+       new: "Přidat trenéra/asistenta"
   activerecord:
     models:
       dog: Pes
@@ -145,6 +156,13 @@ cs:
         dog_tatoo: "Tetování"
         category: "Velikostní kategorie"
         dog_sex: "Pohlaví"
+        individual: "Jednotlivec"
+        individual_reserve: "Náhradník jednotlivců"
+        squads: "Družstva"
+        squads_reserve: "Náhradník družstev"
+        number_size: "Velikost čísla"
+        number_name: "Jméno na číslo"
+        handler_date_of_birth: "Datum narození"
       dog:
         breed_id: "Plemeno"
         date_of_birth: "Datum narození"
@@ -159,6 +177,15 @@ cs:
         category: "Velikostní kategorie"
         sex: "Pohlaví"
         name: "Jméno"
+      staff_member:
+        full_name: "Celé jméno"
+        role_type: "Role"
+        number_size: "Velikost čísla"
+        number_name: "Jméno na číslo"
+        email: "E-mail"
+        phone_number: "Telefonní číslo"
+        picture: "Fotografie"
+        picture_file_name: "Cesta k fotografii"
   helpers:
     label:
       team:
@@ -183,6 +210,22 @@ cs:
         dog_studbook_and_number: "Plemenná kniha"
         dog_tatoo: "Tetování"
         category: "Velikostní kategorie"
+        individual: "Jednotlivec"
+        individual_reserve: "Náhradník jednotlivců"
+        squads: "Družstva"
+        squads_reserve: "Náhradník družstev"
+        number_size: "Velikost čísla"
+        number_name: "Jméno na číslo"
+        handler_date_of_birth: "Datum narození"
+      staff_member:
+        full_name: "Celé jméno"
+        role_type: "Role"
+        number_size: "Velikost čísla"
+        number_name: "Jméno na číslo"
+        email: "E-mail"
+        phone_number: "Telefonní číslo"
+        picture: "Fotografie"
+        picture_file_name: "Cesta k fotografii"
   index:
     all_handlers:
       Argentina: "Argentina"

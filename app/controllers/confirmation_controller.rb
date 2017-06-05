@@ -40,7 +40,7 @@ class ConfirmationController < ApplicationController
     def payment_information
         @payment = Payment.find_by_country_id(current_user.country_id)
         if @payment.nil? 
-            redirect_to handlers_path
+            redirect_to teams_path
         end
     end
 

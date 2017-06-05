@@ -23,7 +23,7 @@
         <% end %>
 
         <div class="control-group">
-            <%= f.label :full_name, t('staff_members.form.full_name'), :class => 'control-label' %>
+            <%= f.label :full_name, :class => 'control-label' %>
             <div class="controls">
                 <%= f.text_field :full_name %>
             </div>
@@ -37,35 +37,35 @@
         </div>
 
         <div class="control-group">
-            <%= f.label :role_type, t('staff_members.form.role_type'), :class => 'control-label' %>
+            <%= f.label :role_type,  :class => 'control-label' %>
             <div class="controls">
                 <%= role_select(f) %>
             </div>
         </div>
 
         <div class="control-group">
-            <%= f.label :email, t('teams.form.email'), :class => 'control-label' %>
+            <%= f.label :email, :class => 'control-label' %>
             <div class="controls">
                 <%= f.email_field :email %>
             </div>
         </div>
 
         <div class="control-group">
-            <%= f.label :phone_number, t('staff_members.form.phone_number'), :class => 'control-label' %>
+            <%= f.label :phone_number, :class => 'control-label' %>
             <div class="controls">
                 <%= f.text_field :phone_number %>
             </div>
         </div>
 
         <div class="control-group">
-            <%= f.label :number_size, t('staff_members.form.number_size'), :class => 'control-label' %>
+            <%= f.label :number_size, :class => 'control-label' %>
             <div class="controls">
                 <%= f.select :number_size, ["S", "M", "L", "XL", "XXL"] %>
             </div>
         </div>
 
         <div class="control-group">
-            <%= f.label :number_name, t('staff_members.form.number_name'), :class => 'control-label' %>
+            <%= f.label :number_name, :class => 'control-label' %>
             <div class="controls">
                 <%= f.text_field :number_name %>
             </div>
@@ -75,6 +75,6 @@
 
     <div class="form-actions">
         <%= f.submit t('teams.form.submit'), :class => 'btn btn-primary' %>
-        <%= link_to t('links.teams.back'), dogs_path, :class => 'btn' %>
+        <%= link_to t('links.teams.back'), staff_members_path, :class => 'btn' %>
     </div>
 <% end %>
