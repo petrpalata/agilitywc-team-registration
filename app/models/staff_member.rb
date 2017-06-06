@@ -11,6 +11,9 @@ class StaffMember < ActiveRecord::Base
         :role_type,
         :phone_number
 
+    validates_presence_of :number_name, if: "role_type == 1"
+    validates_presence_of :number_size, if: "role_type == 1"
+
         
     validates_inclusion_of :role_type, :in => 1..5
 

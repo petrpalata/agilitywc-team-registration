@@ -3,12 +3,11 @@ class ConfirmationController < ApplicationController
     before_filter :check_admin_or_superadmin
 
     def index
-        @handlers = Team.where(:country_id => current_user.country_id).all
     end
     
     def confirm_all
         if not current_user.confirm_all 
-            users = User.where(:country_id => current_user.country_id).all
+            users = User.where(:country_id => current_user.country_id)
             users.each do |user|
                 user.confirm_all = true
                 user.save
@@ -46,27 +45,14 @@ class ConfirmationController < ApplicationController
 
     private
     def generate_payment_information_for_country(country_id)
-        total_teams = 0
-        reserves = {
-            'S' => 0,
-            'M' => 0, 
-            'L' => 0
-        }
-        handlers = Team.where(:country_id => current_user.country_id).all
-        handlers.each do |handler|
-            handler.dogs.collect.each do |dog|
-                if dog.reserve 
-                    reserves[dog.category] += 1
-                end
-                total_teams += 1
-            end
-        end
-        total_reserves = 0
-        total_reserves += 1 if reserves['S'] > 0 
-        total_reserves += 1 if reserves['M'] > 0 
-        total_reserves += 1 if reserves['L'] > 0 
+        total_teams = Team.where(:country_id => current_user.country_id, :reserve => false).count
 
-        total_price = (total_teams * 85) - (total_reserves * 85)
+        staff_members_to_pay = StaffMember.where(:country_id => current_user.country_id).count - 2
+        if staff_members_to_pay < 0
+            staff_members_to_pay = 0
+        end
+        total_price = total_teams * 90 + staff_members_to_pay * 60
+
         @payment = Payment.create!(:country_id => country_id, :price_in_euros => total_price, :total_teams => total_teams)
     end
 
