@@ -85,7 +85,7 @@ class DogsController < ApplicationController
         def check_if_confirmed
             if Payment.find_by_country_id(current_user.country_id)
                 flash[:error] = t('dogs.controller.no_changed_allowed')
-                redirect_to dogs_path and yield
+                redirect_to dogs_path
             end
         end
 end

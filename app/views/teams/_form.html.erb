@@ -82,21 +82,15 @@
             </div>
         </div>
         <div class="control-group">
-            <%= f.label :individual_reserve, :class => 'control-label' %>
-            <div class="controls">
-                <%= f.check_box :individual_reserve %>
-            </div>
-        </div>
-        <div class="control-group">
             <%= f.label :squads, :class => 'control-label' %>
             <div class="controls">
                 <%= f.check_box :squads %>
             </div>
         </div>
         <div class="control-group">
-            <%= f.label :squads_reserve, :class => 'control-label' %>
+            <%= f.label :reserve, :class => 'control-label' %>
             <div class="controls">
-                <%= f.check_box :squads_reserve %>
+                <%= f.check_box :reserve %>
             </div>
         </div>
     </fieldset>
@@ -106,6 +100,13 @@
     </legend>
 
         <fieldset>
+            <div class="control-group">
+                <%= f.label :pedigree, :class => 'control-label' %>
+                <div class="controls">
+                    <%= f.file_field :pedigree %>
+                </div>
+            </div>
+
             <div class="control-group">
                 <%= f.label :dog_nickname, :class => 'control-label' %>
                 <div class="controls">

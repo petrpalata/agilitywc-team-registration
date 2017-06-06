@@ -3,7 +3,7 @@ cs:
      title: "Registrace týmů"
   teams:
      form:
-        at_least_one_checked: "Zaškrkněte alespoň jedno z: Jednotlivec, Náhradník jednotlivců, Družstva, Náhradník družstva"
+        either_competing_or_reserve: "Tým buď běží alespoň jednu ze soutěží (jednotlivci, družstva) nebo je náhradník"
         actions: "Akce"
         correct_errors: "Opravte následující chyby."
         email: "E-mail"

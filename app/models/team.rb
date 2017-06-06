@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
   # handler
-  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :number_name, :individual, :individual_reserve, :squads, :squads_reserve, :handler_date_of_birth
-  validates_presence_of :first_name, :last_name, :country_id, :picture, :insurance, :number_size, :number_name, :handler_date_of_birth
+  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :number_name, :individual, :squads, :reserve, :handler_date_of_birth, :pedigree
+  validates_presence_of :first_name, :last_name, :country_id, :insurance, :number_size, :number_name, :handler_date_of_birth
 
   # dog
   attr_accessible :dog_breed_id, 
@@ -37,17 +37,41 @@ class Team < ActiveRecord::Base
   validates_format_of :category, :with => /S|M|L/
   validates_format_of :number_size, :with => /S|M|L|XL|XXL/
 
-  validate :must_have_at_least_one_checked
+  validate :either_competing_or_reserve
 
 
   # picture
-  has_attached_file :picture, :styles => { :thumbnail => '50x80', :big_thumb => '120x120' }
-  validates_attachment_presence :picture
-  validates_attachment_size :picture, :maximum => 5.megabytes
+  has_attached_file :picture, :styles => { :thumbnail => '50x80', :big_thumb => '120x120' } 
 
-  def must_have_at_least_one_checked
-      unless individual || individual_reserve || squads || squads_reserve
-          errors.add(:base, I18n.t('teams.form.at_least_one_checked'))
+  validates_attachment_presence :picture
+  validates_attachment_size :picture, :less_than => 5.megabytes
+
+  has_attached_file :pedigree, :storage => :s3,
+      :s3_credentials => "#{Rails.root}/config/aws.yml",
+      :s3_permissions => :private,
+      :path => "pedigree/:id/:id_:dog_registered_name_:last_name.:extension",
+      :s3_host_name => "s3-eu-west-2.amazonaws.com",
+      :bucket => "teamleaders.agility2017.cz"
+
+  validates_attachment_presence :pedigree
+  validates_attachment_size :pedigree, :less_than => 20.megabytes
+  validates_attachment_content_type :pedigree, content_type: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf']
+
+  Paperclip.interpolates :dog_registered_name do |attachment, style|
+      attachment.instance.dog_registered_name.parameterize
+  end
+
+  Paperclip.interpolates :last_name do |attachment, style|
+      attachment.instance.last_name.parameterize
+  end
+
+
+  def either_competing_or_reserve
+      if ((individual || squads) && reserve) || !(individual || squads || reserve)
+          errors.add(:individual)
+          errors.add(:squads)
+          errors.add(:reserve)
+          errors.add(:base, I18n.t('teams.form.either_competing_or_reserve'))
       end
   end
 end

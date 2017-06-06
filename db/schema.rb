@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170605001209) do
+ActiveRecord::Schema.define(:version => 20170606213301) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -149,9 +149,11 @@ ActiveRecord::Schema.define(:version => 20170605001209) do
     t.string   "number_name"
     t.date     "handler_date_of_birth"
     t.boolean  "individual"
-    t.boolean  "individual_reserve"
     t.boolean  "squads"
-    t.boolean  "squads_reserve"
+    t.string   "pedigree_file_name"
+    t.string   "pedigree_content_type"
+    t.integer  "pedigree_file_size"
+    t.datetime "pedigree_updated_at"
   end
 
   create_table "users", :force => true do |t|
