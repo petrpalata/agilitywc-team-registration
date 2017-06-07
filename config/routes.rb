@@ -1,5 +1,5 @@
 TeamRegistration::Application.routes.draw do
-  resources :staff_members
+  resources :staff_members, :except => [:show]
 
 
   get "dogs/index"
@@ -38,6 +38,7 @@ TeamRegistration::Application.routes.draw do
 
     match "/payments/:id/confirm" => "index#confirm_payment", :as => 'payment_confirmation'
     delete "/payments/:id" => "index#delete_payment", :as => 'delete_payment'
+    match "/number_information" => "index#number_information"
 
     match "/export/generate_random_startnumbers" => "export#generate_random_startnumbers"
     match "/export/katalog" => "export#catalogue"

@@ -274,3 +274,11 @@ cs:
       Sweden: "Švědsko"
       Switzerland: "Švýcarsko"
       United States: "USA"
+    number_information:
+      title: "Startovní čísla - velikostní tabulky"
+      vest_size: "Velikost startovní vesty"
+      width_not_circumference: "Uvedené míry uvádějí šírku čísla, NIKOLI OBVOD."
+      number_width: "Šířka čísla (cm)"
+      number_height: "Délka čísla (cm)"
+      detailed_info: "Pro zjištění potřebné velikosti položte dres či tričko, které vám velikostně vyhovuje na podložku a v napnutém stavu změřte uvedené rozměry. Zjištěné hodnoty porovnejte s údaji v tabulce. V případě, že jste na rozhraní velikostí, doporučujeme zvolit větší rozměr dresu."
+

@@ -53,4 +53,7 @@ class IndexController < ApplicationController
           redirect_to root_url, :notice => "You are not authorized for this operation."
       end
   end
+
+  def numbers_information
+  end
 end

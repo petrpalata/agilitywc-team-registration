@@ -15,7 +15,7 @@
             </tr>
 
             <% staff_members.each do |staff_member| %>
-                <tr onclick="location.href='<%= staff_members_path(staff_member) %>'">
+                <tr>
                     <td><%= staff_member.full_name %></td>
                     <td><%= possible_roles[staff_member.role_type] %></th>
                     <td><%= Country.find_country_by_number("0" * (3 - staff_member.country_id.to_s.length)  + staff_member.country_id.to_s).name  %></td>
@@ -38,7 +38,7 @@
             <tr>
                 <td><%= staff_member.full_name %></td>
                 <td><%= possible_roles[staff_member.role_type] %></th>
-                <td><%= link_to t('links.teams.show'), staff_member, :class => "btn" %> <%= link_to t('links.teams.edit'), edit_staff_member_path(staff_member), :class => "btn" %>
+                <td><%= link_to t('links.teams.edit'), edit_staff_member_path(staff_member), :class => "btn" %>
                     <%= link_to t('links.teams.destroy'), staff_member, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %></td>
             </tr>
         <% end %>
