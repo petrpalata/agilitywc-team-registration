@@ -35,9 +35,10 @@ class Team < ActiveRecord::Base
 
   validates_format_of :dog_sex, :with => /M|F/
   validates_format_of :category, :with => /S|M|L/
-  validates_format_of :number_size, :with => /S|M|L|XL|XXL/
+  validates_format_of :number_size, :with => /XXS|XS|S|M|L|XL/
 
   validate :either_competing_or_reserve
+  validate :check_maximum_count
 
 
   # picture
@@ -72,6 +73,12 @@ class Team < ActiveRecord::Base
           errors.add(:squads)
           errors.add(:reserve)
           errors.add(:base, I18n.t('teams.form.either_competing_or_reserve'))
+      end
+  end
+
+  def check_maximum_count
+      if Team.where(:country_id => country_id, :category => category, :reserve => true).count > 0 && reserve
+          errors.add(:base, I18n.t('teams.form.maximum_reserve_count'))
       end
   end
 end

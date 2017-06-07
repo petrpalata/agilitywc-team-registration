@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170606213301) do
+ActiveRecord::Schema.define(:version => 20170607005704) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -63,11 +63,12 @@ ActiveRecord::Schema.define(:version => 20170606213301) do
   create_table "payments", :force => true do |t|
     t.integer  "country_id"
     t.integer  "unique"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.integer  "total_teams"
     t.integer  "price_in_euros"
-    t.boolean  "confirmed",      :default => false
+    t.boolean  "confirmed",                :default => false
+    t.integer  "total_assistants_coaches"
   end
 
   create_table "staff_members", :force => true do |t|

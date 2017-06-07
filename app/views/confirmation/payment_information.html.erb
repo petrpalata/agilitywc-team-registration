@@ -4,13 +4,14 @@
     <p class="alert alert-success">Your payment with id <%= @payment.id + 22220000 %> has been successfully accepted, Thank you.</p>
 <% else %>
 <p>
-<%= t 'confirmation.payment_information.account_number' %> 6875362001/5500<br />
-<%= t 'confirmation.payment_information.held_by_raiffeisen_bank' %>, Vršovická 1527/68b, 100 00 Praha 10<br />
-IBAN CZ3055000000006875362001<br />
+<%= t 'confirmation.payment_information.account_number' %> 9269667001/5500<br />
+<%= t 'confirmation.payment_information.held_by_raiffeisen_bank' %>, Hvězdova 1716/2B, 140 78 Praha 4<br />
+IBAN CZ3755000000009269667001<br />
 SWIFT RZBCCZPP<br />
 <%= t 'confirmation.payment_information.payment_id' %>: <%= @payment.id + 22220000 %><br />
 
 <%= t 'confirmation.payment_information.total_teams' %>: <%= @payment.total_teams %><br />
+<%= t 'confirmation.payment_information.total_assistants_coaches' %>: <%= @payment.total_assistants_coaches %><br />
 <%= t 'confirmation.payment_information.total_amount_euro' %>: <%= @payment.price_in_euros %>.00
 </p>
 <% end %>

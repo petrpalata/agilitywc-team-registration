@@ -46,14 +46,15 @@ class ConfirmationController < ApplicationController
     private
     def generate_payment_information_for_country(country_id)
         total_teams = Team.where(:country_id => current_user.country_id, :reserve => false).count
+        total_assistants_coaches = StaffMember.where(:country_id => current_user.country_id).count
 
-        staff_members_to_pay = StaffMember.where(:country_id => current_user.country_id).count - 2
+        staff_members_to_pay = total_assistants_coaches - 2
         if staff_members_to_pay < 0
             staff_members_to_pay = 0
         end
         total_price = total_teams * 90 + staff_members_to_pay * 60
 
-        @payment = Payment.create!(:country_id => country_id, :price_in_euros => total_price, :total_teams => total_teams)
+        @payment = Payment.create!(:country_id => country_id, :price_in_euros => total_price, :total_teams => total_teams, :total_assistants_coaches => total_assistants_coaches)
     end
 
     def send_confirmation_mail

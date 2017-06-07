@@ -89,6 +89,7 @@ cs:
         payment_id: "Variabilní symbol"
         total_teams: "Celkově týmů"
         total_amount_euro: "Celková cena (v eurech)"
+        total_assistants_coaches: "Celkem trenérů/asistentů"
      title:
      controller:
         successfully_confirmed_all_entries: "Všechny přihlášky byly úspěšně potvrzeny."
@@ -217,6 +218,8 @@ cs:
         number_size: "Velikost čísla"
         number_name: "Jméno na číslo"
         handler_date_of_birth: "Datum narození"
+        pedigree: "Rodokmen"
+        pedigree_file_name: "Cesta k rodokmenu"
       staff_member:
         full_name: "Celé jméno"
         role_type: "Role"
@@ -226,6 +229,8 @@ cs:
         phone_number: "Telefonní číslo"
         picture: "Fotografie"
         picture_file_name: "Cesta k fotografii"
+        pedigree: "Rodokmen"
+        pedigree_file_name: "Cesta k rodokmenu"
   index:
     all_handlers:
       Argentina: "Argentina"
