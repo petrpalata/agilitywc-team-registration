@@ -4,6 +4,8 @@ cs:
   teams:
      form:
         either_competing_or_reserve: "Tým buď běží alespoň jednu ze soutěží (jednotlivci, družstva) nebo je náhradník"
+        maximum_reserve_count: "V každé kategorii může být maximálně jeden náhradník"
+        maximum_staff_count: "Maximální počet teamleaderů/asistentů je 5"
         actions: "Akce"
         correct_errors: "Opravte následující chyby."
         email: "E-mail"

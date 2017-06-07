@@ -26,7 +26,7 @@ class StaffMember < ActiveRecord::Base
 
     def check_maximum_count
         if StaffMember.where(:country_id => country_id).count > 4
-            errors.add(:base, I18n.t('teams.form.maximum_reserve_count'))
+            errors.add(:base, I18n.t('teams.form.maximum_staff_count'))
         end
     end
 end
