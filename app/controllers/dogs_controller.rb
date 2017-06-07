@@ -10,7 +10,7 @@ class DogsController < ApplicationController
           @dogs.each do |t|
               country_name = Country.find_country_by_number("0" * (3 - t.country_id.to_s.length) + t.country_id.to_s).name
               @countries[country_name] ||= []
-              @countries[country_name] << h
+              @countries[country_name] << t
           end
       elsif 
           @dogs = Dog.all(:conditions => { :country_id => current_user.country_id })

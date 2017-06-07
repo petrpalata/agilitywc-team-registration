@@ -15,8 +15,8 @@
             <tr>
                 <th>Jméno</th>
                 <th>Příjmení</th>
-                <th>Počet psů</th>
-                <th>Země</th>
+                <th>Pes</th>
+                <th>Kategorie</th>
                 <% if current_user.superadmin? %>
                     <th>Akce</th>
                 <% end %>
@@ -26,8 +26,8 @@
                 <tr onclick="location.href='<%= team_path(team) %>'">
                     <td><%= team.first_name %></td>
                     <td><%= team.last_name %></td>
-                    <td><%= team.dog_nickname %></td>
-                    <td><%= Country.find_country_by_number("0" * (3 - team.country_id.to_s.length)  + team.country_id.to_s).name  %></td>
+                    <td><%= team.dog_registered_name %> <%= "(#{team.dog_nickname})" unless team.dog_nickname.nil? %></td>
+                    <td><%= team.category %></td>
                     <% if current_user.superadmin? %>
                         <td><%= link_to "Smazat", team, :method => :delete,  :class => "btn", :confirm => "Opravdu?" %> <%= link_to t('links.teams.edit'), edit_team_path(team), :class => "btn" %>
                     <% end %>
@@ -40,7 +40,8 @@
         <tr>
             <th><%= t 'activerecord.attributes.team.first_name' %></th>
             <th><%= t 'activerecord.attributes.team.last_name' %></th>
-            <th><%= t 'activerecord.attributes.team.dog_nickname' %></th>
+            <th><%= t 'activerecord.models.dog' %></th>
+            <th><%= t 'activerecord.attributes.team.category' %></th>
             <th><%= t 'teams.form.actions' %></th>
         </tr>
 
@@ -49,7 +50,8 @@
             <tr>
                 <td><%= team.first_name %></td>
                 <td><%= team.last_name %></td>
-                <td><%= team.dog_nickname %></td>
+                <td><%= team.dog_registered_name %> <%= "(#{team.dog_nickname})" unless team.dog_nickname.nil? %></td>
+                <td><%= team.category %></td>
                 <td><%= link_to t('links.teams.show'), team, :class => "btn" %> <%= link_to t('links.teams.edit'), edit_team_path(team), :class => "btn" %>
                     <%= link_to t('links.teams.destroy'), team, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %></td>
             </tr>

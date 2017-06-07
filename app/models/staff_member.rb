@@ -5,7 +5,8 @@ class StaffMember < ActiveRecord::Base
         :number_size,
         :number_name,
         :phone_number,
-        :email
+        :email,
+        :country_id
 
     validates_presence_of :full_name,
         :role_type,
