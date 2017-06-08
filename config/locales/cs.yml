@@ -45,7 +45,6 @@ cs:
         first_name: Jméno
         handler_date_of_birth: Datum narození
         individual: Jednotlivec
-        individual_reserve: Náhradník jednotlivců
         insurance: Pojištění
         last_name: Příjmení
         number_name: Jméno na číslo
@@ -54,7 +53,6 @@ cs:
         picture_file_name: Cesta k obrázku
         reserve: Náhradník
         squads: Družstva
-        squads_reserve: Náhradník družstev
     models:
       dog: Pes
       dogs: Psi
@@ -251,10 +249,7 @@ cs:
     form:
       actions: Akce
       add_dog: Přidat psa
-      category: Kategorie
       correct_errors: Opravte následující chyby.
-      dog_name: Jméno psa
-      dog_nickname: Přezdívka psa
       either_competing_or_reserve: Tým buď běží alespoň jednu ze soutěží (jednotlivci,
         družstva) nebo je náhradník
       email: E-mail
