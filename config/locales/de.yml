@@ -8,6 +8,7 @@ de:
         date_of_birth: Wurftag
         microchip: Mikrochip
         microchip_position: Mikrochip position
+        nickname: Rufname
         owner_address: Adresse
         owner_first_name: Vorname
         owner_last_name: Name
@@ -53,6 +54,13 @@ de:
         Registrierungen bestätigt und weitere Änderungen (Zufügung/Editieren/Löschen)
         werden nicht möglich.
     mailer:
+      payment_information:
+        account_number: Kontonummer
+        held_by_raiffeisen_bank: wurde bei Raiffeisen Bank geführt
+        payment_id: Variables Symbol
+        title: Zahlungsinformationen
+        total_amount_euro: Zahlungsbetrag (in Euro)
+        total_teams: Total Teams
       send_confirmation:
         subject: Zahlungsinformationen
     payment_information:
@@ -62,7 +70,6 @@ de:
       title: Zahlungsinformationen
       total_amount_euro: Zahlungsbetrag (in Euro)
       total_teams: Total Teams
-    title: 
     views:
       index:
         link_to_confirmation: Alle Anmeldungen bestätigen und Zahlungsangabe erstellen.
@@ -70,15 +77,14 @@ de:
     label:
       dog:
         breed_id: Rasse
-        category: Kategorie
         date_of_birth: Wurftag
         microchip: Mikrochip
         microchip_position: Mikrochip position
+        nickname: Rufname
         owner_address: Adresse
         owner_first_name: Vorname
         owner_last_name: Name
         owner_phone_number: Telefon
-        reserve: Reserverhund
         sex: Geschlecht
         tatoo: Täto
       team:
@@ -133,9 +139,7 @@ de:
     form:
       actions: Aktion
       add_dog: den Hund zufügen
-      category: Kategorie
       correct_errors: Korrigieren Sie folgende Fehler
-      date_of_birth: Wurftag
       email: E-mail
       female: Hündin
       first_name: Vorname

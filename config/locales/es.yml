@@ -64,7 +64,13 @@ es:
         total_teams: En conjunto equipos
       send_confirmation:
         subject: Información de pago
-    title: 
+    payment_information:
+      account_number: Número de cuenta
+      held_by_raiffeisen_bank: 'Liderados por los bancos Raiffeisen. '
+      payment_id: Símbolo de la variable
+      title: Información de pago
+      total_amount_euro: El precio total (en euros)
+      total_teams: En conjunto equipos
     views:
       index:
         link_to_confirmation: Enviar todas las inscripción y generar datos para el
@@ -73,7 +79,6 @@ es:
     label:
       dog:
         breed_id: Raza
-        category: Categoría
         date_of_birth: Fecha de nacimiento
         microchip: Microchip
         microchip_position: Posición del microchip
@@ -82,10 +87,7 @@ es:
         owner_first_name: Nombre
         owner_last_name: Apellido
         owner_phone_number: Número de teléfono
-        record_book_or_license: Cartilla de punctvacion/Licencia
-        registered_name: Name
         sex: Sexo
-        studbook_and_number: Registro
         tatoo: Tatuaje
       team:
         category: Categoría
@@ -140,9 +142,7 @@ es:
     form:
       actions: Acción
       add_dog: Aňadir un perro
-      category: Categoría
       correct_errors: 'Corregir los errores '
-      date_of_birth: Fecha de nacimiento
       email: Correo electrónico
       female: Perra
       first_name: Nombre

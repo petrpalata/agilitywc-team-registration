@@ -8,7 +8,6 @@ en:
         date_of_birth: Date of birth
         microchip: Microchip
         microchip_position: Microchip position
-        name: Name
         nickname: Nickname
         owner_address: Address
         owner_first_name: Name
@@ -55,6 +54,13 @@ en:
       warning_message: Attention! After you press this button, all entries will be
         confirmed and no further changes (adding/editing/deleting) will be possible!
     mailer:
+      payment_information:
+        account_number: 'Account no.:'
+        held_by_raiffeisen_bank: Held by Raiffeisen bank
+        payment_id: Payment ID (variable symbol)
+        title: Payment information
+        total_amount_euro: Total amount (euro)
+        total_teams: Total teams
       send_confirmation:
         subject: Payment information
     payment_information:
@@ -64,7 +70,6 @@ en:
       title: Payment information
       total_amount_euro: Total amount (euro)
       total_teams: Total teams
-    title: 
     views:
       index:
         link_to_confirmation: Confirm all entries and generate payment (cannot undo)
@@ -75,7 +80,6 @@ en:
         date_of_birth: Date of birth
         microchip: Microchip
         microchip_position: Microchip position
-        name: Name
         nickname: Nickname
         owner_address: Address
         owner_first_name: Name
@@ -96,7 +100,6 @@ en:
         dog_owner_phone_number: Phone
         dog_record_book_or_license: Record book/License
         dog_registered_name: Registered name
-        dog_reserve: Reserve
         dog_sex: Sex
         dog_studbook_and_number: Studbook
         dog_tatoo: Tatoo
@@ -105,6 +108,7 @@ en:
         last_name: Last name
         picture: Picture
         picture_file_name: Picture path
+        reserve: Reserve
   links:
     application:
       confirmation: Confirmation
@@ -136,7 +140,6 @@ en:
     form:
       actions: Actions
       add_dog: Add dog
-      category: Category
       correct_errors: Correct the following errors.
       email: E-mail
       female: Female

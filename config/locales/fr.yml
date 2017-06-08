@@ -55,6 +55,13 @@ fr:
         seront confirmés et d'autres ajustements (ajouter / modifier / supprimer)
         seront possibles!
     mailer:
+      payment_information:
+        account_number: Numéro de compte
+        held_by_raiffeisen_bank: Dirigée par les banques Raiffeisen
+        payment_id: Symbole variable
+        title: Informations de paiement
+        total_amount_euro: Prix total (en euros)
+        total_teams: Équipes au total
       send_confirmation:
         subject: Information sur le paiement
     payment_information:
@@ -64,7 +71,6 @@ fr:
       title: Informations de paiement
       total_amount_euro: Prix total (en euros)
       total_teams: Équipes au total
-    title: 
     views:
       index:
         link_to_confirmation: Soumettre toutes les applications et les données pour
@@ -73,7 +79,6 @@ fr:
     label:
       dog:
         breed_id: Race
-        category: Catégorie
         date_of_birth: Date de naissance
         microchip: Micropuce
         microchip_position: La position de la micropuce
@@ -137,9 +142,7 @@ fr:
     form:
       actions: Action
       add_dog: Ajoutez un chien
-      category: Catégorie
       correct_errors: Corriger les erreurs suivantes.
-      date_of_birth: Date de naissance
       email: Email
       female: Le chienne
       first_name: Prénom

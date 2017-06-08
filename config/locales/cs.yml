@@ -8,7 +8,7 @@ cs:
         date_of_birth: Datum narození
         microchip: Mikročip
         microchip_position: Pozice mikročipu
-        name: Jméno
+        name: Jméno psa
         nickname: Přezdívka
         owner_address: Adresa majitele
         owner_first_name: Jméno majitele
@@ -69,6 +69,14 @@ cs:
       warning_message: Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny
         záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!
     mailer:
+      payment_information:
+        account_number: Číslo účtu
+        held_by_raiffeisen_bank: Vedeno u Raiffeisen bank
+        payment_id: Variabilní symbol
+        title: Informace o platbě
+        total_amount_euro: Celková cena (v eurech)
+        total_assistants_coaches: Celkem trenérů/asistentů
+        total_teams: Celkově týmů
       send_confirmation:
         subject: Informace o platbě
     payment_information:
@@ -79,7 +87,6 @@ cs:
       total_amount_euro: Celková cena (v eurech)
       total_assistants_coaches: Celkem trenérů/asistentů
       total_teams: Celkově týmů
-    title: 
     views:
       index:
         link_to_confirmation: Potvrdit všechny přihlášky a vygenerovat údaje k platbě
@@ -95,11 +102,10 @@ cs:
     label:
       dog:
         breed_id: Plemeno
-        category: Velikostní kategorie
         date_of_birth: Datum narození
         microchip: Mikročip
         microchip_position: Pozice mikročipu
-        name: Jméno
+        name: Jméno psa
         nickname: Přezdívka
         owner_address: Adresa majitele
         owner_first_name: Jméno majitele
@@ -137,7 +143,6 @@ cs:
         first_name: Jméno
         handler_date_of_birth: Datum narození
         individual: Jednotlivec
-        individual_reserve: Náhradník jednotlivců
         insurance: Pojištění
         last_name: Příjmení
         number_name: Jméno na číslo
@@ -148,7 +153,6 @@ cs:
         picture_file_name: Cesta k obrázku
         reserve: Náhradník
         squads: Družstva
-        squads_reserve: Náhradník družstev
   index:
     all_handlers:
       Argentina: Argentina

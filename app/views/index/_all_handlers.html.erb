@@ -1,5 +1,4 @@
 <% if not @country_name.empty? %>
-    <h1><%= t '.'+@country_name %></h1>
 <% end %>
 <% if @handlers.empty? %>
 <% else %>
@@ -9,8 +8,8 @@
         <th><%= t 'teams.form.first_name' %></th>
         <th><%= t 'teams.form.last_name' %></th>
         <th><%= t 'activerecord.models.dog' %></th>
-        <th><%= t 'teams.form.category' %></th>
-        <th><%= t 'teams.form.breed' %></th>
+        <th><%= t 'activerecord.attributes.team.category' %></th>
+        <th><%= t 'activerecord.attributes.dog.breed_id' %></th>
         <% @handlers.each do |handler| %>
             <% handler.dogs.all.each do |dog| %>
                 <tr>
