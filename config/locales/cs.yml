@@ -1,298 +1,292 @@
+---
 cs:
-  application:
-     title: "Registrace týmů"
-  teams:
-     form:
-        either_competing_or_reserve: "Tým buď běží alespoň jednu ze soutěží (jednotlivci, družstva) nebo je náhradník"
-        maximum_reserve_count: "V každé kategorii může být maximálně jeden náhradník"
-        maximum_staff_count: "Maximální počet teamleaderů/asistentů je 5"
-        actions: "Akce"
-        correct_errors: "Opravte následující chyby."
-        email: "E-mail"
-        password: "Heslo"
-        remember_me: "Zapamatovat"
-        sign_in: "Přihlásit"
-        add_dog: "Přidat psa"
-        first_name: "Jméno"
-        last_name: "Příjmení"
-        insurance_company: "Pojišťovna"
-        insurance_contract_number: "Číslo pojišťovací smlouvy"
-        picture: "Obrázek"
-        dog_nickname: "Přezdívka psa"
-        registered_name: "Jméno"
-        category: "Kategorie"
-        small: "Small"
-        medium: "Medium"
-        large: "Large"
-        dog_breed: "Plemeno"
-        dog_date_of_birth: "Datum narození"
-        dog_license: "Licence"
-        dog_microchip: "Mikročip"
-        dog_microchip_position: "Pozice mikročipu"
-        dog_recordbook: "Recordbook"
-        dog_studbook: "Studbook"
-        dog_studbook_number: "Studbook number"
-        dog_tatoo: "Tetování"
-        dog_owner_first_name: "Jméno majitele"
-        dog_owner_last_name: "Příjmení majitele"
-        dog_owner_phone_number: "Telefon majitele"
-        dog_owner_address: "Adresa majitele"
-        remove_this_dog: "Odebrat tohoto psa"
-        submit: "Odeslat"
-        insurance_message: "Psovod má pojištění odpovědnosti za škody na zdraví a věcech třetích osob, pro území České republiky."
-        this_name_will_be_listed_in_catalogue: "Toto jméno bude použito v katalogu"
-        male: "Pes"
-        female: "Fena"
-        dog_name: "Jméno psa"
-     controller:
-        successfully_created: "Tým byl úspěšně přidán."
-        successfully_updated: "Tým byl úspěšně upraven."
-        successfully_deleted: "Tým byl úspěšně smazán."
-        dont_have_permission: "Pro zobrazení nemáte dostatečná oprávnění."
-        no_changed_allowed: "Již jste potvdili přihlášky, další změny nejsou možné."
-     new:
-        title: "Nový tým"
-     edit:
-        title: "Upravit tým"
-     index:
-        title: "Týmy"
-  staff_members:
-    index:
-      title: "Trenéři a asistenti"
-    model:
-      teamleader: "Teamleader"
-      first_assistant: "První asistent"
-      second_assistant: "Druhý asistent"
-      physiotherapist: "Fyzioterapeut"
-      other: "Ostatní"
-    controller:
-       successfully_created: "Trenér/asistent byl úspěšně přidán."
-       successfully_updated: "Trenér/asistent byl úspěšně upraven."
-       successfully_deleted: "Trenér/asistent byl úspěšně smazán."
-       dont_have_permission: "Pro zobrazení nemáte dostatečná oprávnění."
-       no_changed_allowed: "Již jste potvdili přihlášky, další změny nejsou možné."
-  dogs:
-    controller:
-       successfully_created: "Nezávodící pes byl úspěšně přidán."
-       successfully_updated: "Nezávodící pes byl úspěšně upraven."
-       successfully_deleted: "Nezávodící pes byl úspěšně smazán."
-       dont_have_permission: "Pro zobrazení nemáte dostatečná oprávnění."
-       no_changed_allowed: "Již jste potvdili přihlášky, další změny nejsou možné."
-  confirmation:
-     index:
-       warning_message: "Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!"
-     mailer:
-        send_confirmation:
-          subject: "Informace o platbě"
-     payment_information:
-        title: "Informace o platbě"
-        account_number: "Číslo účtu"
-        held_by_raiffeisen_bank: "Vedeno u Raiffeisen bank"
-        payment_id: "Variabilní symbol"
-        total_teams: "Celkově týmů"
-        total_amount_euro: "Celková cena (v eurech)"
-        total_assistants_coaches: "Celkem trenérů/asistentů"
-     title:
-     controller:
-        successfully_confirmed_all_entries: "Všechny přihlášky byly úspěšně potvrzeny."
-        already_confirmed_all_entries: "Již jste potvdili všechny přihlášky."
-     views:
-        index:
-          link_to_confirmation: "Potvrdit všechny přihlášky a vygenerovat údaje k platbě (nelze vrátit)"
-  user:
-     mailer:
-       admin_welcome_message: 
-          subject: "Aktivate administrátorského účtu" 
-       welcome_message:
-          message: "Váš účet pro registraci týmů na mistrovství světa v agility byl aktivován"
-          subject: "Aktivace účtu"
-  registration:
-     controller:
-       successfully_created_new_user: "Nový uživatel byl úspěšně vytvořen."
-  links:
-     teams:
-       edit: "Editovat"
-       back: "Zpět"
-       show: "Zobrazit"
-       destroy: "Smazat"
-       new: "Nový tým"
-     application:
-       login: "Přihlášení"
-       logout: "Odhlášení"
-       new_admin: "Nový administrátor"
-       new_user: "Nový uživatel"
-       teams: "Týmy"
-       non_competing_dogs: "Nezávodící psi"
-       staff_members: "Trenéři a asistenti"
-       confirmation: "Potvrzení"
-       payment_information: "Informace o platbě"
-     staff_members:
-       new: "Přidat trenéra/asistenta"
   activerecord:
+    attributes:
+      dog:
+        breed_id: Plemeno
+        category: Velikostní kategorie
+        date_of_birth: Datum narození
+        microchip: Mikročip
+        microchip_position: Pozice mikročipu
+        name: Jméno
+        nickname: Přezdívka
+        owner_address: Adresa majitele
+        owner_first_name: Jméno majitele
+        owner_last_name: Příjmení majitele
+        owner_phone_number: Telefon majitele
+        sex: Pohlaví
+        tatoo: Tetování
+      staff_member:
+        email: E-mail
+        full_name: Celé jméno
+        number_name: Jméno na číslo
+        number_size: Velikost čísla
+        phone_number: Telefonní číslo
+        picture: Fotografie
+        picture_file_name: Cesta k fotografii
+        role_type: Role
+      team:
+        category: Velikostní kategorie
+        dog_breed_id: Plemeno
+        dog_date_of_birth: Datum narození
+        dog_microchip: Mikročip
+        dog_microchip_position: Pozice mikročipu
+        dog_nickname: Přezdívka
+        dog_owner_address: Adresa majitele
+        dog_owner_first_name: Jméno majitele
+        dog_owner_last_name: Příjmení majitele
+        dog_owner_phone_number: Telefon majitele
+        dog_record_book_or_license: Výkonnostní průkaz/Licence
+        dog_registered_name: Jméno
+        dog_sex: Pohlaví
+        dog_studbook_and_number: Plemenná kniha
+        dog_tatoo: Tetování
+        dogs: Psi
+        first_name: Jméno
+        handler_date_of_birth: Datum narození
+        individual: Jednotlivec
+        individual_reserve: Náhradník jednotlivců
+        insurance: Pojištění
+        last_name: Příjmení
+        number_name: Jméno na číslo
+        number_size: Velikost čísla
+        picture: Obrázek
+        picture_file_name: Cesta k obrázku
+        reserve: Náhradník
+        squads: Družstva
+        squads_reserve: Náhradník družstev
     models:
       dog: Pes
-      handler: Psovod
       dogs: Psi
+      handler: Psovod
       owner: Majitel
-      staff_member: "Trenér/Asistent"
-    attributes:
-      team:
-        first_name: "Jméno"
-        last_name: "Příjmení"
-        picture: "Obrázek"
-        picture_file_name: "Cesta k obrázku"
-        insurance: "Pojištění"
-        dogs: "Psi"
-        reserve: "Náhradník"
-        dog_breed_id: "Plemeno"
-        dog_date_of_birth: "Datum narození"
-        dog_record_book_or_license: "Výkonnostní průkaz/Licence"
-        dog_microchip: "Mikročip"
-        dog_microchip_position: "Pozice mikročipu"
-        dog_nickname: "Přezdívka"
-        dog_owner_address: "Adresa majitele"
-        dog_owner_first_name: "Jméno majitele"
-        dog_owner_last_name: "Příjmení majitele"
-        dog_owner_phone_number: "Telefon majitele"
-        dog_registered_name: "Jméno"
-        dog_studbook_and_number: "Plemenná kniha"
-        dog_tatoo: "Tetování"
-        category: "Velikostní kategorie"
-        dog_sex: "Pohlaví"
-        individual: "Jednotlivec"
-        individual_reserve: "Náhradník jednotlivců"
-        squads: "Družstva"
-        squads_reserve: "Náhradník družstev"
-        number_size: "Velikost čísla"
-        number_name: "Jméno na číslo"
-        handler_date_of_birth: "Datum narození"
-      dog:
-        breed_id: "Plemeno"
-        date_of_birth: "Datum narození"
-        microchip: "Mikročip"
-        microchip_position: "Pozice mikročipu"
-        nickname: "Přezdívka"
-        owner_address: "Adresa majitele"
-        owner_first_name: "Jméno majitele"
-        owner_last_name: "Příjmení majitele"
-        owner_phone_number: "Telefon majitele"
-        tatoo: "Tetování"
-        category: "Velikostní kategorie"
-        sex: "Pohlaví"
-        name: "Jméno"
-      staff_member:
-        full_name: "Celé jméno"
-        role_type: "Role"
-        number_size: "Velikost čísla"
-        number_name: "Jméno na číslo"
-        email: "E-mail"
-        phone_number: "Telefonní číslo"
-        picture: "Fotografie"
-        picture_file_name: "Cesta k fotografii"
+      staff_member: Trenér/Asistent
+  application:
+    title: Registrace týmů
+  confirmation:
+    controller:
+      already_confirmed_all_entries: Již jste potvdili všechny přihlášky.
+      successfully_confirmed_all_entries: Všechny přihlášky byly úspěšně potvrzeny.
+    index:
+      warning_message: Pozor! Po zmáčknutí tohoto tlačítka budou potvrzeny všechny
+        záznamy a další úpravy (přidávání/editace/mazání) nebudou možné!
+    mailer:
+      send_confirmation:
+        subject: Informace o platbě
+    payment_information:
+      account_number: Číslo účtu
+      held_by_raiffeisen_bank: Vedeno u Raiffeisen bank
+      payment_id: Variabilní symbol
+      title: Informace o platbě
+      total_amount_euro: Celková cena (v eurech)
+      total_assistants_coaches: Celkem trenérů/asistentů
+      total_teams: Celkově týmů
+    title: 
+    views:
+      index:
+        link_to_confirmation: Potvrdit všechny přihlášky a vygenerovat údaje k platbě
+          (nelze vrátit)
+  dogs:
+    controller:
+      dont_have_permission: Pro zobrazení nemáte dostatečná oprávnění.
+      no_changed_allowed: Již jste potvdili přihlášky, další změny nejsou možné.
+      successfully_created: Nezávodící pes byl úspěšně přidán.
+      successfully_deleted: Nezávodící pes byl úspěšně smazán.
+      successfully_updated: Nezávodící pes byl úspěšně upraven.
   helpers:
     label:
-      team:
-        first_name: "Jméno"
-        last_name: "Příjmení"
-        picture: "Obrázek"
-        picture_file_name: "Cesta k obrázku"
-        insurance: "Pojištění"
-        dog_sex: "Pohlaví"
-        reserve: "Náhradník"
-        dog_breed_id: "Plemeno"
-        dog_date_of_birth: "Datum narození"
-        dog_microchip: "Mikročip"
-        dog_microchip_position: "Pozice mikročipu"
-        dog_nickname: "Přezdívka"
-        dog_owner_address: "Adresa majitele"
-        dog_owner_first_name: "Jméno majitele"
-        dog_owner_last_name: "Příjmení majitele"
-        dog_owner_phone_number: "Telefon majitele"
-        dog_record_book_or_license: "Výkonnostní průkaz/Licence"
-        dog_registered_name: "Jméno"
-        dog_studbook_and_number: "Plemenná kniha"
-        dog_tatoo: "Tetování"
-        category: "Velikostní kategorie"
-        individual: "Jednotlivec"
-        individual_reserve: "Náhradník jednotlivců"
-        squads: "Družstva"
-        squads_reserve: "Náhradník družstev"
-        number_size: "Velikost čísla"
-        number_name: "Jméno na číslo"
-        handler_date_of_birth: "Datum narození"
-        pedigree: "Rodokmen"
-        pedigree_file_name: "Cesta k rodokmenu"
       dog:
-        breed_id: "Plemeno"
-        date_of_birth: "Datum narození"
-        microchip: "Mikročip"
-        microchip_position: "Pozice mikročipu"
-        nickname: "Přezdívka"
-        owner_address: "Adresa majitele"
-        owner_first_name: "Jméno majitele"
-        owner_last_name: "Příjmení majitele"
-        owner_phone_number: "Telefon majitele"
-        tatoo: "Tetování"
-        category: "Velikostní kategorie"
-        sex: "Pohlaví"
-        name: "Jméno"
+        breed_id: Plemeno
+        category: Velikostní kategorie
+        date_of_birth: Datum narození
+        microchip: Mikročip
+        microchip_position: Pozice mikročipu
+        name: Jméno
+        nickname: Přezdívka
+        owner_address: Adresa majitele
+        owner_first_name: Jméno majitele
+        owner_last_name: Příjmení majitele
+        owner_phone_number: Telefon majitele
+        sex: Pohlaví
+        tatoo: Tetování
       staff_member:
-        full_name: "Celé jméno"
-        role_type: "Role"
-        number_size: "Velikost čísla"
-        number_name: "Jméno na číslo"
-        email: "E-mail"
-        phone_number: "Telefonní číslo"
-        picture: "Fotografie"
-        picture_file_name: "Cesta k fotografii"
-        pedigree: "Rodokmen"
-        pedigree_file_name: "Cesta k rodokmenu"
+        email: E-mail
+        full_name: Celé jméno
+        number_name: Jméno na číslo
+        number_size: Velikost čísla
+        pedigree: Rodokmen
+        pedigree_file_name: Cesta k rodokmenu
+        phone_number: Telefonní číslo
+        picture: Fotografie
+        picture_file_name: Cesta k fotografii
+        role_type: Role
+      team:
+        category: Velikostní kategorie
+        dog_breed_id: Plemeno
+        dog_date_of_birth: Datum narození
+        dog_microchip: Mikročip
+        dog_microchip_position: Pozice mikročipu
+        dog_nickname: Přezdívka
+        dog_owner_address: Adresa majitele
+        dog_owner_first_name: Jméno majitele
+        dog_owner_last_name: Příjmení majitele
+        dog_owner_phone_number: Telefon majitele
+        dog_record_book_or_license: Výkonnostní průkaz/Licence
+        dog_registered_name: Jméno
+        dog_sex: Pohlaví
+        dog_studbook_and_number: Plemenná kniha
+        dog_tatoo: Tetování
+        first_name: Jméno
+        handler_date_of_birth: Datum narození
+        individual: Jednotlivec
+        individual_reserve: Náhradník jednotlivců
+        insurance: Pojištění
+        last_name: Příjmení
+        number_name: Jméno na číslo
+        number_size: Velikost čísla
+        pedigree: Rodokmen
+        pedigree_file_name: Cesta k rodokmenu
+        picture: Obrázek
+        picture_file_name: Cesta k obrázku
+        reserve: Náhradník
+        squads: Družstva
+        squads_reserve: Náhradník družstev
   index:
     all_handlers:
-      Argentina: "Argentina"
-      Austria: "Rakousko"
-      Belarus: "Bělorusko"
-      Belgium: "Belgie"
-      Brazil: "Brazílie"
-      Canada: "Kanada"
-      Chile: "Chile"
-      China: "Čína"
-      Colombia: "Kolumbie"
-      Croatia: "Chorvatsko"
-      Czech Republic: "Česká republika"
-      Denmark: "Dánsko"
-      Estonia: "Estonsko"
-      Finland: "Finsko"
-      France: "Francie"
-      Germany: "Německo"
-      United Kingdom: "Velká Británie"
-      Great Britain: "Velká Británie"
-      Hungary: "Maďarsko"
-      Ireland: "Irsko"
-      Italy: "Itálie"
-      Japan: "Japonsko"
-      Latvia: "Lotyšsko"
-      Lithuania: "Litva"
-      Luxembourg: "Lucembursko"
-      Mexico: "Mexiko"
-      Netherlands: "Nizozemsko"
-      Norway: "Norsko"
-      Poland: "Polsko"
-      Portugal: "Portugalsko"
-      Russian Federation: "Rusko"
-      San Marino: "San Marino"
-      Slovakia: "Slovensko"
-      Slovenia: "Slovinsko"
-      South Africa: "Jihoafrická republika"
-      Spain: "Španělsko"
-      Sweden: "Švědsko"
-      Switzerland: "Švýcarsko"
-      United States: "USA"
+      Argentina: Argentina
+      Austria: Rakousko
+      Belarus: Bělorusko
+      Belgium: Belgie
+      Brazil: Brazílie
+      Canada: Kanada
+      Chile: Chile
+      China: Čína
+      Colombia: Kolumbie
+      Croatia: Chorvatsko
+      Czech Republic: Česká republika
+      Denmark: Dánsko
+      Estonia: Estonsko
+      Finland: Finsko
+      France: Francie
+      Germany: Německo
+      Great Britain: Velká Británie
+      Hungary: Maďarsko
+      Ireland: Irsko
+      Italy: Itálie
+      Japan: Japonsko
+      Latvia: Lotyšsko
+      Lithuania: Litva
+      Luxembourg: Lucembursko
+      Mexico: Mexiko
+      Netherlands: Nizozemsko
+      Norway: Norsko
+      Poland: Polsko
+      Portugal: Portugalsko
+      Russian Federation: Rusko
+      San Marino: San Marino
+      Slovakia: Slovensko
+      Slovenia: Slovinsko
+      South Africa: Jihoafrická republika
+      Spain: Španělsko
+      Sweden: Švědsko
+      Switzerland: Švýcarsko
+      United Kingdom: Velká Británie
+      United States: USA
     number_information:
-      title: "Startovní čísla - velikostní tabulky"
-      vest_size: "Velikost startovní vesty"
-      width_not_circumference: "Uvedené míry uvádějí šírku čísla, NIKOLI OBVOD."
-      number_width: "Šířka čísla (cm)"
-      number_height: "Délka čísla (cm)"
-      detailed_info: "Pro zjištění potřebné velikosti položte dres či tričko, které vám velikostně vyhovuje na podložku a v napnutém stavu změřte uvedené rozměry. Zjištěné hodnoty porovnejte s údaji v tabulce. V případě, že jste na rozhraní velikostí, doporučujeme zvolit větší rozměr dresu."
-
+      detailed_info: Pro zjištění potřebné velikosti položte dres či tričko, které
+        vám velikostně vyhovuje na podložku a v napnutém stavu změřte uvedené rozměry.
+        Zjištěné hodnoty porovnejte s údaji v tabulce. V případě, že jste na rozhraní
+        velikostí, doporučujeme zvolit větší rozměr dresu.
+      number_height: Délka čísla (cm)
+      number_width: Šířka čísla (cm)
+      title: Startovní čísla - velikostní tabulky
+      vest_size: Velikost startovní vesty
+      width_not_circumference: Uvedené míry uvádějí šírku čísla, NIKOLI OBVOD.
+  links:
+    application:
+      confirmation: Potvrzení
+      login: Přihlášení
+      logout: Odhlášení
+      new_admin: Nový administrátor
+      new_user: Nový uživatel
+      non_competing_dogs: Nezávodící psi
+      payment_information: Informace o platbě
+      staff_members: Trenéři a asistenti
+      teams: Týmy
+    staff_members:
+      new: Přidat trenéra/asistenta
+    teams:
+      back: Zpět
+      destroy: Smazat
+      edit: Editovat
+      new: Nový tým
+      show: Zobrazit
+  registration:
+    controller:
+      successfully_created_new_user: Nový uživatel byl úspěšně vytvořen.
+  staff_members:
+    controller:
+      dont_have_permission: Pro zobrazení nemáte dostatečná oprávnění.
+      no_changed_allowed: Již jste potvdili přihlášky, další změny nejsou možné.
+      successfully_created: Trenér/asistent byl úspěšně přidán.
+      successfully_deleted: Trenér/asistent byl úspěšně smazán.
+      successfully_updated: Trenér/asistent byl úspěšně upraven.
+    index:
+      title: Trenéři a asistenti
+    model:
+      first_assistant: První asistent
+      other: Ostatní
+      physiotherapist: Fyzioterapeut
+      second_assistant: Druhý asistent
+      teamleader: Teamleader
+  teams:
+    controller:
+      dont_have_permission: Pro zobrazení nemáte dostatečná oprávnění.
+      no_changed_allowed: Již jste potvdili přihlášky, další změny nejsou možné.
+      successfully_created: Tým byl úspěšně přidán.
+      successfully_deleted: Tým byl úspěšně smazán.
+      successfully_updated: Tým byl úspěšně upraven.
+    edit:
+      title: Upravit tým
+    form:
+      actions: Akce
+      add_dog: Přidat psa
+      category: Kategorie
+      correct_errors: Opravte následující chyby.
+      dog_name: Jméno psa
+      dog_nickname: Přezdívka psa
+      either_competing_or_reserve: Tým buď běží alespoň jednu ze soutěží (jednotlivci,
+        družstva) nebo je náhradník
+      email: E-mail
+      female: Fena
+      first_name: Jméno
+      insurance_company: Pojišťovna
+      insurance_contract_number: Číslo pojišťovací smlouvy
+      insurance_message: Psovod má pojištění odpovědnosti za škody na zdraví a věcech
+        třetích osob, pro území České republiky.
+      large: Large
+      last_name: Příjmení
+      male: Pes
+      maximum_reserve_count: V každé kategorii může být maximálně jeden náhradník
+      maximum_staff_count: Maximální počet teamleaderů/asistentů je 5
+      medium: Medium
+      password: Heslo
+      picture: Obrázek
+      registered_name: Jméno
+      remember_me: Zapamatovat
+      remove_this_dog: Odebrat tohoto psa
+      sign_in: Přihlásit
+      small: Small
+      submit: Odeslat
+      this_name_will_be_listed_in_catalogue: Toto jméno bude použito v katalogu
+    index:
+      title: Týmy
+    new:
+      title: Nový tým
+  user:
+    mailer:
+      admin_welcome_message:
+        subject: Aktivate administrátorského účtu
+      welcome_message:
+        message: Váš účet pro registraci týmů na mistrovství světa v agility byl aktivován
+        subject: Aktivace účtu

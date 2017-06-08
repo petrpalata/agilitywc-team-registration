@@ -1,185 +1,178 @@
+---
 es:
-  application: 
-    title: "Los equipos de registro"
-  teams: 
-    form: 
-      actions: "Acción"
-      correct_errors: "Corregir los errores "
-      email: "Correo electrónico"
-      password: "Contraseňa de acceso"
-      remember_me: "Guardar en la memoria"
-      sign_in: "Acceder"
-      add_dog: "Aňadir un perro"
-      first_name: "Nombre"
-      last_name:  "Apellido"
-      insurance_company: "Compaňía de seguros"
-      insurance_contract_number: "Número de contratos de seguros"
-      picture: "Cuadro"
-      nickname: "Apodo"
-      registered_name: "Nombre registrado"
-      category: "Categoría"
-      small: "Pequeño"
-      medium: "Mediano"
-      large: "Alto"
-      breed: "Raza"
-      date_of_birth: "Fecha de nacimiento"
-      license: "Licencia"
-      microchip: "Microchip"
-      microchip_position: "Posición del microchip"
-      recordbook: "Cartilla de punctvacion"
-      studbook: "Registro"
-      studbook_number: "Registro número"
-      tatoo: "Tatuaje"
-      owner_first_name: "Nombre del propietario"
-      owner_last_name: "Apellido del propietario"
-      owner_phone_number: "Número de teléfono propietario"
-      owner_address: "Dirección del propietario"
-      remove_this_dog: "Quitar este perro"
-      submit: "Enviar"
-      insurance_message: "El controlador tiene seguro de responsabilidad civil por lesiones corporales ya la propiedad de terceros para la República Checa. "
-      this_name_will_be_listed_in_catalogue: "Este nombre se utiliza en el catálogo."
-      male: "Perro"
-      female: "Perra"
-    controller:
-      successfully_created: "El equipo ha sido agregado con éxito."
-      successfully_updated: "El equipo se adaptó con éxito. "
-      successfully_deleted: "El equipo fue eliminado con éxito. "
-      dont_have_permission: "No tiene permisos."
-      no_changed_allowed: "Ustedes ya han presentado solicitudes, los cambios no son posibles. "
-    new: 
-      title: "Nuevo equipo"
-    edit:
-      title: "Modificar el equipo"
-    index:
-      title: "Equipos"
-  confirmation: 
-    index:
-      warning_message: "Atención! Después de pulsar este botón será confirmado y todos los demás registros ajustes (añadir / editar / borrar) no será posible!"
-    mailer: 
-     send_confirmation: 
-       subject: "Información de pago"
-     payment_information:
-       title: "Información de pago"
-       account_number: "Número de cuenta"
-       held_by_raiffeisen_bank: "Liderados por los bancos Raiffeisen. "
-       payment_id: "Símbolo de la variable"
-       total_teams: "En conjunto equipos"
-       total_amount_euro: "El precio total (en euros)"
-    title:
-    controller: 
-      successfully_confirmed_all_entries: "Todas la solicitudes se han validado con éxito. "
-      already_confirmed_all_entries: "Usted ya ha presentado todas las inscripciones ."
-    views: 
-      index:
-        link_to_confirmation: "Enviar todas las inscripción y generar datos para el pago (no la espalda)"
-  user:
-    mailer:
-      admin_welcome_message:        
-        subject: "Activación de cuenta de administrador."
-      welcome_message: 
-        message: "Sus equipos de registro de la cuenta a los campeonatos del mundo de la agility se ha activado."
-        subject: "Activación de la cuenta."
-  registration: 
-    controller:
-      successfully_created_new_user: "Un nuevo usuario se ha creado correctamente."
-  links: 
-    teams: 
-      edit: "Editar"
-      back: "Atrás"
-      show: "Mostrar"
-      destroy: "Borrar"
-      new: "Nuevo equipo"
-    application:
-      login: "Iniciar la sesión"
-      logout: "Finalizar la sesión"
-      new_admin: "Nuevo administrador"
-      new_user: "Nuevo usuario"
-      teams: "Equipos"
-      confirmation: "Confirmación"
-      payment_information: "Información de pago"
   activerecord:
+    attributes:
+      dog:
+        breed_id: Raza
+        category: Categoría
+        date_of_birth: Fecha de nacimiento
+        microchip: Microchip
+        microchip_position: Posición del microchip
+        nickname: Apodo
+        owner_address: Dirección
+        owner_first_name: Nombre
+        owner_last_name: Apellido
+        owner_phone_number: Número de teléfono
+        record_book_or_license: Cartilla de punctvacion/Licencia
+        registered_name: Name
+        sex: Sexo
+        tatoo: Tatuaje
+      team:
+        category: Categoría
+        dog_breed_id: Raza
+        dog_date_of_birth: Fecha de nacimiento
+        dog_microchip: Microchip
+        dog_microchip_position: Posición del microchip
+        dog_nickname: Apodo
+        dog_owner_address: Dirección
+        dog_owner_first_name: Nombre
+        dog_owner_last_name: Apellido
+        dog_owner_phone_number: Número de teléfono
+        dog_record_book_or_license: Cartilla de punctvacion/Licencia
+        dog_registered_name: Name
+        dog_sex: Sexo
+        dog_studbook_and_number: Registro
+        dog_tatoo: Tatuaje
+        dogs: Perruno
+        first_name: Nombre
+        insurance: Seguro
+        last_name: Apellido
+        picture: Cuadro
+        picture_file_name: Cuadro
+        reserve: Reserva
     models:
       dog: Perro
-      handler: Conductor
       dogs: Perruno
+      handler: Conductor
       owner: Propietario
-    attributes:
-      team:
-        first_name: "Nombre"
-        last_name: "Apellido"
-        picture: "Cuadro"
-        picture_file_name: "Cuadro"
-        insurance: "Seguro"
-        dogs: "Perruno"
-        reserve: "Reserva"
-        dog_breed_id: "Raza"
-        dog_date_of_birth: "Fecha de nacimiento"
-        dog_record_book_or_license: "Cartilla de punctvacion/Licencia"
-        dog_microchip: "Microchip"
-        dog_microchip_position: "Posición del microchip"
-        dog_nickname: "Apodo"
-        dog_owner_first_name: "Nombre"
-        dog_owner_last_name: "Apellido"
-        dog_owner_phone_number: "Número de teléfono"
-        dog_owner_address: "Dirección"
-        dog_registered_name: "Name"
-        dog_studbook_and_number: "Registro"
-        dog_tatoo: "Tatuaje"
-        category: "Categoría"
-        dog_sex: "Sexo"
-      dog:
-        sex: "Sexo"
-        breed_id: "Raza"
-        date_of_birth: "Fecha de nacimiento"
-        microchip: "Microchip"
-        microchip_position: "Posición del microchip"
-        nickname: "Apodo"
-        owner_first_name: "Nombre"
-        owner_last_name: "Apellido"
-        owner_phone_number: "Número de teléfono"
-        owner_address: "Dirección"
-        record_book_or_license: "Cartilla de punctvacion/Licencia"
-        registered_name: "Name"
-        studbook_and_number: "Registro"
-        tatoo: "Tatuaje"
-        category: "Categoría"
+  application:
+    title: Los equipos de registro
+  confirmation:
+    controller:
+      already_confirmed_all_entries: Usted ya ha presentado todas las inscripciones
+        .
+      successfully_confirmed_all_entries: 'Todas la solicitudes se han validado con
+        éxito. '
+    index:
+      warning_message: Atención! Después de pulsar este botón será confirmado y todos
+        los demás registros ajustes (añadir / editar / borrar) no será posible!
+    mailer:
+      payment_information:
+        account_number: Número de cuenta
+        held_by_raiffeisen_bank: 'Liderados por los bancos Raiffeisen. '
+        payment_id: Símbolo de la variable
+        title: Información de pago
+        total_amount_euro: El precio total (en euros)
+        total_teams: En conjunto equipos
+      send_confirmation:
+        subject: Información de pago
+    title: 
+    views:
+      index:
+        link_to_confirmation: Enviar todas las inscripción y generar datos para el
+          pago (no la espalda)
   helpers:
     label:
-      team:
-        first_name: "Nombre"
-        last_name: "Apellido"
-        picture: "Cuadro"
-        picture_file_name: "Cuadro"
-        insurance: "Seguro"
-        dog_sex: "Sexo"
-        reserve: "Reserva"
-        dog_breed_id: "Raza"
-        dog_date_of_birth: "Fecha de nacimiento"
-        dog_microchip: "Microchip"
-        dog_microchip_position: "Posición del microchip"
-        dog_nickname: "Apodo"
-        dog_owner_first_name: "Nombre"
-        dog_owner_last_name: "Apellido"
-        dog_owner_phone_number: "Número de teléfono"
-        dog_owner_address: "Dirección"
-        dog_record_book_or_license: "Cartilla de punctvacion/Licencia"
-        dog_registered_name: "Name"
-        dog_studbook_and_number: "Registro"
-        dog_tatoo: "Tatuaje"
-        category: "Categoría"
       dog:
-        sex: "Sexo"
-        breed_id: "Raza"
-        date_of_birth: "Fecha de nacimiento"
-        microchip: "Microchip"
-        microchip_position: "Posición del microchip"
-        nickname: "Apodo"
-        owner_first_name: "Nombre"
-        owner_last_name: "Apellido"
-        owner_phone_number: "Número de teléfono"
-        owner_address: "Dirección"
-        record_book_or_license: "Cartilla de punctvacion/Licencia"
-        registered_name: "Name"
-        studbook_and_number: "Registro"
-        tatoo: "Tatuaje"
-        category: "Categoría"
+        breed_id: Raza
+        category: Categoría
+        date_of_birth: Fecha de nacimiento
+        microchip: Microchip
+        microchip_position: Posición del microchip
+        nickname: Apodo
+        owner_address: Dirección
+        owner_first_name: Nombre
+        owner_last_name: Apellido
+        owner_phone_number: Número de teléfono
+        record_book_or_license: Cartilla de punctvacion/Licencia
+        registered_name: Name
+        sex: Sexo
+        studbook_and_number: Registro
+        tatoo: Tatuaje
+      team:
+        category: Categoría
+        dog_breed_id: Raza
+        dog_date_of_birth: Fecha de nacimiento
+        dog_microchip: Microchip
+        dog_microchip_position: Posición del microchip
+        dog_nickname: Apodo
+        dog_owner_address: Dirección
+        dog_owner_first_name: Nombre
+        dog_owner_last_name: Apellido
+        dog_owner_phone_number: Número de teléfono
+        dog_record_book_or_license: Cartilla de punctvacion/Licencia
+        dog_registered_name: Name
+        dog_sex: Sexo
+        dog_studbook_and_number: Registro
+        dog_tatoo: Tatuaje
+        first_name: Nombre
+        insurance: Seguro
+        last_name: Apellido
+        picture: Cuadro
+        picture_file_name: Cuadro
+        reserve: Reserva
+  links:
+    application:
+      confirmation: Confirmación
+      login: Iniciar la sesión
+      logout: Finalizar la sesión
+      new_admin: Nuevo administrador
+      new_user: Nuevo usuario
+      payment_information: Información de pago
+      teams: Equipos
+    teams:
+      back: Atrás
+      destroy: Borrar
+      edit: Editar
+      new: Nuevo equipo
+      show: Mostrar
+  registration:
+    controller:
+      successfully_created_new_user: Un nuevo usuario se ha creado correctamente.
+  teams:
+    controller:
+      dont_have_permission: No tiene permisos.
+      no_changed_allowed: 'Ustedes ya han presentado solicitudes, los cambios no son
+        posibles. '
+      successfully_created: El equipo ha sido agregado con éxito.
+      successfully_deleted: 'El equipo fue eliminado con éxito. '
+      successfully_updated: 'El equipo se adaptó con éxito. '
+    edit:
+      title: Modificar el equipo
+    form:
+      actions: Acción
+      add_dog: Aňadir un perro
+      category: Categoría
+      correct_errors: 'Corregir los errores '
+      date_of_birth: Fecha de nacimiento
+      email: Correo electrónico
+      female: Perra
+      first_name: Nombre
+      insurance_company: Compaňía de seguros
+      insurance_contract_number: Número de contratos de seguros
+      insurance_message: 'El controlador tiene seguro de responsabilidad civil por
+        lesiones corporales ya la propiedad de terceros para la República Checa. '
+      large: Alto
+      last_name: Apellido
+      male: Perro
+      medium: Mediano
+      password: Contraseňa de acceso
+      picture: Cuadro
+      registered_name: Nombre registrado
+      remember_me: Guardar en la memoria
+      sign_in: Acceder
+      small: Pequeño
+      submit: Enviar
+      this_name_will_be_listed_in_catalogue: Este nombre se utiliza en el catálogo.
+    index:
+      title: Equipos
+    new:
+      title: Nuevo equipo
+  user:
+    mailer:
+      admin_welcome_message:
+        subject: Activación de cuenta de administrador.
+      welcome_message:
+        message: Sus equipos de registro de la cuenta a los campeonatos del mundo
+          de la agility se ha activado.
+        subject: Activación de la cuenta.
