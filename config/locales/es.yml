@@ -13,8 +13,6 @@ es:
         owner_first_name: Nombre
         owner_last_name: Apellido
         owner_phone_number: Número de teléfono
-        record_book_or_license: Cartilla de punctvacion/Licencia
-        registered_name: Name
         sex: Sexo
         tatoo: Tatuaje
       team:
