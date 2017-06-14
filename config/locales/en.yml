@@ -1,182 +1,174 @@
+---
 en:
-  application:
-     title: "Teams registration"
-  teams:
-     form:
-        actions: "Actions"
-        correct_errors: "Correct the following errors."
-        email: "E-mail"
-        password: "Password"
-        remember_me: "Remember me"
-        sign_in: "Sign in"
-        add_dog: "Add dog"
-        first_name: "First name"
-        last_name: "Last name"
-        insurance_company: "Insurance company"
-        insurance_contract_number: "Insurance contract number"
-        picture: "Picture"
-        nickname: "Nickname"
-        registered_name: "Registered name"
-        category: "Category"
-        small: "Small"
-        medium: "Medium"
-        large: "Large"
-        breed: "Breed"
-        date_of_birth: "Date of birth"
-        license: "License"
-        microchip: "Microchip"
-        microchip_position: "Microchip position"
-        recordbook: "Recordbook"
-        studbook: "Studbook"
-        studbook_number: "Studbook number"
-        tatoo: "Tatoo"
-        owner_first_name: "Owner's first name"
-        owner_last_name: "Owner's last name"
-        owner_phone_number: "Owner's phone number"
-        owner_address: "Owner's address"
-        remove_this_dog: "Remove this dog"
-        submit: "Submit"
-        insurance_message: "The handler has liability insurance for the health and property of third parties, valid for Czech Republic."
-        this_name_will_be_listed_in_catalogue: "This name will be used in the catalogue"
-        male: "Male"
-        female: "Female"
-     controller:
-        successfully_created: "Team successfully created."
-        successfully_updated: "Team successfully updated."
-        successfully_deleted: "Team successfully deleted."
-        dont_have_permission: "You don't have permission to view this."
-        no_changed_allowed: "You have confirmed your entries, subsequent changes are not possible."
-     new:
-        title: "New team"
-     edit:
-        title: "Edit team"
-     index:
-        title: "Listing teams"
-  confirmation:
-     index:
-       warning_message: "Attention! After you press this button, all entries will be confirmed and no further changes (adding/editing/deleting) will be possible!"
-     mailer:
-        send_confirmation:
-          subject: "Payment information"
-     payment_information:
-        title: "Payment information"
-        account_number: "Account no.:"
-        held_by_raiffeisen_bank: "Held by Raiffeisen bank"
-        payment_id: "Payment ID (variable symbol)"
-        total_teams: "Total teams"
-        total_amount_euro: "Total amount (euro)"
-     title:
-     controller:
-        successfully_confirmed_all_entries: "You have successfully confirmed all your entries."
-        already_confirmed_all_entries: "You have already confirmed your entries."
-     views:
-        index:
-          link_to_confirmation: "Confirm all entries and generate payment (cannot undo)"
-  user:
-     mailer:
-       admin_welcome_message: 
-          subject: "Admin account activation" 
-       welcome_message:
-          message: "Your account for World Agility Championship registration has been activated"
-          subject: "Account activation"
-  registration:
-     controller:
-       successfully_created_new_user: "Successfully created new user."
-  links:
-     teams:
-       edit: "Edit"
-       back: "Back"
-       show: "Show"
-       destroy: "Destroy"
-       new: "New team"
-     application:
-       login: "Login"
-       logout: "Logout"
-       new_admin: "New admin"
-       new_user: "New user"
-       teams: "Teams"
-       confirmation: "Confirmation"
-       payment_information: "Payment information"
   activerecord:
+    attributes:
+      dog:
+        breed_id: Breed
+        category: Category
+        date_of_birth: Date of birth
+        microchip: Microchip
+        microchip_position: Microchip position
+        nickname: Nickname
+        owner_address: Address
+        owner_first_name: Name
+        owner_last_name: Surname
+        owner_phone_number: Phone
+        sex: Sex
+        tatoo: Tatoo
+      team:
+        category: Category
+        dog_breed_id: Breed
+        dog_date_of_birth: Date of birth
+        dog_microchip: Microchip
+        dog_microchip_position: Microchip position
+        dog_nickname: Nickname
+        dog_owner_address: Address
+        dog_owner_first_name: Name
+        dog_owner_last_name: Surname
+        dog_owner_phone_number: Phone
+        dog_record_book_or_license: Record book/License
+        dog_registered_name: Registered name
+        dog_sex: Sex
+        dog_studbook_and_number: Studbook
+        dog_tatoo: Tatoo
+        dogs: Dogs
+        first_name: First name
+        insurance: Insurance
+        last_name: Last name
+        picture: Picture
+        picture_file_name: Picture path
+        reserve: Reserve
     models:
       dog: Dog
-      handler: Handler
       dogs: Dogs
+      handler: Handler
       owner: Owner
-    attributes:
-      team:
-        first_name: "First name"
-        last_name: "Last name"
-        picture: "Picture"
-        picture_file_name: "Picture path"
-        insurance: "Insurance"
-        dogs: "Dogs"
-        reserve: "Reserve"
-        dog_breed_id: "Breed"
-        dog_date_of_birth: "Date of birth"
-        dog_record_book_or_license: "Record book/License"
-        dog_microchip: "Microchip"
-        dog_microchip_position: "Microchip position"
-        dog_nickname: "Nickname"
-        dog_owner_address: "Address"
-        dog_owner_first_name: "Name"
-        dog_owner_last_name: "Surname"
-        dog_owner_phone_number: "Phone"
-        dog_registered_name: "Registered name"
-        dog_studbook_and_number: "Studbook"
-        dog_tatoo: "Tatoo"
-        category: "Category"
-        dog_sex: "Sex"
-      dog:
-        breed_id: "Breed"
-        date_of_birth: "Date of birth"
-        microchip: "Microchip"
-        microchip_position: "Microchip position"
-        nickname: "Nickname"
-        owner_address: "Address"
-        owner_first_name: "Name"
-        owner_last_name: "Surname"
-        owner_phone_number: "Phone"
-        registered_name: "Registered name"
-        studbook_and_number: "Studbook"
-        tatoo: "Tatoo"
-        category: "Category"
-        sex: "Sex"
-        name: "Name"
+  application:
+    title: Teams registration
+  confirmation:
+    controller:
+      already_confirmed_all_entries: You have already confirmed your entries.
+      successfully_confirmed_all_entries: You have successfully confirmed all your
+        entries.
+    index:
+      warning_message: Attention! After you press this button, all entries will be
+        confirmed and no further changes (adding/editing/deleting) will be possible!
+    mailer:
+      payment_information:
+        account_number: 'Account no.:'
+        held_by_raiffeisen_bank: Held by Raiffeisen bank
+        payment_id: Payment ID (variable symbol)
+        title: Payment information
+        total_amount_euro: Total amount (euro)
+        total_teams: Total teams
+      send_confirmation:
+        subject: Payment information
+    payment_information:
+      account_number: 'Account no.:'
+      held_by_raiffeisen_bank: Held by Raiffeisen bank
+      payment_id: Payment ID (variable symbol)
+      title: Payment information
+      total_amount_euro: Total amount (euro)
+      total_teams: Total teams
+    views:
+      index:
+        link_to_confirmation: Confirm all entries and generate payment (cannot undo)
   helpers:
     label:
-      team:
-        first_name: "First name"
-        last_name: "Last name"
-        picture: "Picture"
-        picture_file_name: "Picture path"
-        insurance: "Insurance"
-        dog_sex: "Sex"
-        dog_reserve: "Reserve"
-        dog_breed_id: "Breed"
-        dog_date_of_birth: "Date of birth"
-        dog_microchip: "Microchip"
-        dog_microchip_position: "Microchip position"
-        dog_nickname: "Nickname"
-        dog_owner_address: "Address"
-        dog_owner_first_name: "Name"
-        dog_owner_last_name: "Surname"
-        dog_owner_phone_number: "Phone"
-        dog_record_book_or_license: "Record book/License"
-        dog_registered_name: "Registered name"
-        dog_studbook_and_number: "Studbook"
-        dog_tatoo: "Tatoo"
-        category: "Category"
       dog:
-        sex: "Sex"
-        breed_id: "Breed"
-        date_of_birth: "Date of birth"
-        microchip: "Microchip"
-        microchip_position: "Microchip position"
-        nickname: "Nickname"
-        owner_address: "Address"
-        owner_first_name: "Name"
-        owner_last_name: "Surname"
-        owner_phone_number: "Phone"
-        tatoo: "Tatoo"
-        name: "Name"
+        breed_id: Breed
+        date_of_birth: Date of birth
+        microchip: Microchip
+        microchip_position: Microchip position
+        nickname: Nickname
+        owner_address: Address
+        owner_first_name: Name
+        owner_last_name: Surname
+        owner_phone_number: Phone
+        sex: Sex
+        tatoo: Tatoo
+      team:
+        category: Category
+        dog_breed_id: Breed
+        dog_date_of_birth: Date of birth
+        dog_microchip: Microchip
+        dog_microchip_position: Microchip position
+        dog_nickname: Nickname
+        dog_owner_address: Address
+        dog_owner_first_name: Name
+        dog_owner_last_name: Surname
+        dog_owner_phone_number: Phone
+        dog_record_book_or_license: Record book/License
+        dog_registered_name: Registered name
+        dog_sex: Sex
+        dog_studbook_and_number: Studbook
+        dog_tatoo: Tatoo
+        first_name: First name
+        insurance: Insurance
+        last_name: Last name
+        picture: Picture
+        picture_file_name: Picture path
+        reserve: Reserve
+  links:
+    application:
+      confirmation: Confirmation
+      login: Login
+      logout: Logout
+      new_admin: New admin
+      new_user: New user
+      payment_information: Payment information
+      teams: Teams
+    teams:
+      back: Back
+      destroy: Destroy
+      edit: Edit
+      new: New team
+      show: Show
+  registration:
+    controller:
+      successfully_created_new_user: Successfully created new user.
+  teams:
+    controller:
+      dont_have_permission: You don't have permission to view this.
+      no_changed_allowed: You have confirmed your entries, subsequent changes are
+        not possible.
+      successfully_created: Team successfully created.
+      successfully_deleted: Team successfully deleted.
+      successfully_updated: Team successfully updated.
+    edit:
+      title: Edit team
+    form:
+      actions: Actions
+      add_dog: Add dog
+      correct_errors: Correct the following errors.
+      email: E-mail
+      female: Female
+      first_name: First name
+      insurance_company: Insurance company
+      insurance_contract_number: Insurance contract number
+      insurance_message: The handler has liability insurance for the health and property
+        of third parties, valid for Czech Republic.
+      large: Large
+      last_name: Last name
+      male: Male
+      medium: Medium
+      password: Password
+      picture: Picture
+      registered_name: Registered name
+      remember_me: Remember me
+      sign_in: Sign in
+      small: Small
+      submit: Submit
+      this_name_will_be_listed_in_catalogue: This name will be used in the catalogue
+    index:
+      title: Listing teams
+    new:
+      title: New team
+  user:
+    mailer:
+      admin_welcome_message:
+        subject: Admin account activation
+      welcome_message:
+        message: Your account for World Agility Championship registration has been
+          activated
+        subject: Account activation
