@@ -8,6 +8,10 @@ cs:
         date_of_birth: Datum narození
         microchip: Mikročip
         microchip_position: Pozice mikročipu
+        microchip_positions:
+          left_side_of_neck: Levá strana krku
+          other: Jiné
+          right_side_of_neck: Pravá strana krku
         name: Jméno psa
         nickname: Přezdívka
         owner_address: Adresa majitele

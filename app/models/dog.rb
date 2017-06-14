@@ -1,9 +1,9 @@
 class Dog < ActiveRecord::Base
     def self.microchip_positions
         {
-            "RN" => I18n.t('dog.model.right_side_of_neck'),
-            "LN" => I18n.t('dog.model.left_side_of_neck'),
-            "O" => I18n.t('dog.model.other'),
+            "RN" => I18n.t('activerecord.attributes.dog.microchip_positions.right_side_of_neck'),
+            "LN" => I18n.t('activerecord.attributes.dog.microchip_positions.left_side_of_neck'),
+            "O" => I18n.t('activerecord.attributes.dog.microchip_positions.other'),
         }
     end
 

@@ -8,6 +8,10 @@ en:
         date_of_birth: Date of birth
         microchip: Microchip
         microchip_position: Microchip position
+        microchip_positions:
+          left_side_of_neck: Neck (left side)
+          other: Other
+          right_side_of_neck: Neck (right side)
         nickname: Nickname
         owner_address: Address
         owner_first_name: Name
