@@ -11,7 +11,7 @@ class IndexController < ApplicationController
       I18n.locale = params[:language]
       country = Country[params[:country_id].upcase]
       if country
-          @handlers = Handler.where(:country_id => country.number.to_i).all
+          @handlers = Team.where(:country_id => country.number.to_i).all
           @country_name = country.name
       else 
           @handlers = []

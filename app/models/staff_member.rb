@@ -3,7 +3,6 @@ class StaffMember < ActiveRecord::Base
         :role_type,
         :picture,
         :number_size,
-        :number_name,
         :phone_number,
         :email,
         :country_id
@@ -12,7 +11,6 @@ class StaffMember < ActiveRecord::Base
         :role_type,
         :phone_number
 
-    validates_presence_of :number_name, if: "role_type == 1"
     validates_presence_of :number_size, if: "role_type == 1"
 
     validates_format_of :number_size, :with => /XXS|XS|S|M|L|XL/

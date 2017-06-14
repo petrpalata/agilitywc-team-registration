@@ -31,6 +31,11 @@
 
         <div class="control-group">
             <%= f.label :picture, :class => 'control-label' %>
+            <% if @staff_member.picture_file_name %>
+                <div class="span6">
+                    <%= image_tag(@staff_member.picture(:big_thumb)) %>
+                </div>
+            <% end %>
             <div class="controls">
                 <%= f.file_field :picture %>
             </div>
@@ -39,7 +44,7 @@
         <div class="control-group">
             <%= f.label :role_type,  :class => 'control-label' %>
             <div class="controls">
-                <%= role_select(f) %>
+                <%= role_select(f, {:onchange => "updateNumberSizeField()" }) %>
             </div>
         </div>
 
@@ -57,6 +62,7 @@
             </div>
         </div>
 
+        <div id="number_size_wrapper">
         <div class="control-group">
             <%= f.label :number_size, :class => 'control-label' %>
             <div class="controls">
@@ -64,18 +70,27 @@
                 <a class="btn" href="/number_information" target="_blank"><i class="icon-large icon-question-sign"></i></a>
             </div>
         </div>
-
-        <div class="control-group">
-            <%= f.label :number_name, :class => 'control-label' %>
-            <div class="controls">
-                <%= f.text_field :number_name %>
-            </div>
         </div>
-
     </fieldset>
 
     <div class="form-actions">
         <%= f.submit t('teams.form.submit'), :class => 'btn btn-primary' %>
         <%= link_to t('links.teams.back'), staff_members_path, :class => 'btn' %>
     </div>
+
+    <script type="text/javascript">
+function updateNumberSizeField() {
+    var role_type = $('#staff_member_role_type').val();
+    if (role_type === '1') {
+        $('#number_size_wrapper').show();
+    } else {
+        $('#number_size_wrapper').hide();
+    }
+}
+
+$(document).ready(function() {
+    updateNumberSizeField();
+    $('#staff_member_role_type').change(updateNumberSizeField);
+});
+    </script>
 <% end %>

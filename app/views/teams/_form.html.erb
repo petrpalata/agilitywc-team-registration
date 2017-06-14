@@ -41,16 +41,18 @@
         <div class="control-group">
             <%= f.label :handler_date_of_birth, :class => 'control-label' %>
             <div class="controls">
-                <%= f.date_select :handler_date_of_birth %>
+                <%= f.date_select :handler_date_of_birth, start_year: 1920, end_year: 2010, default: 18.years.until %>
             </div>
         </div>
 
 
         <div class="control-group">
-            <div class="controls">
-                <label class="checkbox" for="insurance">
-                    <%= t('teams.form.insurance_message') %><%= f.check_box :insurance %>
-                </label>
+            <div class="offset1 span6">
+                <%= t('teams.form.insurance_message') %>
+            </div>
+            <div class="offset2 span3">
+                <label class="radio inline"><%= f.radio_button :insurance, true %>Yes</label>
+                <label class="radio inline"><%= f.radio_button :insurance, false, checked: true %>No</label>
             </div>
         </div>
 
@@ -66,13 +68,6 @@
             <div class="controls">
                 <%= f.select :number_size, ["XXS", "XS", "S", "M", "L", "XL"] %>
                 <a class="btn" href="/number_information" target="_blank"><i class="icon-large icon-question-sign"></i></a>
-            </div>
-        </div>
-
-        <div class="control-group">
-            <%= f.label :number_name, :class => 'control-label' %>
-            <div class="controls">
-                <%= f.text_field :number_name %>
             </div>
         </div>
 
@@ -154,7 +149,7 @@
             <div class="control-group">
                 <%= f.label :dog_microchip,  :class => 'control-label' %> 
                 <div class="controls">
-                    <%= f.text_field :dog_microchip %>
+                    <%= f.text_field :dog_microchip%>
                 </div>
             </div>
 
@@ -169,7 +164,7 @@
             <div class="control-group">
                 <%= f.label :dog_microchip_position, :class => 'control-label' %> 
                 <div class="controls">
-                    <%= f.text_field :dog_microchip_position %>
+                    <%= microchip_position_select(f, :dog_microchip_position) %>
                 </div>
             </div>
 

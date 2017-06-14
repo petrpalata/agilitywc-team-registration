@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
   # handler
-  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :number_name, :individual, :squads, :reserve, :handler_date_of_birth, :pedigree
-  validates_presence_of :first_name, :last_name, :country_id, :insurance, :number_size, :number_name, :handler_date_of_birth
+  attr_accessible :country_id, :first_name, :insurance, :last_name, :picture, :number_size, :individual, :squads, :reserve, :handler_date_of_birth, :pedigree
+  validates_presence_of :first_name, :last_name, :country_id, :number_size, :handler_date_of_birth
 
   # dog
   attr_accessible :dog_breed_id, 
@@ -57,6 +57,8 @@ class Team < ActiveRecord::Base
   validates_attachment_presence :pedigree
   validates_attachment_size :pedigree, :less_than => 20.megabytes
   validates_attachment_content_type :pedigree, content_type: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf']
+
+  validates_inclusion_of :dog_microchip_position, in: Dog.microchip_positions.keys
 
   Paperclip.interpolates :dog_registered_name do |attachment, style|
       attachment.instance.dog_registered_name.parameterize

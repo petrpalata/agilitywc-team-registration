@@ -1,6 +1,6 @@
 module StaffMembersHelper
-    def role_select(form)
-        form.select(:role_type, possible_roles.map { |k, v| [v, k] })
+    def role_select(form, options = {})
+        form.select(:role_type, possible_roles.map { |k, v| [v, k] }, options)
     end
 
     def possible_roles
