@@ -12,6 +12,7 @@ en:
           left_side_of_neck: Neck (left side)
           other: Other
           right_side_of_neck: Neck (right side)
+        name: Name
         nickname: Nickname
         owner_address: Address
         owner_first_name: Name
@@ -19,6 +20,15 @@ en:
         owner_phone_number: Phone
         sex: Sex
         tatoo: Tatoo
+      staff_member:
+        email: E-mail
+        full_name: Full name
+        number_name: Name on start number
+        number_size: Size of start number
+        phone_number: Phone number
+        picture: Photo
+        picture_file_name: Photo path to file
+        role_type: Role
       team:
         category: Category
         dog_breed_id: Breed
@@ -37,16 +47,22 @@ en:
         dog_tatoo: Tatoo
         dogs: Dogs
         first_name: First name
+        handler_date_of_birth: Date of birth
+        individual: Individual
         insurance: Insurance
         last_name: Last name
+        number_name: Name on start number
+        number_size: Size of start number
         picture: Picture
         picture_file_name: Picture path
         reserve: Reserve
+        squads: Teams
     models:
       dog: Dog
       dogs: Dogs
       handler: Handler
       owner: Owner
+      staff_member: Teamleader/Assistant
   application:
     title: Teams registration
   confirmation:
@@ -64,6 +80,7 @@ en:
         payment_id: Payment ID (variable symbol)
         title: Payment information
         total_amount_euro: Total amount (euro)
+        total_assistants_coaches: Total number of teamleaders/assistants
         total_teams: Total teams
       send_confirmation:
         subject: Payment information
@@ -73,10 +90,18 @@ en:
       payment_id: Payment ID (variable symbol)
       title: Payment information
       total_amount_euro: Total amount (euro)
+      total_assistants_coaches: Total number of teamleaders/assistants
       total_teams: Total teams
     views:
       index:
         link_to_confirmation: Confirm all entries and generate payment (cannot undo)
+  dogs:
+    controller:
+      dont_have_permission: You don’t have sufficient authorisation to view the information
+      no_changed_allowed: You have confirmed the entry forms, no additional changes are allowed
+      successfully_created: Non-competing dog has been succesfully added
+      successfully_deleted: Non-competing dog has been succesfully deleted
+      successfully_updated: Non-competing dog has been succesfully modified
   helpers:
     label:
       dog:
@@ -84,6 +109,7 @@ en:
         date_of_birth: Date of birth
         microchip: Microchip
         microchip_position: Microchip position
+        name: Full (pedigree) name
         nickname: Nickname
         owner_address: Address
         owner_first_name: Name
@@ -91,6 +117,17 @@ en:
         owner_phone_number: Phone
         sex: Sex
         tatoo: Tatoo
+      staff_member:
+        email: E-mail
+        full_name: Full name
+        number_name: Name on start number
+        number_size: Size of start number
+        pedigree: Pedigree
+        pedigree_file_name: Path to pedigree file
+        phone_number: Phone number
+        picture: Photo
+        picture_file_name: Path to photo file
+        role_type: Role
       team:
         category: Category
         dog_breed_id: Breed
@@ -108,11 +145,25 @@ en:
         dog_studbook_and_number: Studbook
         dog_tatoo: Tatoo
         first_name: First name
+        handler_date_of_birth: Date of birth
+        individual: Individual
         insurance: Insurance
         last_name: Last name
+        number_name: Name on start number
+        number_size: Size of start number
+        pedigree: Pedigree
+        pedigree_file_name: Path to pedigree file
         picture: Picture
         picture_file_name: Picture path
         reserve: Reserve
+        squads: Teams
+    number_information:
+      detailed_info: Pro zjištění potřebné velikosti položte dres či tričko, které vám velikostně vyhovuje na podložku a v napnutém stavu změřte uvedené rozměry. Zjištěné hodnoty porovnejte s údaji v tabulce. V případě, že jste na rozhraní velikostí, doporučujeme zvolit větší rozměr dresu. 
+      number_height: Length of number (cm)
+      number_width: Width of number (cm)
+      title: Start numbers - size tables
+      vest_size: Size of start vest
+      width_not_circumference: The indicated number is width of the number, NOT circumference
   links:
     application:
       confirmation: Confirmation
@@ -120,8 +171,12 @@ en:
       logout: Logout
       new_admin: New admin
       new_user: New user
+      non_competing_dogs: Non-competing dogs
       payment_information: Payment information
+      staff_members: Teamleader and assistants
       teams: Teams
+    staff_members:
+      new: Add teamleader/assistant
     teams:
       back: Back
       destroy: Destroy
@@ -131,6 +186,21 @@ en:
   registration:
     controller:
       successfully_created_new_user: Successfully created new user.
+  staff_members:
+    controller:
+      dont_have_permission: You don’t have sufficient authorisation to view the information
+      no_changed_allowed: You have confirmed the entry forms, no additional changes are allowed
+      successfully_created: Teamleader/Assistant has been succesfully added
+      successfully_deleted: Teamleader/Assistant has been succesfully deleted
+      successfully_updated: Teamleader/Assistant has been succesfully modified
+    index:
+      title: Teamleader and assistants
+    model:
+      first_assistant: First assistant
+      other: Others
+      physiotherapist: Physiotherapist
+      second_assistant: Second assistant
+      teamleader: Teamleader
   teams:
     controller:
       dont_have_permission: You don't have permission to view this.
@@ -145,6 +215,7 @@ en:
       actions: Actions
       add_dog: Add dog
       correct_errors: Correct the following errors.
+      either_competing_or_reserve: A team either runs at least one of the competitions (individual or team contest) or is a reserve team
       email: E-mail
       female: Female
       first_name: First name
@@ -155,6 +226,8 @@ en:
       large: Large
       last_name: Last name
       male: Male
+      maximum_reserve_count: Max one reserve dog is allowed in each size category
+      maximum_staff_count: Maximal number of teamleaders/assistants is 5
       medium: Medium
       password: Password
       picture: Picture
