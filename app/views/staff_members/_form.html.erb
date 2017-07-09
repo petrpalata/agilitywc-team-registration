@@ -33,7 +33,7 @@
             <%= f.label :picture, :class => 'control-label' %>
             <% if @staff_member.picture_file_name %>
                 <div class="span6">
-                    <%= image_tag(@staff_member.picture(:big_thumb)) %>
+                    <%= image_tag(@staff_member.picture.url(:big_thumb)) %>
                 </div>
             <% end %>
             <div class="controls">

@@ -58,6 +58,11 @@
 
         <div class="control-group">
             <%= f.label :picture, :class => 'control-label' %>
+            <% if @team.picture_file_name %>
+                <div class="span6">
+                    <%= image_tag(@team.picture.url(:big_thumb)) %>
+                </div>
+            <% end %>
             <div class="controls">
                 <%= f.file_field :picture %>
             </div>

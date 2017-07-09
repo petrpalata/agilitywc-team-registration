@@ -158,46 +158,6 @@ cs:
         reserve: Náhradník
         squads: Družstva
   index:
-    all_handlers:
-      Argentina: Argentina
-      Austria: Rakousko
-      Belarus: Bělorusko
-      Belgium: Belgie
-      Brazil: Brazílie
-      Canada: Kanada
-      Chile: Chile
-      China: Čína
-      Colombia: Kolumbie
-      Croatia: Chorvatsko
-      Czech Republic: Česká republika
-      Denmark: Dánsko
-      Estonia: Estonsko
-      Finland: Finsko
-      France: Francie
-      Germany: Německo
-      Great Britain: Velká Británie
-      Hungary: Maďarsko
-      Ireland: Irsko
-      Italy: Itálie
-      Japan: Japonsko
-      Latvia: Lotyšsko
-      Lithuania: Litva
-      Luxembourg: Lucembursko
-      Mexico: Mexiko
-      Netherlands: Nizozemsko
-      Norway: Norsko
-      Poland: Polsko
-      Portugal: Portugalsko
-      Russian Federation: Rusko
-      San Marino: San Marino
-      Slovakia: Slovensko
-      Slovenia: Slovinsko
-      South Africa: Jihoafrická republika
-      Spain: Španělsko
-      Sweden: Švědsko
-      Switzerland: Švýcarsko
-      United Kingdom: Velká Británie
-      United States: USA
     number_information:
       detailed_info: Pro zjištění potřebné velikosti položte dres či tričko, které
         vám velikostně vyhovuje na podložku a v napnutém stavu změřte uvedené rozměry.

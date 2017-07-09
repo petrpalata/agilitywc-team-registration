@@ -249,3 +249,14 @@ en:
         message: Your account for World Agility Championship registration has been
           activated
         subject: Account activation
+  index:
+    number_information:
+      detailed_info: Pro zjištění potřebné velikosti položte dres či tričko, které
+        vám velikostně vyhovuje na podložku a v napnutém stavu změřte uvedené rozměry.
+        Zjištěné hodnoty porovnejte s údaji v tabulce. V případě, že jste na rozhraní
+        velikostí, doporučujeme zvolit větší rozměr dresu.
+      number_height: Length of number (cm)
+      number_width: Width of number (cm)
+      title: Start numbers - size tables
+      vest_size: Size of start vest
+      width_not_circumference: The indicated number is width of the number, NOT circumference
