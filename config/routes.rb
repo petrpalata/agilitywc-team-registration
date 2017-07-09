@@ -50,7 +50,7 @@ TeamRegistration::Application.routes.draw do
     match "/export/for_main_judge" => "export#for_main_judge"
 
     match "/api/countries" => "api#countries"
-    match "/api/team/:country" => "api#country_teams"
+    #match "/api/team/:country" => "api#country_teams"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 
