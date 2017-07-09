@@ -26,6 +26,8 @@ TeamRegistration::Application.routes.draw do
         get "/login" => "devise/sessions#new", :as => 'new_user_session'
         post "/login" => "devise/sessions#create", :as => 'user_session'
         delete "/logout" => "devise/sessions#destroy", :as => 'destroy_user_session'
+
+        get "/user/:id/switch_country" => "registration#switch_show_country", :as => 'switch_show_country'
     end
 
     resources :teams
@@ -46,6 +48,9 @@ TeamRegistration::Application.routes.draw do
     #match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
     match "/export/squads" => "export#squads"
     match "/export/for_main_judge" => "export#for_main_judge"
+
+    match "/api/countries" => "api#countries"
+    match "/api/team/:country" => "api#country_teams"
     # The priority is based upon order of creation:
     # first created -> highest priority.
 

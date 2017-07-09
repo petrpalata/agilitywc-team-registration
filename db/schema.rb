@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170607005704) do
+ActiveRecord::Schema.define(:version => 20170708192732) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(:version => 20170607005704) do
     t.integer  "country_id"
     t.integer  "role_cd"
     t.boolean  "confirm_all",            :default => false
+    t.boolean  "show_country",           :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

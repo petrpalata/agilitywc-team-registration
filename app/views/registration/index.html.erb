@@ -3,12 +3,21 @@
     <th>Země</th>
     <th>Akce</th>
     <th></th>
+    <th></th>
     <% @users.each do |user| %>
         <tr>
             <td><%= user.email %></td>
             <td><%= Country.find_country_by_number("0" * (3 - user.country_id.to_s.length)  + user.country_id.to_s).name  %></td>
             <td><%= button_to "Smazat", delete_user_path(:id => user.id), :method => :delete, :confirm => "Opravdu?", :class => 'btn' %></td>
             <td><%= button_to "Znovu odeslat e-mail", user_resend_email_path(:id => user.id), :class=> 'btn', :method => :get,  :disable_with => 'Odesílám...' %></td>
+
+            <% if current_user.superadmin? %>
+                <% if user.show_country %>
+                    <td><%= button_to "Nezobrazovat (Zobrazeno)", switch_show_country_path(:id => user.id), :class=> 'btn', :method => :get%></td>
+                <% else %>
+                    <td><%= button_to "Zobrazovat (Nezobrazeno)", switch_show_country_path(:id => user.id), :class=> 'btn', :method => :get%></td>
+                <% end %>
+            <% end %>
         </tr>
     <% end %>
 </table>

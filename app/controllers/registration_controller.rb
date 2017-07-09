@@ -62,4 +62,15 @@ class RegistrationController < DeviseController
             redirect_to root_url, :notice => "Nemáte dostatečná oprávnění"
         end
     end
+
+    def switch_show_country
+        if current_user.superadmin?
+            user = User.find(params[:id])
+            user.show_country = !user.show_country
+            user.save
+            redirect_to list_users_path, :notice => "Přehozeno"
+        else 
+            redirect_to root_url, :notice => "Nemáte dostatečná oprávnění"
+        end
+    end
 end
