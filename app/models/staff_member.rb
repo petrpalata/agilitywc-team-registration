@@ -1,4 +1,5 @@
 class StaffMember < ActiveRecord::Base
+    include StaffMembersHelper
     attr_accessible :full_name,
         :role_type,
         :picture,
@@ -28,5 +29,23 @@ class StaffMember < ActiveRecord::Base
         if StaffMember.where(:country_id => country_id).count > 4
             errors.add(:base, I18n.t('teams.form.maximum_staff_count'))
         end
+    end
+
+    def as_json(*a)
+        lang = I18n.locale
+        I18n.locale = 'cs'
+        role_cs = possible_roles[role_type]
+
+        I18n.locale = 'en'
+        role_en = possible_roles[role_type]
+
+        I18n.locale = lang
+        {
+            "full_name" => full_name,
+            "role_cs" => role_cs,
+            "role_en" => role_en,
+            "picture_url" => picture.url,
+            "show_role" => role_type < 4
+        }
     end
 end

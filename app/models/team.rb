@@ -84,4 +84,14 @@ class Team < ActiveRecord::Base
           errors.add(:base, I18n.t('teams.form.maximum_reserve_count'))
       end
   end
+
+  def as_json(*a)
+      {
+          "full_name" => "#{first_name.strip} #{last_name.strip}",
+          "dog" => "#{dog_registered_name.strip} (#{dog_nickname.strip})",
+          "breed" => Breed.find(dog_breed_id).name,
+          "picture_url" => picture.url(:big_thumb)
+      }
+  end
+
 end

@@ -49,8 +49,10 @@ TeamRegistration::Application.routes.draw do
     match "/export/squads" => "export#squads"
     match "/export/for_main_judge" => "export#for_main_judge"
 
-    match "/api/countries" => "api#countries"
-    #match "/api/team/:country" => "api#country_teams"
+    scope '/api', defaults: { format: 'json' }, constraints: { format: 'json' } do
+        match "/countries" => "api#countries"
+        match "/team/:country" => "api#country_teams"
+    end
     # The priority is based upon order of creation:
     # first created -> highest priority.
 
