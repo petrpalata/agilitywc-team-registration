@@ -37,21 +37,21 @@ class ApiController < ApplicationController
 
         teams = Team.where(country_id: teamleader.country_id).order('last_name DESC')
 
-        if teams.where(individual: true).count
+        if teams.where(individual: true).count > 0
             country_team["individual"] = Hash.new
             country_team["individual"]["small"] = teams.where(category: 'S', individual: true) 
             country_team["individual"]["medium"] = teams.where(category: 'M', individual: true)
             country_team["individual"]["large"] = teams.where(category: 'L', individual: true)
         end
 
-        if teams.where(squads: true).count
+        if teams.where(squads: true).count > 0
             country_team["teams"] = Hash.new
             country_team["teams"]["small"] = teams.where(category: 'S', squads: true)
             country_team["teams"]["medium"] = teams.where(category: 'M', squads: true)
             country_team["teams"]["large"] = teams.where(category: 'L', squads: true)
         end
 
-        if teams.where(reserve: true).count
+        if teams.where(reserve: true).count > 0
             country_team["reserve"] = Hash.new
             country_team["reserve"]["small"] = teams.where(category: 'S', reserve: true)
             country_team["reserve"]["medium"] = teams.where(category: 'M', reserve: true)

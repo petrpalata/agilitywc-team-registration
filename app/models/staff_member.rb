@@ -18,7 +18,7 @@ class StaffMember < ActiveRecord::Base
         
     validates_inclusion_of :role_type, :in => 1..5
 
-    has_attached_file :picture, :styles => { :thumbnail => '50x80', :big_thumb => '120x120' }, :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename", :url => '/system/:class/:attachment/:id/:style/:filename'
+    has_attached_file :picture, :styles => { :thumbnail => '50x80', :big_thumb => '120x120', :portrait => "250x250" }, :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename", :url => '/system/:class/:attachment/:id/:style/:filename'
     validates_attachment_presence :picture
     validates_attachment_size :picture, :less_than => 5.megabytes
     validates_attachment_content_type :picture, content_type: ['image/jpeg', 'image/png', 'image/gif']
