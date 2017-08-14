@@ -42,7 +42,7 @@ class Team < ActiveRecord::Base
 
 
   # picture
-  has_attached_file :picture, :styles => { :thumbnail => '50x80', :big_thumb => '120x120', :portrait => "250x250" }, :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename", :url => '/system/:class/:attachment/:id/:style/:filename'
+  has_attached_file :picture, :styles => { :big_thumb => '120x120', :portrait => "150x200" }, :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename", :url => '/system/:class/:attachment/:id/:style/:filename', :convert_options => { :portrait => "-quality 75 -strip" }
 
   validates_attachment_presence :picture
   validates_attachment_size :picture, :less_than => 5.megabytes
@@ -90,7 +90,7 @@ class Team < ActiveRecord::Base
           "full_name" => "#{first_name.strip} #{last_name.strip}",
           "dog" => "#{dog_registered_name.strip} (#{dog_nickname.strip})",
           "breed" => Breed.find(dog_breed_id).name,
-          "picture_url" => picture.url(:big_thumb)
+          "picture_url" => picture.url(:portrait)
       }
   end
 
