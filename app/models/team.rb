@@ -85,6 +85,14 @@ class Team < ActiveRecord::Base
       end
   end
 
+  def breed_name
+      Breed.find(dog_breed_id).name
+  end
+
+  def breed_fci_number
+      Breed.find(dog_breed_id).fci_number
+  end
+
   def as_json(*a)
       {
           "full_name" => "#{first_name.strip} #{last_name.strip}",
@@ -94,4 +102,19 @@ class Team < ActiveRecord::Base
       }
   end
 
+  def country_text
+      Country.find_country_by_number("0" * (3 - country_id.to_s.length) + country_id.to_s).name
+  end
+
+  def self.to_csv
+      attributes = %w{ id country_text first_name last_name number_size dog_registered_name dog_nickname dog_tatoo category individual squads reserve dog_sex breed_name breed_fci_number dog_date_of_birth dog_microchip dog_microchip_position dog_owner_address dog_owner_first_name dog_owner_last_name dog_owner_phone_number dog_record_book_or_license dog_studbook_and_number  }
+
+      CSV.generate(headers: true) do |csv|
+          csv << attributes
+
+          current_scope.each do |team|
+              csv << attributes.map{ |attr| team.send(attr) }
+          end
+      end
+  end
 end

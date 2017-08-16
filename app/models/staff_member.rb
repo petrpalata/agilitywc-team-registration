@@ -31,13 +31,17 @@ class StaffMember < ActiveRecord::Base
         end
     end
 
+    def role_name
+        possible_roles[role_type]
+    end
+
     def as_json(*a)
         lang = I18n.locale
         I18n.locale = 'cs'
-        role_cs = possible_roles[role_type]
+        role_cs = role_name
 
         I18n.locale = 'en'
-        role_en = possible_roles[role_type]
+        role_en = role_name
 
         I18n.locale = lang
         {
@@ -47,5 +51,21 @@ class StaffMember < ActiveRecord::Base
             "picture_url" => picture.url(:portrait),
             "show_role" => role_type < 5
         }
+    end
+
+    def country_text
+        Country.find_country_by_number("0" * (3 - country_id.to_s.length) + country_id.to_s).name
+    end
+
+    def self.to_csv
+        attributes = %w{ id country_text full_name role_name number_size phone_number email }
+
+        CSV.generate(headers: true) do |csv|
+            csv << attributes
+
+            current_scope.each do |team|
+                csv << attributes.map{ |attr| team.send(attr) }
+            end
+        end
     end
 end

@@ -21,11 +21,18 @@ class ExportController < ApplicationController
         end
     end
 
+    def shirts
+        @teams = Team.scoped
+        @staff = StaffMember.scoped
+        respond_to do |format|
+            format.html
+            format.csv { send_data @teams.to_csv + @staff.to_csv, filename: "export-#{Date.today}.csv" }
+        end
+    end
 
     def size_and_breed_stats
-        clean_up_dogs
-        @dog_breeds = Dog.select('breed_id, count(*) as count_all').group('breed_id')
-        @dog_sizes = Dog.select('category, count(*) as count_all').group('category')
+        @dog_breeds = Team.select('breed_id, count(*) as count_all').group('breed_id')
+        @dog_sizes = Team.select('category, count(*) as count_all').group('category')
         respond_to do |format|
             format.csv {
                 render :partial => "export/size_and_breed_stats.csv"
