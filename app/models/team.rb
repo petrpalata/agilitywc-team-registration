@@ -107,7 +107,7 @@ class Team < ActiveRecord::Base
   end
 
   def self.to_csv
-      attributes = %w{ id country_text first_name last_name number_size dog_registered_name dog_nickname dog_tatoo category individual squads reserve dog_sex breed_name breed_fci_number dog_date_of_birth dog_microchip dog_microchip_position dog_owner_address dog_owner_first_name dog_owner_last_name dog_owner_phone_number dog_record_book_or_license dog_studbook_and_number  }
+      attributes = %w{ id country_text first_name last_name number_size dog_registered_name dog_nickname handler_date_of_birth dog_tatoo category individual squads reserve dog_sex breed_name breed_fci_number dog_date_of_birth dog_microchip dog_microchip_position dog_owner_address dog_owner_first_name dog_owner_last_name dog_owner_phone_number dog_record_book_or_license dog_studbook_and_number  }
 
       CSV.generate(headers: true) do |csv|
           csv << attributes
