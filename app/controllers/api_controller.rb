@@ -35,6 +35,13 @@ class ApiController < ApplicationController
     def compose_country_team(teamleader)
         country_team = Hash.new
 
+        c = country_by_number(teamleader.country_id) 
+        country_team["country"] = {
+            :code => c.alpha2,
+            :cs_translation => c.translation(:cs),
+            :en_translation => c.translation(:en)
+        }
+
         teams = Team.where(country_id: teamleader.country_id).order('last_name DESC')
 
         if teams.where(individual: true).count > 0
