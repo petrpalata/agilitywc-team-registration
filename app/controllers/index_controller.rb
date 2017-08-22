@@ -38,10 +38,6 @@ class IndexController < ApplicationController
   def delete_payment
       if current_user && (current_user.admin? || current_user.superadmin?)
           payment = Payment.find(params[:id])
-          if payment.confirmed
-              redirect_to root_url, :notice => "Potvrzené platby nelze smazat."
-              return
-          end
           users = User.where(:country_id => payment.country_id).all
           users.each do |user|
               user.confirm_all = false
