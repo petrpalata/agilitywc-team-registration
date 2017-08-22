@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
     def countries
-        teamleaders = User.where(show_country: true, role_cd: 2).select(:country_id).uniq
+        teamleaders = User.where(confirm_all: true, show_country: true, role_cd: 2).select(:country_id).uniq
         team_countries = teamleaders.map do |tleader| 
             c = country_by_number(tleader.country_id)
             {
