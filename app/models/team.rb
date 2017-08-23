@@ -42,7 +42,11 @@ class Team < ActiveRecord::Base
 
 
   # picture
-  has_attached_file :picture, :styles => { :big_thumb => '120x120', :portrait => "150x200" }, :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename", :url => '/system/:class/:attachment/:id/:style/:filename', :convert_options => { :portrait => "-quality 75 -strip" }
+  has_attached_file :picture,
+      :styles => { :big_thumb => '120x120', :portrait => "150x200" },
+      :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename",
+      :url => '/system/:class/:attachment/:id/:style/:filename',
+      :convert_options => { :portrait => "-quality 75" }
 
   validates_attachment_presence :picture
   validates_attachment_size :picture, :less_than => 5.megabytes
