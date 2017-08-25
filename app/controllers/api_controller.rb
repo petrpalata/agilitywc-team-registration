@@ -26,6 +26,20 @@ class ApiController < ApplicationController
         end
     end
 
+    def country_teams_v2
+        country = Country[params[:country]]
+        if country.nil?
+            render :nothing => true, :status => 404
+        else
+            teamleader = User.where(country_id: country.number, show_country: true, role_cd: 2, confirm_all: true).first
+            if teamleader.nil?
+                render :nothing => true, :status => 404
+            else
+                render :json => compose_country_team_v2(teamleader)
+            end
+        end
+    end
+
     private
     def country_by_number(number)
         number_str = number.to_s
@@ -56,6 +70,40 @@ class ApiController < ApplicationController
             country_team["teams"]["small"] = teams.where(category: 'S', squads: true)
             country_team["teams"]["medium"] = teams.where(category: 'M', squads: true)
             country_team["teams"]["large"] = teams.where(category: 'L', squads: true)
+        end
+
+        if teams.where(reserve: true).count > 0
+            country_team["reserve"] = Hash.new
+            country_team["reserve"]["small"] = teams.where(category: 'S', reserve: true)
+            country_team["reserve"]["medium"] = teams.where(category: 'M', reserve: true)
+            country_team["reserve"]["large"] = teams.where(category: 'L', reserve: true)
+        end
+
+        leadership = StaffMember.where(country_id: teamleader.country_id).order('role_type ASC')
+        if not leadership.nil? and leadership.count
+            country_team["leadership"] = leadership
+        end
+
+        country_team
+    end
+
+    def compose_country_team_v2(teamleader)
+        country_team = Hash.new
+
+        c = country_by_number(teamleader.country_id) 
+        country_team["country"] = {
+            :code => c.alpha2,
+            :cs_translation => c.translation(:cs),
+            :en_translation => c.translation(:en)
+        }
+
+        teams = Team.where(country_id: teamleader.country_id).order('last_name DESC')
+
+        if teams.where(reserve: false).count > 0
+            country_team["competitors"] = Hash.new
+            country_team["competitors"]["small"] = teams.where(category: 'S', reserve: false) 
+            country_team["competitors"]["medium"] = teams.where(category: 'M', reserve: false)
+            country_team["competitors"]["large"] = teams.where(category: 'L', reserve: false)
         end
 
         if teams.where(reserve: true).count > 0

@@ -31,7 +31,7 @@ class ExportController < ApplicationController
     end
 
     def size_and_breed_stats
-        @dog_breeds = Team.select('breed_id, count(*) as count_all').group('breed_id')
+        @dog_breeds = Team.select('dog_breed_id, count(*) as count_all').group('dog_breed_id')
         @dog_sizes = Team.select('category, count(*) as count_all').group('category')
         respond_to do |format|
             format.csv {
