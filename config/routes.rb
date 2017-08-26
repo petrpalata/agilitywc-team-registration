@@ -46,7 +46,7 @@ TeamRegistration::Application.routes.draw do
     match "/export/katalog" => "export#catalogue"
     match "/export/size_and_breed_stats" => "export#size_and_breed_stats"
     match "/export/shirts" => "export#shirts"
-    #match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
+    match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
     match "/export/squads" => "export#squads"
     match "/export/for_main_judge" => "export#for_main_judge"
 
