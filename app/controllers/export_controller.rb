@@ -30,7 +30,7 @@ class ExportController < ApplicationController
         end
     end
 
-    def non_competings_dogs
+    def non_competing_dogs
         @dogs = Dog.scoped
         respond_to do |format|
             format.html
