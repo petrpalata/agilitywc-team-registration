@@ -49,6 +49,7 @@ TeamRegistration::Application.routes.draw do
     match "/export/generate_squad_numbers" => "export#generate_squad_numbers"
     match "/export/squads" => "export#squads"
     match "/export/for_main_judge" => "export#for_main_judge"
+    match "/export/non_competing_dogs" => "export#non_competing_dogs"
 
     scope '/api', defaults: { format: 'json' }, constraints: { format: 'json' } do
         match "/countries" => "api#countries"

@@ -30,6 +30,14 @@ class ExportController < ApplicationController
         end
     end
 
+    def non_competings_dogs
+        @dogs = Dog.scoped
+        respond_to do |format|
+            format.html
+            format.csv { send_data @dogs.to_csv, filename: "export-non-competing-#{Date.today}.csv" }
+        end
+    end
+
     def size_and_breed_stats
         @dog_breeds = Team.select('dog_breed_id, count(*) as count_all').group('dog_breed_id')
         @dog_sizes = Team.select('category, count(*) as count_all').group('category')
