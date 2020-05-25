@@ -10,4 +10,4 @@ SuperAdmin can create other Admin roles and has the power to perform any CRUD op
 Admin has read-only rights for any country but cannot modify country-level registrations.
 Admin also has the rights to create country users.
 === User
-A person that is represents a country and registers (creates, deletes and edits) all teams for that particular country. 
+A person that represents a country and registers (creates, deletes and edits) all teams for that particular country. 
